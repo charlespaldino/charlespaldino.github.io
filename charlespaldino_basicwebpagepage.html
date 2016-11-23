@@ -1,0 +1,144 @@
+﻿<html>
+<head>
+
+<style type="text/css"> 
+body {background-color:lightgrey;}
+
+.centerdiv { width: 95%; height:95%; position: fixed;top: 0; bottom: 0; left: 0; right: 0; 
+		margin: auto; background-color:white;
+		border-width: 2px; border-radius: 20px; border-color: black;border-style: solid;
+		box-shadow: 0px 5px 5px 5px gray;
+		text-align:center;
+		animation: fadein 1s;
+	   } 
+
+.centerinsidediv
+{
+    position: absolute;
+    left: 10;
+    right: 10;
+    top: 50%;
+    bottom: 50%;
+    animation: fadein 4s;
+}
+
+.centerinsidediv_weather
+{
+    position: absolute;
+    left: 10;
+    right: 10;
+    top: 25%;
+    animation: fadein 4s;
+}
+
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+#textlabel { text-decoration: underline; font-size: large; }
+#citylabel {font-size: x-large; font-weight: bold;}
+#degreeslabel {font-size: x-large;}
+#iconimg { width: 100; height:100; border-width: 2px; border-color: black; border-style: solid; border-radius: 20px;}
+#skieslabel {font-size: x-large; font-weight: bold;}
+#loadinglabel {font-size: x-large; font-weight: bold;}
+
+</style>
+
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+
+function convertToF(degrees) {
+    
+	var calc = ""+(degrees * 9 / 5 + 32);
+	
+	if(calc.length > 4)
+	{
+	   return calc.substring(0,5);
+	}
+
+	return calc;
+}
+
+var ip_lat = "";
+var ip_long = "";
+var ip_city = "";
+var weather_skies = "";
+var weather_icon = "";
+var weather_degrees = "";
+var weather_fahrenheit = "";
+
+//Get the location
+var ip_request = new XMLHttpRequest();
+
+ip_request.open( "GET", "https://weathersync.herokuapp.com/ip", false );
+ip_request.send( null );
+
+var ip_response = JSON.parse(ip_request.responseText);
+
+ip_city = ip_response.city;
+ip_lat = ip_response.location.latitude;
+ip_long = ip_response.location.longitude;
+
+
+//Get the weather
+var weather_request = new XMLHttpRequest();
+weather_request.open("GET", "https://weathersync.herokuapp.com/weather/"+ip_lat+","+ip_long, false);
+weather_request.send(null);
+
+var weather_response = JSON.parse(weather_request.responseText);
+weather_skies = weather_response.weather[0].main;
+weather_icon = weather_response.weather[0].icon;
+weather_degrees = new String(weather_response.main.temp);
+
+var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
+weather_fahrenheit = convertToF(parsed_degrees);
+
+</script>
+
+<div class="centerdiv">
+
+<div id="loadingdiv" class="centerinsidediv">
+	<label id="loadinglabel">Loading...Please Wait</label>
+</div>
+
+<div id="infodiv" class="centerinsidediv_weather" style="visibility: hidden; display:inline;">
+	<label id="textlabel">CURRENT CONDITIONS FOR:</label><br><br>
+	<label id="citylabel"></label><br><br>
+	<label id="degreeslabel"></label><br><br>
+	<img id="iconimg"><br><br>
+	<label id="skieslabel"></label><br><br>
+</div>
+</div>
+
+
+<script>
+
+
+document.getElementById("citylabel").innerHTML = ip_city;
+document.getElementById("skieslabel").innerHTML = weather_skies;
+document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
+document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
+
+
+//Swap out divs
+document.getElementById("loadingdiv").style.visibility="hidden";
+document.getElementById("infodiv").style.visibility="visible";
+
+</script>
+</body>
+
+
+
+</html>
+
