@@ -58,9 +58,9 @@ body {background-color:lightgrey;}
 
 <script type="text/javascript">
 
-function convertToF(degrees) {
+function convertKToF(kelvin) {
     
-	var calc = ""+(degrees * 9 / 5 + 32);
+	var calc = ""+(276.1 * (9 / 5) -459.67);
 	
 	if(calc.length > 4)
 	{
@@ -102,7 +102,7 @@ weather_icon = weather_response.weather[0].icon;
 weather_degrees = new String(weather_response.main.temp);
 
 var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
-weather_fahrenheit = convertToF(parsed_degrees);
+weather_fahrenheit = convertKToF(parsed_degrees);
 
 </script>
 
