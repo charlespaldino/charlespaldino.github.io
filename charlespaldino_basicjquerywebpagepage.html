@@ -1,0 +1,192 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="basicjquerypage.css">
+
+<script type="text/javascript">
+function navigateclick() {
+  
+
+	if($('#navbutton').val().toString() == 'Show Local Weather')
+	{
+	   $("#navbutton").prop('value', 'Show Major Cities');		
+	   $("#infodiv").fadeIn();
+	   $("#citiesinfodiv").hide();	 
+	}
+	else
+	{
+	   $("#navbutton").prop('value', 'Show Local Weather');		
+	   $("#infodiv").hide();	   
+	   $("#citiesinfodiv").fadeIn();
+	}
+
+	
+
+
+}
+
+function convertKToF(kelvin) {
+    
+	var calc = ""+(kelvin * (9 / 5) - 459.67);
+	
+	if(calc.length > 4)
+	{
+	   return calc.substring(0,5);
+	}
+
+	return calc;
+}
+
+
+$(document).ready(function() {
+		//Hide divs	
+		$("#citiesinfodiv").hide();
+		$("#infodiv").hide();
+
+		//Grab user local location data
+		$.ajax({
+       		 	url: "https://weathersync.herokuapp.com/ip"
+   		 }).then(function(data) {
+			$('#citylabel').append(data.city);   	 	 	
+			$('#latlonglabel').append("".concat(data.location.latitude).concat(",").concat(data.location.longitude)); 
+			var dataurl = "https://weathersync.herokuapp.com/weather/".concat(data.location.latitude).concat(',').concat(data.location.longitude);
+			
+			//set local data
+			$.ajax({
+       		 		
+				url: dataurl
+   		 	}).then(function(weatherdata) {
+				var weather_fahrenheit = convertKToF(weatherdata.main.temp.toString());
+
+				$('#degreeslabel').append(weather_fahrenheit + "\u00B0"+"F");				
+				$('#iconimg').attr("src","http://openweathermap.org/img/w/"+weatherdata.weather[0].icon+".png");								
+				$('#skieslabel').append(weatherdata.weather[0].main);	
+				
+				$("#loadingdiv").hide();
+				$("#infodiv").show();
+			    });
+
+			//set city data
+			$.ajax({
+       		 		url: "https://weathersync.herokuapp.com/weather/40.730610,-73.935242"
+   		 	}).then(function(data) {				
+				var fahrenheit = convertKToF(data.main.temp.toString());
+				
+				$('#nycp').append("New York, NY");	
+				$('#nycp_temp').append(""+fahrenheit + "\u00B0"+"F");	
+				$('#nycp_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    });
+
+			$.ajax({
+       		 		url: "https://weathersync.herokuapp.com/weather/34.052235,-118.243683"
+   		 	}).then(function(data) {				
+				var fahrenheit = convertKToF(data.main.temp.toString());
+				
+				$('#lap').append("Los Angeles, CA");	
+				$('#lap_temp').append(""+fahrenheit + "\u00B0"+"F");	
+				$('#lap_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    });
+
+			$.ajax({
+       		 		url: "https://weathersync.herokuapp.com/weather/41.881832,-87.623177"
+   		 	}).then(function(data) {				
+				var fahrenheit = convertKToF(data.main.temp.toString());
+				
+				$('#ccp').append("Chicago, IL");	
+				$('#ccp_temp').append(""+fahrenheit + "\u00B0"+"F");	
+				$('#ccp_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    });
+
+			$.ajax({
+       		 		url: "https://weathersync.herokuapp.com/weather/39.952583,-75.165222"
+   		 	}).then(function(data) {				
+				var fahrenheit = convertKToF(data.main.temp.toString());
+				
+				$('#pap').append("Philadelphia, PA");	
+				$('#pap_temp').append(""+fahrenheit + "\u00B0"+"F");	
+				$('#pap_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    });
+
+			$.ajax({
+       		 		url: "https://weathersync.herokuapp.com/weather/29.762778,-95.383056"
+   		 	}).then(function(data) {				
+				var fahrenheit = convertKToF(data.main.temp.toString());
+				
+				$('#hsp').append("Houston, TX");	
+				$('#hsp_temp').append(""+fahrenheit + "\u00B0"+"F");	
+				$('#hsp_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    });
+
+		 });
+
+		
+	
+});
+
+//TODO update repo and resume
+//make youtube video
+//need loading screen, using loading gif
+//make divs for the top5  cities, just get temp and cloud data, rest is static
+//ensure loading screen checks for each call
+
+</script>
+</head>
+
+
+<body>
+<div class="centerdiv">
+
+	<div class="navigation">
+		<input id="navbutton" class="navbutton" type="button" onclick="navigateclick()" value="Show Major Cities"></input>	
+	</div>
+
+	<div id="loadingdiv" class="loading_div">
+		<img alt="Loading...Please Wait" class="loading_gif" src="C:\Users\Shyhalu\Documents\GitHub\charlespaldino.github.io\img\loading.gif"></img>
+	</div>
+
+	<div id="infodiv" class="infodiv" style="visible: hidden;">
+		<label id="textlabel">CURRENT CONDITIONS FOR:</label><br><br>
+		<label id="citylabel"></label> (<label id="latlonglabel"></label>)<br><br>
+		<label id="degreeslabel"></label><br><br>
+		<img id="iconimg"><br><br>
+		<label id="skieslabel"></label><br><br>
+	</div>
+
+	<div id="citiesinfodiv" class="cities_infodiv" style="visible: hidden;">		
+		<table>
+			<tr><td><p id="lap"></p></td>
+			    <td><p id="lap_temp"></p></td>
+			    <td><img id="lap_icon"></img></td>
+			</tr>
+			<tr><td><p id="ccp"></p></td>
+			    <td><p id="ccp_temp"></p></td>
+			    <td><img id="ccp_icon"></img></td>
+			</tr>
+			<tr><td><p id="pap"></p></td>
+			    <td><p id="pap_temp"></p></td>
+			    <td><img id="pap_icon"></img></td>
+			</tr>
+			<tr><td><p id="nycp"></p></td>
+			    <td><p id="nycp_temp"></p></td>
+			    <td><img id="nycp_icon"></img></td>
+			</tr>
+			<tr><td><p id="hsp"></p></td>
+			    <td><p id="hsp_temp"></p></td>
+			    <td><img id="hsp_icon"></img></td>
+			</tr>
+		</table> 
+	</div>
+</div>
+
+
+<script>
+
+
+</script>
+</body>
+
+
+
+</html>
+

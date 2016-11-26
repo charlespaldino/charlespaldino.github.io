@@ -1,0 +1,87 @@
+body {background-color:lightgrey;}
+
+.centerdiv { width: 95%; height:95%; position: fixed;top: 0; bottom: 0; left: 0; right: 0; 
+		margin: auto; background-color:white;
+		border-width: 2px; border-radius: 20px; border-color: black;border-style: solid;
+		box-shadow: 0px 5px 5px 5px gray;
+		text-align:center;
+		animation: fadein 1s;
+	   } 
+
+.navbutton
+{
+	border-width: 2px; border-radius: 20px; border-color: black;border-style: solid;
+	box-shadow: 0px 1px 1px 1px gray;
+	height: 25px;
+}
+
+.navigation
+{
+    left: 50%;    
+    right: 50%;
+    animation: fadein 4s;
+    height: 50px;
+    padding: 10px 0px 0px 0px;
+}
+
+.centerinsidediv
+{
+    position: absolute;
+    left: 10;
+    right: 10;
+    top: 50%;
+    bottom: 50%;
+    animation: fadein 4s;    
+}
+
+.infodiv
+{
+    position: relative;
+    top: 20%;
+    animation: fadein 4s;
+}
+
+.cities_infodiv
+{    
+    position: relative;
+    top: 20%;
+    animation: fadein 4s;
+    z-index: -1;
+}
+
+table
+{
+	position: relative;
+	align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loading_div
+{
+	position: relative;
+	top: 20%;
+}
+
+.loading_gif
+{
+	width: 25%;
+	height: 25%;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+#textlabel { text-decoration: underline; font-size: large; }
+#citylabel {font-size: x-large; font-weight: bold;}
+#degreeslabel {font-size: x-large;}
+#iconimg { width: 100; height:100; border-width: 2px; border-color: black; border-style: solid; border-radius: 20px;}
+#skieslabel {font-size: x-large; font-weight: bold;}
+#loadinglabel {font-size: x-large; font-weight: bold;}
+
