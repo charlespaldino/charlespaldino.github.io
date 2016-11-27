@@ -57,6 +57,12 @@ table
 	margin-right: auto;
 }
 
+.error_div
+{
+	position: relative;
+	top: 40%;
+}
+
 .loading_div
 {
 	position: relative;

@@ -13,10 +13,6 @@ function navigateclick() {
 	   $("#infodiv").hide();	   
 	   $("#citiesinfodiv").fadeIn();
 	}
-
-	
-
-
 }
 
 function convertKToF(kelvin) {
@@ -35,6 +31,8 @@ $(document).ready(function() {
 		//Hide divs	
 		$("#citiesinfodiv").hide();
 		$("#infodiv").hide();
+		$("#navdiv").hide();
+		$("#errordiv").hide();
 
 		//Grab user local location data
 		$.ajax({
@@ -46,8 +44,11 @@ $(document).ready(function() {
 			
 			//set local data
 			$.ajax({
-       		 		
-				url: dataurl
+				url: dataurl,
+				error: function(xerror)
+				        {
+     					   
+					}
    		 	}).then(function(weatherdata) {
 				var weather_fahrenheit = convertKToF(weatherdata.main.temp.toString());
 
@@ -57,7 +58,8 @@ $(document).ready(function() {
 				
 				$("#loadingdiv").hide();
 				$("#infodiv").show();
-			    });
+				$("#navdiv").show();			    
+			}).fail(callfailure);
 
 			//set city data
 			$.ajax({
@@ -68,6 +70,8 @@ $(document).ready(function() {
 				$('#nycp').append("New York, NY");	
 				$('#nycp_temp').append(""+fahrenheit + "\u00B0"+"F");	
 				$('#nycp_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    }).fail(function(data) {				
+				$('#nycp').append("Could not find New York");
 			    });
 
 			$.ajax({
@@ -78,6 +82,8 @@ $(document).ready(function() {
 				$('#lap').append("Los Angeles, CA");	
 				$('#lap_temp').append(""+fahrenheit + "\u00B0"+"F");	
 				$('#lap_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    }).fail(function(data) {				
+				$('#lap').append("Could not find Los Angeles");
 			    });
 
 			$.ajax({
@@ -88,6 +94,8 @@ $(document).ready(function() {
 				$('#ccp').append("Chicago, IL");	
 				$('#ccp_temp').append(""+fahrenheit + "\u00B0"+"F");	
 				$('#ccp_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    }).fail(function(data) {				
+				$('#ccp').append("Could not find Chicago");
 			    });
 
 			$.ajax({
@@ -98,6 +106,8 @@ $(document).ready(function() {
 				$('#pap').append("Philadelphia, PA");	
 				$('#pap_temp').append(""+fahrenheit + "\u00B0"+"F");	
 				$('#pap_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    }).fail(function(data) {				
+				$('#pap').append("Could not find Philadelphia");
 			    });
 
 			$.ajax({
@@ -108,10 +118,21 @@ $(document).ready(function() {
 				$('#hsp').append("Houston, TX");	
 				$('#hsp_temp').append(""+fahrenheit + "\u00B0"+"F");	
 				$('#hsp_icon').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");				
+			    }).fail(function(data) {				
+				$('#hsp').append("Could not find Houston");
 			    });
 
-		 });
+		 }).fail(callfailure);
 
+
+function callfailure(xerror)
+{
+	$("#loadingdiv").hide();
+	$("#infodiv").hide();
+	$("#navdiv").hide();
+	$("#errordiv").show();
+	$("#errortext").append("Error Occurred, Status: "+xerror.status+". Message: "+ xerror.statusText + ' ' + xerror.responseText);
+}
 		
 	
 });

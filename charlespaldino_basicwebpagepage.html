@@ -22,6 +22,20 @@ body {background-color:lightgrey;}
     animation: fadein 4s;
 }
 
+.error_div
+{
+	top: 40%;
+	position: relative;
+}
+
+.loading_div
+{
+	top: 40%;
+	position: relative;
+	animation: fadein 4s;
+}
+
+
 .centerinsidediv_weather
 {
     position: absolute;
@@ -41,7 +55,6 @@ body {background-color:lightgrey;}
     }
 }
 
-
 #textlabel { text-decoration: underline; font-size: large; }
 #citylabel {font-size: x-large; font-weight: bold;}
 #degreeslabel {font-size: x-large;}
@@ -51,16 +64,10 @@ body {background-color:lightgrey;}
 
 </style>
 
-</head>
-
-
-<body>
-
 <script type="text/javascript">
-
 function convertKToF(kelvin) {
     
-	var calc = ""+(276.1 * (9 / 5) -459.67);
+	var calc = ""+(kelvin * (9 / 5) - 459.67);
 	
 	if(calc.length > 4)
 	{
@@ -78,37 +85,86 @@ var weather_icon = "";
 var weather_degrees = "";
 var weather_fahrenheit = "";
 
-//Get the location
+var weather_request = new XMLHttpRequest();
 var ip_request = new XMLHttpRequest();
 
-ip_request.open( "GET", "https://weathersync.herokuapp.com/ip", false );
-ip_request.send( null );
+document.onreadystatechange = loaded;
 
-var ip_response = JSON.parse(ip_request.responseText);
+function loaded()
+{
+	ip_request.onreadystatechange=getIPCallBack;
+	ip_request.open( "GET", "https://weathersync.herokuapp.com/ip", false );
+	ip_request.send( null );
+}
 
-ip_city = ip_response.city;
-ip_lat = ip_response.location.latitude;
-ip_long = ip_response.location.longitude;
+function getIPCallBack()
+{
 
+	if (ip_request.readyState==4 && ip_request.status==200)
+	{
+		var ip_response = JSON.parse(ip_request.responseText);
 
-//Get the weather
-var weather_request = new XMLHttpRequest();
-weather_request.open("GET", "https://weathersync.herokuapp.com/weather/"+ip_lat+","+ip_long, false);
-weather_request.send(null);
+		ip_city = ip_response.city;
+		ip_lat = ip_response.location.latitude;
+		ip_long = ip_response.location.longitude;
+		//Get the weather
+		weather_request.onreadystatechange=postCallback;
+		weather_request.open("GET", "https://weathersync.herokuapp.com/weather/"+ip_lat+","+ip_long, false);
+		weather_request.send(null);
+	}
+	else
+	{
+		document.getElementById("loadingdiv").style.visibility="hidden";
+		document.getElementById("infodiv").style.visibility="hidden";
+		document.getElementById("errordiv").style.visibility="visible";
+		document.getElementById("errortext").innerHTML="An error ocurred, status: "+ip_request.status;		
+	}
+}
 
-var weather_response = JSON.parse(weather_request.responseText);
-weather_skies = weather_response.weather[0].main;
-weather_icon = weather_response.weather[0].icon;
-weather_degrees = new String(weather_response.main.temp);
+function postCallback()
+{
+	if (weather_request.readyState==4 && weather_request.status==200)
+	{
+		var weather_response = JSON.parse(weather_request.responseText);
+		weather_skies = weather_response.weather[0].main;
+		weather_icon = weather_response.weather[0].icon;
+		weather_degrees = new String(weather_response.main.temp);
 
-var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
-weather_fahrenheit = convertKToF(parsed_degrees);
+		var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
+		weather_fahrenheit = convertKToF(parsed_degrees);
+
+		document.getElementById("citylabel").innerHTML = ip_city;
+		document.getElementById("skieslabel").innerHTML = weather_skies;
+		document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
+		document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
+
+		//Swap out divs
+		document.getElementById("loadingdiv").style.visibility="hidden";
+		document.getElementById("infodiv").style.visibility="visible";
+	}
+	else
+	{
+		document.getElementById("loadingdiv").style.visibility="hidden";
+		document.getElementById("infodiv").style.visibility="hidden";
+		document.getElementById("errordiv").style.visibility="visible";
+		document.getElementById("errortext").innerHTML="An service error ocurred, status: "+ip_request.status;		
+	}
+}
 
 </script>
 
+</head>
+
+
+<body>
+
 <div class="centerdiv">
 
-<div id="loadingdiv" class="centerinsidediv">
+<div id="errordiv" style="visibility: hidden;" class="error_div">
+	<p id="errortext"></p>
+</div>
+
+<div id="loadingdiv" class="loading_div">
 	<label id="loadinglabel">Loading...Please Wait</label>
 </div>
 
@@ -121,21 +177,6 @@ weather_fahrenheit = convertKToF(parsed_degrees);
 </div>
 </div>
 
-
-<script>
-
-
-document.getElementById("citylabel").innerHTML = ip_city;
-document.getElementById("skieslabel").innerHTML = weather_skies;
-document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
-document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
-
-
-//Swap out divs
-document.getElementById("loadingdiv").style.visibility="hidden";
-document.getElementById("infodiv").style.visibility="visible";
-
-</script>
 </body>
 
 
