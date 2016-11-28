@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-
+<title>Basic HTML skill demonstration - Charles Paldino</title>
 <style type="text/css"> 
 body {background-color:lightgrey;}
 
@@ -92,46 +92,42 @@ document.onreadystatechange = loaded;
 
 function loaded()
 {
+	//Get user coordinates, don't run if not supported.
+	if (navigator.geolocation) 
+	{
+       		navigator.geolocation.getCurrentPosition(getLocalWeather);		
+    	} 
+	else { 
+      	  showError("Geolocation is not supported by this browser.");
+    	}
+
+	
+}
+
+function getLocalWeather(position) 
+{
+	ip_lat = position.coords.latitude;
+	ip_long = position.coords.longitude;
+
 	ip_request.onreadystatechange=getIPCallBack;
-	ip_request.open( "GET", "https://weathersync.herokuapp.com/ip", false );
+	ip_request.open( "GET", "http://api.openweathermap.org/data/2.5/weather?lat="+ip_lat+"&lon="+ip_long+"&appid=77f6677e96a00ad72436c97b767535e4", false );
 	ip_request.send( null );
 }
 
 function getIPCallBack()
 {
-
 	if (ip_request.readyState==4 && ip_request.status==200)
 	{
 		var ip_response = JSON.parse(ip_request.responseText);
 
-		ip_city = ip_response.city;
-		ip_lat = ip_response.location.latitude;
-		ip_long = ip_response.location.longitude;
-		//Get the weather
-		weather_request.onreadystatechange=postCallback;
-		weather_request.open("GET", "https://weathersync.herokuapp.com/weather/"+ip_lat+","+ip_long, false);
-		weather_request.send(null);
-	}
-	else
-	{
-		document.getElementById("loadingdiv").style.visibility="hidden";
-		document.getElementById("infodiv").style.visibility="hidden";
-		document.getElementById("errordiv").style.visibility="visible";
-		document.getElementById("errortext").innerHTML="An error ocurred, status: "+ip_request.status;		
-	}
-}
+		ip_city = ip_response.name;
 
-function postCallback()
-{
-	if (weather_request.readyState==4 && weather_request.status==200)
-	{
-		var weather_response = JSON.parse(weather_request.responseText);
-		weather_skies = weather_response.weather[0].main;
-		weather_icon = weather_response.weather[0].icon;
-		weather_degrees = new String(weather_response.main.temp);
+		weather_skies = ip_response.weather[0].main;
+		weather_icon = ip_response.weather[0].icon;
+		weather_degrees = new String(ip_response.main.temp);
 
-		var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
-		weather_fahrenheit = convertKToF(parsed_degrees);
+		//var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
+		weather_fahrenheit = convertKToF(weather_degrees);
 
 		document.getElementById("citylabel").innerHTML = ip_city;
 		document.getElementById("skieslabel").innerHTML = weather_skies;
@@ -139,17 +135,26 @@ function postCallback()
 		document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
 
 		//Swap out divs
+		document.getElementById("errordiv").style.visibility="hidden";
 		document.getElementById("loadingdiv").style.visibility="hidden";
 		document.getElementById("infodiv").style.visibility="visible";
 	}
 	else
 	{
-		document.getElementById("loadingdiv").style.visibility="hidden";
-		document.getElementById("infodiv").style.visibility="hidden";
-		document.getElementById("errordiv").style.visibility="visible";
-		document.getElementById("errortext").innerHTML="An service error ocurred, status: "+ip_request.status;		
+		showError("An error ocurred, status: "+ip_request.status);
 	}
 }
+
+
+function showError(message)
+{
+	document.getElementById("loadingdiv").style.visibility="hidden";
+	document.getElementById("infodiv").style.visibility="hidden";
+	document.getElementById("errordiv").style.visibility="visible";
+	document.getElementById("errortext").innerHTML=message;		
+}
+
+
 
 </script>
 
