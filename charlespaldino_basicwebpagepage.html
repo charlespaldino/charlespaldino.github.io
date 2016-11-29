@@ -64,49 +64,9 @@ body {background-color:lightgrey;}
 
 </style>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script src="js\skycons.js"></script>
 
 <script type="text/javascript">
-function codeLatLng(lat, lng) {
-
-    var latlng = new google.maps.LatLng(lat, lng);
-    geocoder.geocode({'latLng': latlng}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results)
-        if (results[1]) {         
-         alert(results[0].formatted_address)
-             
-	for (var i=0; i<results[0].address_components.length; i++) {
-            for (var b=0;b<results[0].address_components[i].types.length;b++) {
-                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-                    city= results[0].address_components[i];
-                    break;
-                }
-            }
-        }
-
-        alert(city.short_name + " " + city.long_name)
-
-        } else {
-          alert("No results found");
-        }
-      } else {
-        alert("Geocoder failed due to: " + status);
-      }
-    });
-  }
-
-
-
-
-
-
-
-
-
-
-
-
 function convertCToF(celsius) {
     
 	var calc = ""+(celsius * 1.8 + 32);
@@ -135,15 +95,13 @@ document.onreadystatechange = loaded;
 function loaded()
 {
 
-//a0f14923220e85d789e4bb93ce547cb0
-
 	//Get user coordinates, don't run if not supported.
 	if (navigator.geolocation) 
 	{
        		navigator.geolocation.getCurrentPosition(getLocalWeather);		
     	} 
 	else { 
-      	  showError("Geolocation is not supported by this browser.");
+      	  	showError("Geolocation is not supported by this browser.");
     	}
 
 	
@@ -173,8 +131,16 @@ function getIPCallBack()
 
 		document.getElementById("citylabel").innerHTML = ip_city;
 		document.getElementById("skieslabel").innerHTML = weather_skies;
-		//document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
 		document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
+
+
+		var skycons = new Skycons({"color": "black"});
+		skycons.add("weather_icon", Skycons.PARTLY_CLOUDY_DAY);
+
+		skycons.play();
+
+		//document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
+
 
 		//Swap out divs
 		document.getElementById("errordiv").style.visibility="hidden";
@@ -216,10 +182,9 @@ function showError(message)
 </div>
 
 <div id="infodiv" class="centerinsidediv_weather" style="visibility: hidden; display:inline;">
-	<label id="textlabel">CURRENT CONDITIONS FOR:</label><br><br>
-	<label id="citylabel"></label><br><br>
+	<label id="textlabel">CURRENT LOCAL CONDITIONS:</label><br><br>
 	<label id="degreeslabel"></label><br><br>
-	<img id="iconimg"><br><br>
+	<canvas id="weather_icon" width="10%" height="10%"></canvas><br><br>
 	<label id="skieslabel"></label><br><br>
 </div>
 </div>
