@@ -34,37 +34,49 @@ $(document).ready(function() {
 		$("#navdiv").hide();
 		$("#errordiv").hide();
 
-		//Grab user local location data
-		$.ajax({
-       		 	url: "https://weathersync.herokuapp.com/ip"
-   		 }).then(function(data) {
-			$('#citylabel').append(data.city);   	 	 	
-			$('#latlonglabel').append("".concat(data.location.latitude).concat(",").concat(data.location.longitude)); 
-			var dataurl = "https://weathersync.herokuapp.com/weather/".concat(data.location.latitude).concat(',').concat(data.location.longitude);
-			
-			//set local data
-			$.ajax({
-				url: dataurl,
-				error: function(xerror)
-				        {
-     					   
-					}
-   		 	}).then(function(weatherdata) {
-				var weather_fahrenheit = convertKToF(weatherdata.main.temp.toString());
+		//Check for geolocator
+		if (navigator.geolocation) 
+		{
+       			navigator.geolocation.getCurrentPosition(getLocalWeather);		
+    		} 
+		else 
+		{ 
+      	  		showError("Geolocation is not supported by this browser.");
+    		}
+});
 
-				$('#degreeslabel').append(weather_fahrenheit + "\u00B0"+"F");				
-				$('#iconimg').attr("src","http://openweathermap.org/img/w/"+weatherdata.weather[0].icon+".png");								
-				$('#skieslabel').append(weatherdata.weather[0].main);	
+
+		
+
+
+function getLocalWeather(position)
+{
+	var ip_lat = position.coords.latitude;
+	var ip_long = position.coords.longitude;
+	  	 	 	
+	$('#latlonglabel').append("".concat(ip_lat).concat(",").concat(ip_long)); 
+	
+	var dataurl = "http://api.openweathermap.org/data/2.5/weather?lat="+ip_lat+"&lon="+ip_long+"&appid=77f6677e96a00ad72436c97b767535e4";
+
+	$.ajax({
+       		 url: dataurl
+   	}).then(function(data) {
+		var weather_fahrenheit = convertKToF(data.main.temp.toString());
+
+		$('#citylabel').append(data.name); 
+		$('#degreeslabel').append(weather_fahrenheit + "\u00B0"+"F");				
+		$('#iconimg').attr("src","http://openweathermap.org/img/w/"+data.weather[0].icon+".png");								
+		$('#skieslabel').append(data.weather[0].main);	
 				
-				$("#loadingdiv").hide();
-				$("#infodiv").show();
-				$("#navdiv").show();			    
-			}).fail(callfailure);
+		$("#loadingdiv").hide();
+		$("#infodiv").show();
+		$("#navdiv").show();	
 
-			//set city data
-			$.ajax({
-       		 		url: "https://weathersync.herokuapp.com/weather/40.730610,-73.935242"
-   		 	}).then(function(data) {				
+		//set city data
+		$.ajax({
+       		 	url: "http://api.openweathermap.org/data/2.5/weather?lat=40.730610&lon=-73.935242&appid=77f6677e96a00ad72436c97b767535e4"
+   		 	}).then(function(data) 
+			{				
 				var fahrenheit = convertKToF(data.main.temp.toString());
 				
 				$('#nycp').append("New York, NY");	
@@ -75,7 +87,7 @@ $(document).ready(function() {
 			    });
 
 			$.ajax({
-       		 		url: "https://weathersync.herokuapp.com/weather/34.052235,-118.243683"
+				url: "http://api.openweathermap.org/data/2.5/weather?lat=34.052235&lon=-118.243683&appid=77f6677e96a00ad72436c97b767535e4"
    		 	}).then(function(data) {				
 				var fahrenheit = convertKToF(data.main.temp.toString());
 				
@@ -87,7 +99,7 @@ $(document).ready(function() {
 			    });
 
 			$.ajax({
-       		 		url: "https://weathersync.herokuapp.com/weather/41.881832,-87.623177"
+				url: "http://api.openweathermap.org/data/2.5/weather?lat=41.881832&lon=-87.623177&appid=77f6677e96a00ad72436c97b767535e4"	
    		 	}).then(function(data) {				
 				var fahrenheit = convertKToF(data.main.temp.toString());
 				
@@ -99,7 +111,7 @@ $(document).ready(function() {
 			    });
 
 			$.ajax({
-       		 		url: "https://weathersync.herokuapp.com/weather/39.952583,-75.165222"
+				url: "http://api.openweathermap.org/data/2.5/weather?lat=39.952583&lon=-75.165222&appid=77f6677e96a00ad72436c97b767535e4"
    		 	}).then(function(data) {				
 				var fahrenheit = convertKToF(data.main.temp.toString());
 				
@@ -111,7 +123,7 @@ $(document).ready(function() {
 			    });
 
 			$.ajax({
-       		 		url: "https://weathersync.herokuapp.com/weather/29.762778,-95.383056"
+				url: "http://api.openweathermap.org/data/2.5/weather?lat=29.762778&lon=-95.383056&appid=77f6677e96a00ad72436c97b767535e4"
    		 	}).then(function(data) {				
 				var fahrenheit = convertKToF(data.main.temp.toString());
 				
@@ -122,8 +134,18 @@ $(document).ready(function() {
 				$('#hsp').append("Could not find Houston");
 			    });
 
-		 }).fail(callfailure);
+	}).fail(callfailure);
 
+}
+
+function showError(message)
+{
+	$("#loadingdiv").hide();
+	$("#infodiv").hide();
+	$("#navdiv").hide();
+	$("#errordiv").show();
+	$("#errortext").append(message);
+}
 
 function callfailure(xerror)
 {
@@ -133,6 +155,3 @@ function callfailure(xerror)
 	$("#errordiv").show();
 	$("#errortext").append("Error Occurred, Status: "+xerror.status+". Message: "+ xerror.statusText + ' ' + xerror.responseText);
 }
-		
-	
-});
