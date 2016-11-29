@@ -65,9 +65,9 @@ body {background-color:lightgrey;}
 </style>
 
 <script type="text/javascript">
-function convertKToF(kelvin) {
+function convertCToF(celsius) {
     
-	var calc = ""+(kelvin * (9 / 5) - 459.67);
+	var calc = ""+(celsius * 1.8 + 32);
 	
 	if(calc.length > 4)
 	{
@@ -92,6 +92,9 @@ document.onreadystatechange = loaded;
 
 function loaded()
 {
+
+//a0f14923220e85d789e4bb93ce547cb0
+
 	//Get user coordinates, don't run if not supported.
 	if (navigator.geolocation) 
 	{
@@ -110,7 +113,7 @@ function getLocalWeather(position)
 	ip_long = position.coords.longitude;
 
 	ip_request.onreadystatechange=getIPCallBack;
-	ip_request.open( "GET", "http://api.openweathermap.org/data/2.5/weather?lat="+ip_lat+"&lon="+ip_long+"&appid=77f6677e96a00ad72436c97b767535e4", false );
+	ip_request.open( "GET", "https://api.darksky.net/forecast/a0f14923220e85d789e4bb93ce547cb0/"+ip_lat+","+ip_long+"?exclude=minutely,hourly,daily", false );
 	ip_request.send( null );
 }
 
@@ -120,18 +123,17 @@ function getIPCallBack()
 	{
 		var ip_response = JSON.parse(ip_request.responseText);
 
-		ip_city = ip_response.name;
+		//ip_city = ip_response.name;
 
-		weather_skies = ip_response.weather[0].main;
-		weather_icon = ip_response.weather[0].icon;
-		weather_degrees = new String(ip_response.main.temp);
+		weather_skies = ip_response.currently.summary;
+		weather_icon = ip_response.currently.icon;
+		weather_degrees = new String(ip_response.currently.temperature);
 
-		//var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
-		weather_fahrenheit = convertKToF(weather_degrees);
+		weather_fahrenheit = convertCToF(weather_degrees);
 
 		document.getElementById("citylabel").innerHTML = ip_city;
 		document.getElementById("skieslabel").innerHTML = weather_skies;
-		document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
+		//document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
 		document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
 
 		//Swap out divs
