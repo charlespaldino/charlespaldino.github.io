@@ -64,7 +64,49 @@ body {background-color:lightgrey;}
 
 </style>
 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
 <script type="text/javascript">
+function codeLatLng(lat, lng) {
+
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      console.log(results)
+        if (results[1]) {         
+         alert(results[0].formatted_address)
+             
+	for (var i=0; i<results[0].address_components.length; i++) {
+            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                    city= results[0].address_components[i];
+                    break;
+                }
+            }
+        }
+
+        alert(city.short_name + " " + city.long_name)
+
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 function convertCToF(celsius) {
     
 	var calc = ""+(celsius * 1.8 + 32);
@@ -122,8 +164,6 @@ function getIPCallBack()
 	if (ip_request.readyState==4 && ip_request.status==200)
 	{
 		var ip_response = JSON.parse(ip_request.responseText);
-
-		//ip_city = ip_response.name;
 
 		weather_skies = ip_response.currently.summary;
 		weather_icon = ip_response.currently.icon;
