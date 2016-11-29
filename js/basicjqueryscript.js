@@ -53,8 +53,6 @@ function getLocalWeather(position)
 {
 	var ip_lat = position.coords.latitude;
 	var ip_long = position.coords.longitude;
-	  	 	 	
-	$('#latlonglabel').append("".concat(ip_lat).concat(",").concat(ip_long)); 
 	
 	var dataurl = "http://api.openweathermap.org/data/2.5/weather?lat="+ip_lat+"&lon="+ip_long+"&appid=77f6677e96a00ad72436c97b767535e4";
 
