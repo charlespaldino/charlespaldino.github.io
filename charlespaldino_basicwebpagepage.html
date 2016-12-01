@@ -1,4 +1,4 @@
-﻿<<html>
+﻿<html>
 <head>
 <title>Basic HTML skill demonstration - Charles Paldino</title>
 <style type="text/css"> 
@@ -72,7 +72,6 @@ var weather_skies = "";
 var weather_icon = "";
 var weather_degrees = "";
 var weather_fahrenheit = "";
-var weather_request = new XMLHttpRequest();
 var ip_request = new XMLHttpRequest();
 document.onreadystatechange = loaded;
 function loaded()
@@ -80,7 +79,7 @@ function loaded()
 	//Get user coordinates, don't run if not supported.
 	if (navigator.geolocation) 
 	{
-       		navigator.geolocation.getCurrentPosition(getLocalWeather);		
+       		navigator.geolocation.getCurrentPosition(getLocalWeather, locationerrorCallback);		
     	} 
 	else { 
       	  showError("Geolocation is not supported by this browser.");
@@ -104,12 +103,13 @@ function getIPCallBack()
 		weather_skies = ip_response.weather[0].main;
 		weather_icon = ip_response.weather[0].icon;
 		weather_degrees = new String(ip_response.main.temp);
-		//var parsed_degrees = weather_degrees.charAt(0) + weather_degrees.charAt(1) + "." + weather_degrees.charAt(2);
 		weather_fahrenheit = convertKToF(weather_degrees);
+
 		document.getElementById("citylabel").innerHTML = ip_city;
 		document.getElementById("skieslabel").innerHTML = weather_skies;
 		document.getElementById("iconimg").src = "http://openweathermap.org/img/w/"+weather_icon+".png";
 		document.getElementById("degreeslabel").innerHTML = weather_fahrenheit + "\u00B0"+"F";
+		
 		//Swap out divs
 		document.getElementById("errordiv").style.visibility="hidden";
 		document.getElementById("loadingdiv").style.visibility="hidden";
@@ -120,6 +120,19 @@ function getIPCallBack()
 		showError("An error ocurred, status: "+ip_request.status);
 	}
 }
+
+function locationerrorCallback(error) 
+{
+	if (error.code == error.PERMISSION_DENIED) 
+	{
+		showError("This site requires permission to know your location.");
+	}
+	else
+	{
+		showError("Unknown error getting your location.");
+	}
+}
+
 function showError(message)
 {
 	document.getElementById("loadingdiv").style.visibility="hidden";
@@ -136,21 +149,21 @@ function showError(message)
 
 <div class="centerdiv">
 
-<div id="errordiv" style="visibility: hidden;" class="error_div">
-	<p id="errortext"></p>
-</div>
+	<div id="errordiv" style="visibility: hidden;" class="error_div">
+		<p id="errortext"></p>
+	</div>
 
-<div id="loadingdiv" class="loading_div">
-	<label id="loadinglabel">Loading...Please Wait</label>
-</div>
+	<div id="loadingdiv" class="loading_div">
+		<label id="loadinglabel">Loading...Please Wait</label>
+	</div>
 
-<div id="infodiv" class="centerinsidediv_weather" style="visibility: hidden; display:inline;">
-	<label id="textlabel">CURRENT CONDITIONS FOR:</label><br><br>
-	<label id="citylabel"></label><br><br>
-	<label id="degreeslabel"></label><br><br>
-	<img id="iconimg"><br><br>
-	<label id="skieslabel"></label><br><br>
-</div>
+	<div id="infodiv" class="centerinsidediv_weather" style="visibility: hidden; display:inline;">
+		<label id="textlabel">CURRENT CONDITIONS FOR:</label><br><br>
+		<label id="citylabel"></label><br><br>
+		<label id="degreeslabel"></label><br><br>
+		<img id="iconimg"><br><br>
+		<label id="skieslabel"></label><br><br>
+	</div>
 </div>
 
 </body>
