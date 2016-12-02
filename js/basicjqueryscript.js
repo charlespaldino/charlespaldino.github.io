@@ -37,7 +37,7 @@ $(document).ready(function() {
 		//Check for geolocator
 		if (navigator.geolocation) 
 		{
-       			navigator.geolocation.getCurrentPosition(getLocalWeather);		
+       			navigator.geolocation.getCurrentPosition(getLocalWeather, locationerrorCallback);		
     		} 
 		else 
 		{ 
@@ -134,6 +134,18 @@ function getLocalWeather(position)
 
 	}).fail(callfailure);
 
+}
+
+function locationerrorCallback(error) 
+{
+	if (error.code == error.PERMISSION_DENIED) 
+	{
+		showError("This site requires permission to know your location.");
+	}
+	else
+	{
+		showError("Unknown error getting your location.");
+	}
 }
 
 function showError(message)
