@@ -3,6 +3,7 @@
 
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/diceroller.js"></script>
 <link rel="stylesheet" type="text/css" href="css/diceroller.css">
 </head>
 
@@ -11,13 +12,13 @@
 
 <div id="leftside">
 	<div class="div_floating" id="dicetray">
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD4.png" alt="D4"></img></a>
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD6.png" alt="D6"></img></a>
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD8.png" alt="D8"></img></a>
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD10.png" alt="D10"></img></a>
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD12.png" alt="D12"></img></a>
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD20.png" alt="D20"></img></a>
-		<a href=""><img class="image_dice_large" src="C:\Users\Nathan\Documents\GitHub\charlespaldino.github.io\studentprojects\diceroller\images/SiteD100.png" alt="D100"></img></a>	
+		<input type="image" onclick="addDice('D4')" class="image_dice_large" src="images\SiteD4.png" alt="D4"></input>
+		<input type="image" onclick="addDice('D6')" class="image_dice_large" src="images\SiteD6.png" alt="D6"></input>
+		<input type="image" onclick="addDice('D8')" class="image_dice_large" src="images\SiteD8.png" alt="D8"></input>
+		<input type="image" onclick="addDice('D10')" class="image_dice_large" src="images\SiteD10.png" alt="D10"></input>
+		<input type="image" onclick="addDice('D12')" class="image_dice_large" src="images\SiteD12.png" alt="D12"></input>
+		<input type="image" onclick="addDice('D20')" class="image_dice_large" src="images\SiteD20.png" alt="D20"></input>
+		<input type="image" onclick="addDice('D100')" class="image_dice_large" src="images\SiteD100.png" alt="D100"></input>
 	</div>	
 
 	<div id="dicegroups">
@@ -26,9 +27,17 @@
 </div>
 
 <div id="middle">
+	<div id="dicetext"><input id="dicetextfield" type="text"></input></div>
+
+	<div id="dicecontainer"></div>
+	
+	<button onclick="rollDice()" class="button" name="rolldicebutton" value="Roll Dice" type="button">Roll Dice</button>
 </div>
 
 <div id="rightside">
+	<div id="historycontainer">
+	<textarea id="historytextarea"></textarea>
+	</div>
 </div>
 
 

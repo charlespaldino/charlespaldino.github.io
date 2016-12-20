@@ -26,12 +26,13 @@ body {
 #middle
 {
 	position: fixed;
-	background-color: white;
+	background-color: black;
 	width: 100%;
 	height: 100%;
 	left: 310px;
 	float:left;
 	top: 0px; bottom: 0px;
+	text-align:center;
 }
 
 #rightside
@@ -64,12 +65,59 @@ body {
 }
 
 
+
+#dicetext
+{
+	background-color: green;
+	height: 25px; width: 100%;
+}
+
+#dicetextfield
+{
+	height: 25px; width: 100%;
+	
+}
+
+#dicecontainer
+{
+	background-color: blue;
+	height: 90%; width: 100%;
+}
+
+#historycontainer
+{
+	width: 100%; height: 100%;
+	
+}
+
+#historytextarea
+{
+	width: 100%; min-height: 100%;
+	resize: none;
+	
+}
+
 .image_dice_large
 {
 	min-height: 75px; max-height: 100px;
 	min-width: 75px; max-width: 100px;
 	padding: 2px;
 }
+
+.image_dice_small
+{
+	height: 50px;
+	width: 50px;
+	padding: 2px;
+	float: left;
+}
+
+.button
+{
+	width: 100px; height: 25px;
+	min-height: 25px;
+}
+
 
 
 
