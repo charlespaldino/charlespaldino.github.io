@@ -25,8 +25,41 @@ function updateHistory(text)
 {
 	$('#historytextarea').val($('#historytextarea').val() + text +"\n");
 	$('#historytextarea').scrollTop($('#historytextarea')[0].scrollHeight);
+	
+
+	getDiceText();
 }
 
+function getDiceText()
+{
+	//need 2d array  [dicename][count]
+	var DiceArray = new Array();
+
+	for(var i = 0; i < CurrentDiceGroup.dicegroup.length; i++)
+	{		
+		var s = CurrentDiceGroup.dicegroup[i].sides;		
+	}
+
+
+//array[[sides,count]]
+
+//array[0,0]
+
+//if sides = 10
+//push [10, count++]  //need to get the count
+
+
+
+
+	//var items = [
+  //[1, 2],
+//  [3, 4],
+  //[5, 6]
+//];
+//console.log(items[0][0]); // 1
+//console.log(items);
+
+}
 
 
 
