@@ -21,6 +21,12 @@ body {background-color:lightgrey;}
 	background-color:red;
 }
 
+.icon_social
+{
+	width:35px; height:30px;
+}
+
+
 @keyframes fadein {
     from {
         opacity:0;

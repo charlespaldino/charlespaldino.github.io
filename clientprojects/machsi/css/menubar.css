@@ -122,6 +122,7 @@ Styles for social media menu
     font-family: 'Fontawesome';
     -webkit-font-smoothing: antialiased;
     content: '\f08e';
+    
 }
 
 .social-menu li a[href*="facebook.com"]::before { content: '\img\facebook.png'; }
