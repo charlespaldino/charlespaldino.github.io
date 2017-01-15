@@ -32,32 +32,31 @@ function updateHistory(text)
 
 function getDiceText()
 {
-	//need 2d array  [dicename][count]
-	var DiceArray = new Array();
+	var dicetext = "";
+	var dicearray = new Array();
 
 	for(var i = 0; i < CurrentDiceGroup.dicegroup.length; i++)
 	{		
 		var s = CurrentDiceGroup.dicegroup[i].sides;		
+
+		if(dicearray[s] == 'undefined' || dicearray[s] == null)
+		{
+			dicearray[s] = 0;
+		}
+
+		dicearray[s] += 1;
 	}
 
+	for(var sides = 0; sides < dicearray.length; sides++)
+	{
+		if(dicearray[sides] != 'undefined' && dicearray[sides] != null)
+		{
+			dicetext += (dicearray[sides] == 1) ? "" : dicearray[sides];
+			dicetext += 'D'+sides+',';
+		}	
+	}	
 
-//array[[sides,count]]
-
-//array[0,0]
-
-//if sides = 10
-//push [10, count++]  //need to get the count
-
-
-
-
-	//var items = [
-  //[1, 2],
-//  [3, 4],
-  //[5, 6]
-//];
-//console.log(items[0][0]); // 1
-//console.log(items);
+	alert(dicetext);
 
 }
 
