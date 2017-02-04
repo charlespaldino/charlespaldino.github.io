@@ -3,52 +3,38 @@
 
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../../global/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="js/die.js"></script>
 <script src="js/dicegroup.js"></script>
 <script src="js/diceroller.js"></script>
 <link rel="stylesheet" type="text/css" href="css/diceroller.css">
+<link rel="stylesheet" href="../../global/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../../global/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
-
 <body>
-
-<div id="leftside">
-	<div class="div_floating" id="dicetray">
-		<input type="image" onclick="addDice(4)" class="image_dice_large" src="images\SiteD4.png" alt="D4"></input>
-		<input type="image" onclick="addDice(6)" class="image_dice_large" src="images\SiteD6.png" alt="D6"></input>
-		<input type="image" onclick="addDice(8)" class="image_dice_large" src="images\SiteD8.png" alt="D8"></input>
-		<input type="image" onclick="addDice(10)" class="image_dice_large" src="images\SiteD10.png" alt="D10"></input>
-		<input type="image" onclick="addDice(12)" class="image_dice_large" src="images\SiteD12.png" alt="D12"></input>
-		<input type="image" onclick="addDice(20)" class="image_dice_large" src="images\SiteD20.png" alt="D20"></input>
-		<input type="image" onclick="addDice(100)" class="image_dice_large" src="images\SiteD100.png" alt="D100"></input>
-	</div>	
-
-	<div class="div_floating" id="dicegroups">
-	</div>
-	
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div id="middle">
-	<div id="dicetext"><input id="dicetextfield" type="text"></input></div>
-
-	<div id="dicecontainer"></div>
-	
-	<div id="buttoncontainer"><button onclick="rollDice()" id="rollbutton" class="button" name="rolldicebutton" value="Roll Dice" type="button">Roll Dice</button></div>
-	
-</div>
-
-<div id="rightside">
-	<div id="historycontainer">
-	<textarea id="historytextarea"></textarea>
-	</div>
-</div>
-
-
-
-
-
 
 
 </body>
+
 </html>
 
