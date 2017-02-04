@@ -1,4 +1,4 @@
-var image_prepend = "'<img class='image_dice_small' src='..\\diceroller\\images\\";
+var image_prepend = "<img class='image_dice_small' src='..\\diceroller\\images\\";
 var CurrentDiceGroup = new DiceGroup();
 
 //Adds dice to the CurrentDiceGroup.
@@ -6,18 +6,34 @@ function addDice(die)
 {
 	var prependtext = image_prepend + "SiteD"+die+".png'></img>";
 	
+	//var prependtext = "";
+
 	$('#dicecontainer').prepend(prependtext);
-	$('#dicetextfield').val($('#dicetextfield').val() + "D" + die + ", ");
 	
-	CurrentDiceGroup.addDice(new Die(die));	
+	CurrentDiceGroup.addDice(new Die(die));
+	
+	$('#dicetextfield').val(getDiceText());
+	
+	
+		
+}
+
+//Clears the dice from the text field and the container.
+function clearDice()
+{
+	$('#dicetextfield').val("");
+	$('#dicecontainer').html("");
+	$('#historytextarea').val("");
+
+	CurrentDiceGroup.clearDice();
 }
 
 //Rolls all dice within CurrentDiceGroup and updates the history.
 function rollDice()
 {
-	var rollgroup = CurrentDiceGroup.rollDice();
+	CurrentDiceGroup.rollDice();
 
-	updateHistory(rollgroup);
+	updateHistory(CurrentDiceGroup.lastdiceroll);
 }
 
 //Adds the given text to history.
@@ -27,14 +43,13 @@ function updateHistory(text)
 	$('#historytextarea').scrollTop($('#historytextarea')[0].scrollHeight);
 	
 
-	getDiceText();
 }
 
+//Formats the dice text for the display bar.
 function getDiceText()
 {
 	var dicetext = "";
 	var dicearray = new Array();
-
 	for(var i = 0; i < CurrentDiceGroup.dicegroup.length; i++)
 	{		
 		var s = CurrentDiceGroup.dicegroup[i].sides;		
@@ -55,8 +70,8 @@ function getDiceText()
 			dicetext += 'D'+sides+',';
 		}	
 	}	
-
-	alert(dicetext);
+	dicetext = dicetext.replace(/,\s*$/,"");
+	return dicetext;
 
 }
 

@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
   <div class="row">
@@ -31,6 +32,41 @@
       </div>
     </div>
   </div>
+=======
+
+<div id="leftside">
+	<div class="div_floating" id="dicetray">
+		<input type="image" onclick="addDice(4)" class="image_dice_large" src="images\SiteD4.png" alt="D4"></input>
+		<input type="image" onclick="addDice(6)" class="image_dice_large" src="images\SiteD6.png" alt="D6"></input>
+		<input type="image" onclick="addDice(8)" class="image_dice_large" src="images\SiteD8.png" alt="D8"></input>
+		<input type="image" onclick="addDice(10)" class="image_dice_large" src="images\SiteD10.png" alt="D10"></input>
+		<input type="image" onclick="addDice(12)" class="image_dice_large" src="images\SiteD12.png" alt="D12"></input>
+		<input type="image" onclick="addDice(20)" class="image_dice_large" src="images\SiteD20.png" alt="D20"></input>
+		<input type="image" onclick="addDice(100)" class="image_dice_large" src="images\SiteD100.png" alt="D100"></input>
+	</div>	
+
+	<div class="div_floating" id="dicegroups">
+	</div>
+	
+</div>
+
+<div id="middle">
+	<div id="dicetext"><input id="dicetextfield" type="text"></input></div>
+
+	<div id="dicecontainer"></div>
+	
+	<div id="buttoncontainer">
+		<button onclick="rollDice()" id="rollbutton" class="button" name="rolldicebutton" value="Roll Dice" type="button">Roll Dice</button>
+		<button onclick="clearDice()" id="clearbutton" class="button" name="cleardicebutton" value="Clear" type="button">Clear</button>
+	</div>
+	
+</div>
+
+<div id="rightside">
+	<div id="historycontainer">
+	<textarea id="historytextarea"></textarea>
+	</div>
+>>>>>>> origin/master
 </div>
 
 
