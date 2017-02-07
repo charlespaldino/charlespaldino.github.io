@@ -7,40 +7,35 @@ body {
 {
 	border-width: 2px; border-radius: 15px; border-color: black;border-style: solid;
 	box-shadow: 0px 3px 6px 1px gray;
+	overflow-y: scroll;
 }
 
 
+.div_floating_rightflat
+{
+	border-width: 2px; 
+	border-radius: 15px 0px 0px 15px; 
+	border-color: black;border-style: solid;
+	box-shadow: 0px 3px 6px 1px gray;
+	overflow-y: scroll;
+}
+
 #leftside
 {
-	position: fixed;
-	width: 300px;
 	height: 100%;
-	float: left;
-	top: 0px; left: 0px; bottom: 0px;
-	padding: 5px 5px 5px 5px;
-	
-	
+	padding: 5px 5px 5px 5px;	
 }
 
 #middle
 {
-	position: fixed;
-	min-width: 1300px;
-	max-width: 2000px;
 	height: 100%;
-	left: 310px;
-	float:left;
-	top: 0px; bottom: 0px;
-	text-align:center;
 	padding-left: 3px;
 }
 
 #rightside
 {
-	position: fixed;
-	min-width: 300px;
 	height: 100%;
-	right: 0px; top: 0px; bottom: 0px;
+
 }
 
 #dicetray
@@ -54,13 +49,9 @@ body {
 }
 
 #dicegroups
-{
-	position: absolute;
+{	
 	background: white;
-	width: 300px; height: 50%;
-	max-height: 450px;
-	bottom: 15px;
-	
+	height: 50%;	
 }
 
 
@@ -79,7 +70,7 @@ body {
 
 #dicecontainer
 {
-	height: 90%; width: 100%;	
+	height: 800px; width: 100%;	
 	background: #f3e2c7; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
@@ -91,20 +82,21 @@ body {
 
 #historycontainer
 {
-	width: 100%; height: 100%;
+	
 }
 
 #historytextarea
 {
 	width: 100%; min-height: 100%;
 	resize: none;
-	
+	border-width: 2px; border-radius: 15px; border-color: black;border-style: solid;
+	box-shadow: 0px 3px 6px 1px gray;
 }
 
 .image_dice_large
 {
-	min-height: 75px; max-height: 100px;
-	min-width: 75px; max-width: 100px;
+	min-height: 25px; max-height: 100px;
+	min-width: 25px; max-width: 100px;
 	padding: 2px;
 }
 
@@ -130,7 +122,7 @@ body {
 	border-width: 2px; border-radius: 0px 0px 15px 15px; border-color: black;border-style: solid;
 }
 
-.button
+.button_old
 {
 	width: 200px;
 	min-height: 40px;
@@ -155,8 +147,6 @@ body {
 	padding: 10px 20px 10px 20px;
  	text-decoration: none;
 }
-
-
 
 
 
