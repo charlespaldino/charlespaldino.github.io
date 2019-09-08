@@ -5,30 +5,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets\imports\bootstrap_v4.3.1\css\bootstrap.min.css">
+<link rel="stylesheet" href="assets\imports\fontawesome-free-5.10.2-web\css\all.css">
 <link rel="stylesheet" href="assets\main\main.css">
+
+
 <script src="assets\imports\jquery_v3.4.1\jquery-3.4.1.min.js"></script>
 <script src="assets\imports\bootstrap_v4.3.1\js\bootstrap.min.js"></script>
-<script src="assets\main\main.js"></script>
+
 
 </head>
-<body>
-<div class="container-fluid">
-	<nav class="navbar navbar-expand-md navbar-light bg-light">
-	<span class="navbar-brand">Charles Paldino - Portfolio</span> <!--- get border and curves -->
+<body class="bg-dark">
+<div id="bannerdiv" class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<span class="navbar-brand banner">Charles Paldino - Portfolio</span> <!--- get border and curves -->
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" style="width: 100%;">
             <li class="nav-item">
-                <a href="#" class="nav-link">Resume</a>
+                <a href="#" class="nav-link menulink curvedmenu">Resume</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Portfolio</a>
+                <a href="#" class="nav-link  menulink">Portfolio</a>
 				<!-- main list, then break down into smaller chunks, can do individual divs hide/show -->
-            </li>
+            </li>			
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                <a href="#" class="nav-link  menulink dropdown-toggle" data-toggle="dropdown">Services</a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">All</a>
                     <a href="#" class="dropdown-item">Training</a>
@@ -37,20 +40,14 @@
                     <a href="#"class="dropdown-item">Azure Hosting Services</a>
                 </div>
             </li>
-        </ul>
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item">Reports</a>
-                    <a href="#" class="dropdown-item">Settings</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#"class="dropdown-item">Logout</a>
-                </div>
+			<li class="nav-item menulink lastmenulink">
+                <button type="button" class="socialicon" style="margin-top: 5px;"><a href="https://www.linkedin.com/in/cpaldino/" target="new"><i class="fab fa-linkedin-in"></i></a></button>
+				<button type="button" class="socialicon github" style="margin-top: 5px;"><a href="https://www.linkedin.com/in/cpaldino/" target="new"><i class="fab fa-github"></i></a></button>
             </li>
         </ul>
     </div>
 </nav>
+</div>
 
 <!--- advertivement horizontal>
 <!--- advertivement vertical left and right, get rid of them on media query small screen -->

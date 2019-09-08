@@ -1,0 +1,73 @@
+/* Top menu/Banner*/
+
+nav 
+{
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	height:40px;
+   
+}
+#bannerdiv
+{
+	 border-style: solid;
+	 border-color: white;
+	 border-width: 0px 0px 2px 0px;
+	 height:42px;
+}
+
+.socialicon
+{	 
+	min-width: 30px; 
+	min-height: 25px;
+	background-color: #0077b5;
+	color: white;
+	border-radius: 5px;
+} 
+
+.socialicon a:visited
+{
+	color: white;
+}
+
+.github
+{	 
+	background-color: purple !important;
+} 
+
+
+.banner
+{
+	font-weight: bolder;
+	margin-left: -30px;
+	padding-right: 10px;
+	padding-left: 5px;
+	border-style: solid;
+	border-width: 0px 2px 0px 0px;
+	border-radius: 0px 25px 0px 0px;
+}
+
+.curvedmenu
+{
+	margin-left: -19px;
+	padding-left: 15px !important;
+	border-width: 0px 0px 0px 2px !important;
+	border-radius: 25px 0px 0px 0px !important;
+	
+}
+
+.menulink
+{
+	color: white !important;
+	border-style: solid;
+	border-color: white;
+	border-width: 0px;
+}
+
+.lastmenulink
+{
+	float: right;
+	border-style: solid;
+	border-width: 0px;
+	text-align: right;
+}
