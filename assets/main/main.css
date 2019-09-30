@@ -86,6 +86,11 @@ nav
 	height: 50px;
 }
 
+/* Main Container*/
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 
 
