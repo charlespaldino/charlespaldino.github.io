@@ -29,17 +29,29 @@
                 <a href="#" class="nav-link menulink curvedmenu">Resume</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link  menulink">Portfolio</a>
+                <a href="#" class="nav-link  menulink"></a>
 				<!-- main list, then break down into smaller chunks, can do individual divs hide/show -->
-            </li>			
+            </li>	
+			<li class="nav-item dropdown">
+                <a href="#" class="nav-link  menulink dropdown-toggle" data-toggle="dropdown">Portfolio</a>
+                <div class="dropdown-menu">
+                    <a href="#" onclick="SinglePageViewManager.switchView("view_portfolio");" class="dropdown-item">Web Development - Single Page</a>
+                    <a href="#" onclick="SinglePageViewManager.switchView("view_portfolio");" class="dropdown-item">Backend Design Patterns</a>
+					<a href="#" onclick="SinglePageViewManager.switchView("view_portfolio");" class="dropdown-item">Backend Tools</a>
+					<div class="dropdown-divider"></div>
+					<a href="#" onclick="SinglePageViewManager.switchView("view_portfolio");" class="dropdown-item">Edited Videos</a>
+					<div class="dropdown-divider"></div>
+					<a href="#" onclick="SinglePageViewManager.switchView("view_portfolio");" class="dropdown-item">Training</a>
+                </div>
+            </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link  menulink dropdown-toggle" data-toggle="dropdown">Services</a>
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">All</a>
-                    <a href="#" class="dropdown-item">Training</a>
-                    <a href="#" class="dropdown-item">Audo/Video Editing</a>
+                    <a href="#" onclick="SinglePageViewManager.switchView("view_services");" class="dropdown-item">All</a>
+                    <a href="#" onclick="SinglePageViewManager.switchView("view_services");" class="dropdown-item">Training</a>
+                    <a href="#" onclick="SinglePageViewManager.switchView("view_services");" class="dropdown-item">Audo/Video Editing</a>
                     <div class="dropdown-divider"></div>
-                    <a href="#"class="dropdown-item">Azure Hosting Services</a>
+                    <a href="#" onclick="SinglePageViewManager.switchView("view_services");" class="dropdown-item">Azure Hosting Services</a>
                 </div>
             </li>
 			<li class="nav-item menulink lastmenulink">
@@ -74,6 +86,15 @@
 			<div id = "view_resume">
 				<iframe id="iframe_resume" src="https://docs.google.com/document/d/e/2PACX-1vS-lkYJdbfI9Iw3zcMltOcarvfDWnsRxkok85hzpA9pCy4tf3lpvY_Fpz2gO8jWsw/pub?embedded=true"></iframe>
 			</div>
+			
+			<div id = "view_portfolio">
+				
+			</div>
+			
+			<div id = "view_services">
+				
+			</div>
+			
 		</div>
 	</div>
 </div> 

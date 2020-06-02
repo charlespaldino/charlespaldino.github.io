@@ -13,6 +13,12 @@ var SinglePageViewManager = {
 		current_view = data;
     },
 	
+	switchView: function (data, anchor) 
+	{
+		switchView(data);
+		//change to anchor here, mb wait .5 sec?
+    },
+	
 	
 	setDefaultView: function (data) 
 	{
