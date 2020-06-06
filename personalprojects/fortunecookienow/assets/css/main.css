@@ -35,7 +35,10 @@
 	max-height:25px;
 	
 	background-color: #C00000;
-	background-image: url(../images/redvelvet.jpg);
+	/*background-image: url(../images/redvelvet.jpg);*/
+	background-image: url(../images/ChineseTopBanner.png);
+	background-size: contain;
+
 	
 }
 
@@ -49,23 +52,22 @@
 }
 
 
+/*Main Body*/
+#Main_Body
+{
+	height: calc(100vh - 162px);  /*6,6,25,100,25*/
+}
 
-/*Horizontal Border*/
-/*
 
-background: linear-gradient(to bottom, #f8b500, #fceabb);
 
-background-color: #facc6b;
-background-image: linear-gradient(315deg, #facc6b 0%, #fabc3c 74%);
-
-background: #fceabb;  /* fallback for old browsers 
-background: linear-gradient(to bottom, #f8b500, #fceabb);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
-*/
-
- 
 
 /*Vertial Border*/
 
+.Background_Curtains
+{
+		background-image: url(../images/redcurtains3.jpg);
+		background-size: cover;
+}
 
 
 
