@@ -1,0 +1,44 @@
+{
+  "training": [
+    {
+      "category": "Java",
+      "name": "JS2E",
+      "courses": 5,
+      "hours": 13,
+      "url": "https://drive.google.com/drive/folders/1tjqSZVwF1re0k1uhFKeY72ASxhpRzAme?usp=sharing"
+    },
+    {
+      "category": "Web Development",
+      "name": "HTML",
+      "courses": 3,
+      "hours": 6,
+      "url": "https://drive.google.com/drive/folders/1iI4Y9dHzEzT5oVCVRcmIz_DYZSorCPcC?usp=sharing"
+    },
+    {
+      "category": "Web Development",
+      "name": "CSS",
+      "courses": 3,
+      "hours": 6,
+      "url": "https://drive.google.com/drive/folders/1mzmwrqS6PcWI1weZdlD_cVNvGgxB-tGo?usp=sharing"
+    },
+    {
+      "category": "Web Development",
+      "name": "Javascript",
+      "courses": 2,
+      "hours": 11,
+      "url": "https://drive.google.com/drive/folders/1caDSi5GuoMdB2Ofcrc1hJeyiwmlb-Eoc?usp=sharing"
+    },
+    {
+      "category": "Web Development",
+      "name": "Bootstrap",
+      "courses": 2,
+      "hours": 10,
+      "url": "https://drive.google.com/drive/folders/1caDSi5GuoMdB2Ofcrc1hJeyiwmlb-Eoc?usp=sharing"
+    }
+  ]
+}
+//            new TrainingCert("Sharepoint", "Sharepoint", 9, 15, "https://drive.google.com/drive/folders/1quu05g0dAp_egUPzbiVFHI3E5MAvUnUy?usp=sharing"),
+//            new TrainingCert("CMS", "Drupal", 4, 4, "https://drive.google.com/drive/folders/1bsehYdnuCTMTYDZEYhePA7T-R-QvE-WE?usp=sharing"),
+//            //new TrainingCert("Azure", "Azure",0,0, ""),
+//            new TrainingCert("Azure", "Azure Data", 4, 3, "https://drive.google.com/drive/folders/1__eBaLIDbtaQ_rxWf8gDNWZ3LLqEHE3q?usp=sharing")
+            
