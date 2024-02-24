@@ -10,6 +10,14 @@ function TrainingCert(category, name,courses, hours, url)
 
 TrainingCert.prototype.getTrainingCertList = function ()
 {
+    $.getJSON("assets/data/training.json", function (data)
+    {
+        console.log(data);
+        //console.log(data[0].category);
+    }).fail(function (error) {
+        console.log(error);
+    });
+
     const training_list =
         [
             new TrainingCert("Architecture", "Microservices", 3, 5, "https://drive.proton.me/urls/5M8YDQBA30#ZDWwYmUZi6m2"),
