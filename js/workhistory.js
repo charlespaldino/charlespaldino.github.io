@@ -102,7 +102,7 @@ WorkHistory.prototype.getHistory = function (index)
 WorkHistory.prototype.fillHistory = function ()
 {
     this.history[0] = "";
-    this.history[0] += "<ul>";
+    this.history[0] += "<ul class='nobold'>";
 
     this.history[0] += "<li>";
     this.history[0] += "Contracted to Hire via Net2Source & FirstPro (04/07/2022 to 11/08/2022), converted to full time.";
