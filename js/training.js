@@ -10,13 +10,12 @@ function TrainingCert(category, name,courses, hours, url)
 
 TrainingCert.prototype.getTrainingCertList = function ()
 {
-    $.getJSON("assets/data/training.json", function (data)
-    {
-        console.log(data);
-        //console.log(data[0].category);
-    }).fail(function (error) {
-        console.log(error);
-    });
+    fetch('assets/data/training.json')
+        .then((response) => response.json())
+        .then((json) => {
+
+            console.log(json);
+        });
 
     const training_list =
         [
