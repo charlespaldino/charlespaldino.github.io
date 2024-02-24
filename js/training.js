@@ -14,18 +14,6 @@ TrainingCert.prototype.getTrainingCertList = function (debugmode)
 
     if (debugmode)
     {
-        fetch('assets/data/training.json')
-            .then((response) => response.json())
-            .then((json) => {
-
-                for (var training of json.training)
-                {
-                    training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
-                }
-            });
-    }
-    else
-    {
         training_list =
             [
                 new TrainingCert("Architecture", "Microservices", 3, 5, "https://drive.proton.me/urls/5M8YDQBA30#ZDWwYmUZi6m2"),
@@ -40,6 +28,18 @@ TrainingCert.prototype.getTrainingCertList = function (debugmode)
                 new TrainingCert("CMS", "Drupal", 4, 4, "https://drive.proton.me/urls/5WVTXNEF88#GXW8AAZrJ0jU"),
                 new TrainingCert("Azure", "Azure Data", 4, 3, "https://drive.proton.me/urls/BEJW2H6K3G#O8dp93o0FVKb")
             ];
+      
+    }
+    else
+    {
+        fetch('assets/data/training.json')
+            .then((response) => response.json())
+            .then((json) => {
+
+                for (var training of json.training) {
+                    training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
+                }
+            });
     }
     
     return training_list;
@@ -83,7 +83,7 @@ TrainingCert.prototype.getHTML = function (debugmode)
 
 TrainingCert.prototype.fillHTML = function ()
 {
-    var training_list = this.getTrainingCertList();
+    var training_list = this.getTrainingCertList(debugmode);
 
     for (var i = 0; i < training_list.length; i++)
     {
