@@ -41,6 +41,8 @@ TrainingCert.prototype.getTrainingCertList = function (debugmode)
                 for (var training of json.training) {
                     training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
                 }
+
+                return training_list;
             });
     }
     
