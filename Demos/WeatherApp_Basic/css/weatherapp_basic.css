@@ -1,0 +1,124 @@
+body {background-color:lightgrey;}
+
+.centerdiv { width: 95%; height:500px; position: relative;top: 5px; left: 0; right: 0; 
+		margin: auto; background-color:white;
+		border-width: 2px; border-radius: 20px; border-color: black;border-style: solid;
+		box-shadow: 0px 5px 5px 5px gray;
+		text-align:center;
+		animation: fadein 1s;
+	   } 
+
+.navbutton
+{
+	border-width: 2px; border-radius: 20px; border-color: black;border-style: solid;
+	box-shadow: 0px 1px 1px 1px gray;
+	height: 50px;
+	width: 150px;
+    
+	cursor: pointer;
+}
+
+.navigation
+{
+    left: 50%;    
+    right: 50%;
+    animation: fadein 4s;
+    height: 50px;
+    padding: 10px 0px 0px 0px;
+}
+
+.centerinsidediv
+{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 50%;
+    bottom: 50%;
+    animation: fadein 4s;    
+}
+
+.info_current_div 
+{
+    position: relative;
+    top: 75px;
+    animation: fadein 4s;
+}
+
+.info_cities_div {
+    position: relative;
+    top: 75px;
+    animation: fadein 4s;
+}
+
+.weather_mainimg
+{
+	height:100px;
+	width:100px;
+}
+
+table
+{
+	position: relative;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.error_div
+{
+	position: relative;
+    top: 40%;
+}
+
+.loading_div
+{
+	position: relative;
+	top: 20%;
+}
+
+.loading_gif
+{
+	width: 25%;
+	height: 25%;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+#textlabel { text-decoration: underline; font-size: large; }
+#citylabel {font-size: x-large; font-weight: bold;}
+#degreeslabel {font-size: x-large;}
+#iconimg { width: 100px; height:100px; border-width: 2px; border-color: black; border-style: solid; border-radius: 20px;}
+#skieslabel {font-size: x-large; font-weight: bold;}
+#loadinglabel {font-size: x-large; font-weight: bold;}
+
+figure 
+{
+    margin-inline-start: 0;
+}
+
+figcaption
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.about_div 
+{
+    position: relative;
+    top: 25px;
+    margin-left:  25px;
+    animation: fadein 4s;
+}
+
+.about_div_info
+{
+    display: inline-block;
+    text-align: left;
+}
