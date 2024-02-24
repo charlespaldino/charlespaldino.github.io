@@ -34,15 +34,16 @@ TrainingCert.prototype.getTrainingCertList = function (debugmode)
     }
     else
     {
-        fetch('assets/data/training.json')
+        await fetch('assets/data/training.json')
             .then((response) => response.json())
-            .then((json) => {
+            .then((json) =>
+            {
 
-                for (var training of json.training) {
+                for (var training of json.training)
+                {
                     training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
                 }
-
-                return training_list;
+                
             });
     }
     
