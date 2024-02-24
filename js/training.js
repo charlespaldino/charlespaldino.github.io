@@ -7,7 +7,6 @@ function TrainingCert(category, name,courses, hours, url)
     this.url = url;
 }
 
-
 TrainingCert.prototype.getTrainingCertList = function (debugmode)
 {
     console.log("Debug = "+false);
@@ -34,7 +33,7 @@ TrainingCert.prototype.getTrainingCertList = function (debugmode)
     }
     else
     {
-        await fetch('assets/data/training.json')
+        fetch('assets/data/training.json')
             .then((response) => response.json())
             .then((json) =>
             {
