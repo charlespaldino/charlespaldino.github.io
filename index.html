@@ -145,7 +145,7 @@
 
 
     <script type="text/javascript">
-        var global_debugmode = true;
+        var debugmode = true;
 
         $(document).ready(function () {
             $('.carousel').carousel('pause');
@@ -163,7 +163,7 @@
             $("#view_resume_mobile").html($("#view_resume").html());
 
             var trainingcerts = new TrainingCert();
-            $("#view_training").html(trainingcerts.getHTML());
+            $("#view_training").html(trainingcerts.getHTML(debugmode));
             trainingcerts.fillHTML();
             $("#view_training_mobile").html($("#view_training").html());
 

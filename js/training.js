@@ -8,11 +8,11 @@ function TrainingCert(category, name,courses, hours, url)
 }
 
 
-TrainingCert.prototype.getTrainingCertList = function ()
+TrainingCert.prototype.getTrainingCertList = function (debugmode)
 {
     var training_list = [];
 
-    if (global_debugmode)
+    if (debugmode)
     {
         fetch('assets/data/training.json')
             .then((response) => response.json())
@@ -45,8 +45,8 @@ TrainingCert.prototype.getTrainingCertList = function ()
     return training_list;
 };
 
-TrainingCert.prototype.getTrainingCategoryList = function () {
-    var training_list = this.getTrainingCertList();
+TrainingCert.prototype.getTrainingCategoryList = function (debugmode) {
+    var training_list = this.getTrainingCertList(debugmode);
     const category_list = [];
 
     for (var i = 0; i < training_list.length; i++)
@@ -57,9 +57,9 @@ TrainingCert.prototype.getTrainingCategoryList = function () {
     return category_list;
 };
 
-TrainingCert.prototype.getHTML = function ()
+TrainingCert.prototype.getHTML = function (debugmode)
 {
-    var category_list = this.getTrainingCategoryList();
+    var category_list = this.getTrainingCategoryList(debugmode);
    
     var HTML = "";
 
