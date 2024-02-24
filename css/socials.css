@@ -1,0 +1,20 @@
+
+.socialicon 
+{
+	margin: 2px;
+}
+
+.socialicon a:visited 
+{
+	color: white;
+}
+
+.github_icon {
+	background-color: purple !important;
+}
+
+.linkedin_icon {
+	background-color: deepskyblue !important;
+} 
+
+

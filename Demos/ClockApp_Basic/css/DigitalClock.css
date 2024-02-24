@@ -1,0 +1,47 @@
+#container_digital
+{
+	
+	font-family: 'Orbitron', sans-serif;
+	font-weight: normal;
+	font-size: xx-large;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	display: inline;
+}
+
+#timetable{
+}
+
+#timetable td
+{
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+#td_digital_timetext
+{
+	min-width: 178px;
+	max-width: 178px;
+	text-align: center;
+}
+
+#td_digital_dashtext
+{
+	min-width: 10px;
+	text-align: center;
+	border: 0px !important;
+}
+
+#td_digital_millisecondstext
+{	
+	min-width: 112px;
+	max-width: 112px;
+	text-align: center;
+}
+
+#td_digital_ampmtext
+{
+	min-width: 10px;
+	text-align: center;
+	border: 0px !important;
+}

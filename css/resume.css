@@ -1,0 +1,72 @@
+/* General */
+.resume_alignleft
+{
+    text-align: left;
+}
+
+.resume_floatleft {
+    float: left;
+}
+
+.resume_floatright {
+    float: right;
+}
+
+.resume_bold
+{
+    font-weight: bold;
+}
+
+.resume_maincard 
+{
+    margin: 5px 0px 5px 0px;
+}
+
+
+
+/* Summary */
+
+
+/* Work History */
+
+.workhistory_cardtitle {
+    margin-bottom: 0px !important;
+}
+
+
+.workhistory_title 
+{
+    text-align: left;
+    float: left;
+    font-weight: bold;
+}
+
+.p_workhistory_description 
+{
+    float: left;
+    font-weight: normal;
+}
+
+/* Training Certs */
+.row_trainingcerts 
+{
+    border: 2px solid whitesmoke;
+}
+
+.col_traininglist
+{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.span_traininglist_category {
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 5px;
+    text-align: center;
+}
+
+.hr_traininglist 
+{
+    margin: 10px;
+}

@@ -1,44 +1,91 @@
 {
   "training": [
     {
+      "category": "Architecture",
+      "name": "Microservices",
+      "courses": 3,
+      "hours": 5,
+      "url": "https://drive.proton.me/urls/5M8YDQBA30#ZDWwYmUZi6m2"
+    },
+    {
+      "category": "Net",
+      "name": "C#",
+      "courses": 9,
+      "hours": 18,
+      "url": "https://drive.proton.me/urls/84BDNCM6YW#pEwyqItO3Krq"
+    },
+    {
       "category": "Java",
       "name": "JS2E",
-      "courses": 5,
-      "hours": 13,
-      "url": "https://drive.google.com/drive/folders/1tjqSZVwF1re0k1uhFKeY72ASxhpRzAme?usp=sharing"
+      "courses": 6,
+      "hours": 15,
+      "url": "https://drive.proton.me/urls/QSKQ4ZMW4W#oFnm5EJbzczg"
     },
     {
       "category": "Web Development",
       "name": "HTML",
-      "courses": 3,
+      "courses": 1,
       "hours": 6,
-      "url": "https://drive.google.com/drive/folders/1iI4Y9dHzEzT5oVCVRcmIz_DYZSorCPcC?usp=sharing"
+      "url": "https://drive.proton.me/urls/PFSA9M7ZWG#q6vMC94Nd4K8"
     },
     {
       "category": "Web Development",
       "name": "CSS",
-      "courses": 3,
-      "hours": 6,
-      "url": "https://drive.google.com/drive/folders/1mzmwrqS6PcWI1weZdlD_cVNvGgxB-tGo?usp=sharing"
+      "courses": 4,
+      "hours": 16,
+      "url": "https://drive.proton.me/urls/CSQZJ9SSQR#rnrT83tI3bBx"
     },
     {
       "category": "Web Development",
       "name": "Javascript",
       "courses": 2,
       "hours": 11,
-      "url": "https://drive.google.com/drive/folders/1caDSi5GuoMdB2Ofcrc1hJeyiwmlb-Eoc?usp=sharing"
+      "url": "https://drive.proton.me/urls/KVV5ZPE2V4#JKueDhfSI89t"
     },
     {
       "category": "Web Development",
       "name": "Bootstrap",
       "courses": 2,
       "hours": 10,
-      "url": "https://drive.google.com/drive/folders/1caDSi5GuoMdB2Ofcrc1hJeyiwmlb-Eoc?usp=sharing"
+      "url": "https://drive.proton.me/urls/HP9FXGN5XM#OYa8nfbZmCKi"
+    },
+    {
+      "category": "Web Development",
+      "name": "jQuery",
+      "courses": 3,
+      "hours": 8,
+      "url": "https://drive.proton.me/urls/1AWYEDWC9G#h4OFmvzlcYF0"
+    },
+    {
+      "category": "Sharepoint",
+      "name": "General Sharepoint",
+      "courses": 10,
+      "hours": 17,
+      "url": "https://drive.proton.me/urls/9ADFEKRZ14#XT40kSubezCS"
+    },
+    {
+      "category": "CMS",
+      "name": "Drupal",
+      "courses": 4,
+      "hours": 4,
+      "url": "https://drive.proton.me/urls/5WVTXNEF88#GXW8AAZrJ0jU"
+    },
+    {
+      "category": "Azure",
+      "name": "Azure Data",
+      "courses": 4,
+      "hours": 3,
+      "url": "https://drive.proton.me/urls/BEJW2H6K3G#O8dp93o0FVKb"
     }
   ]
 }
-//            new TrainingCert("Sharepoint", "Sharepoint", 9, 15, "https://drive.google.com/drive/folders/1quu05g0dAp_egUPzbiVFHI3E5MAvUnUy?usp=sharing"),
-//            new TrainingCert("CMS", "Drupal", 4, 4, "https://drive.google.com/drive/folders/1bsehYdnuCTMTYDZEYhePA7T-R-QvE-WE?usp=sharing"),
-//            //new TrainingCert("Azure", "Azure",0,0, ""),
-//            new TrainingCert("Azure", "Azure Data", 4, 3, "https://drive.google.com/drive/folders/1__eBaLIDbtaQ_rxWf8gDNWZ3LLqEHE3q?usp=sharing")
-            
+
+/*
+    {
+      "category": "",
+      "name": "",
+      "courses": ,
+      "hours": ,
+      "url": ""
+    }
+*/
