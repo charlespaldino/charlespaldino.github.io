@@ -145,7 +145,7 @@
 
 
     <script type="text/javascript">
-        var debugmode = true;
+        var debugmode = false;
 
         $(document).ready(function () {
             $('.carousel').carousel('pause');
@@ -163,9 +163,19 @@
             $("#view_resume_mobile").html($("#view_resume").html());
 
             var trainingcerts = new TrainingCert();
-            $("#view_training").html(trainingcerts.getHTML(debugmode));
-            trainingcerts.fillHTML();
-            $("#view_training_mobile").html($("#view_training").html());
+
+            if (debugmode)
+            {
+                $("#view_training").html(trainingcerts.getHTML());
+                trainingcerts.fillHTML();
+                $("#view_training_mobile").html($("#view_training").html());
+            }
+            else
+            {
+                trainingcerts.fillHTMLFromJSON("#view_training");
+            }
+
+          
 
             //Nav Links
             $("#navlink_home").on("click", function ()
