@@ -10,32 +10,37 @@ function TrainingCert(category, name,courses, hours, url)
 
 TrainingCert.prototype.getTrainingCertList = function ()
 {
-    fetch('assets/data/training.json')
-        .then((response) => response.json())
-        .then((json) => {
+    var training_list = [];
 
-            console.log(json);
-        });
+    if (global_debugmode)
+    {
+        fetch('assets/data/training.json')
+            .then((response) => response.json())
+            .then((json) => {
 
-    const training_list =
-        [
-            new TrainingCert("Architecture", "Microservices", 3, 5, "https://drive.proton.me/urls/5M8YDQBA30#ZDWwYmUZi6m2"),
-            new TrainingCert("Net", "C#", 9, 18, "https://drive.proton.me/urls/84BDNCM6YW#pEwyqItO3Krq"),
-            new TrainingCert("Java", "JS2E", 6, 15, "https://drive.proton.me/urls/QSKQ4ZMW4W#oFnm5EJbzczg"), //completing
-            new TrainingCert("Web Development", "HTML", 1, 6, "https://drive.proton.me/urls/PFSA9M7ZWG#q6vMC94Nd4K8"),
-            new TrainingCert("Web Development", "CSS", 4, 16, "https://drive.proton.me/urls/CSQZJ9SSQR#rnrT83tI3bBx"),
-            new TrainingCert("Web Development", "Javascript", 2, 11, "https://drive.proton.me/urls/KVV5ZPE2V4#JKueDhfSI89t"),
-            new TrainingCert("Web Development", "Bootstrap", 2, 10, "https://drive.proton.me/urls/HP9FXGN5XM#OYa8nfbZmCKi"),
-            new TrainingCert("Web Development", "jQuery", 3, 8, "https://drive.proton.me/urls/1AWYEDWC9G#h4OFmvzlcYF0"),
-            new TrainingCert("Sharepoint", "General Sharepoint", 10, 17, "https://drive.proton.me/urls/9ADFEKRZ14#XT40kSubezCS"),
-            new TrainingCert("CMS", "Drupal", 4, 4, "https://drive.proton.me/urls/5WVTXNEF88#GXW8AAZrJ0jU"),
-            //new TrainingCert("Azure", "Azure Admin", 0, 0, ""),
-            //new TrainingCert("Azure", "Azure Developer", 0, 0, ""),
-            new TrainingCert("Azure", "Azure Data", 4, 3, "https://drive.proton.me/urls/BEJW2H6K3G#O8dp93o0FVKb")
-           // new TrainingCert("Azure", "Azure Microservices", 0, 0, "")
-        ];
-
-
+                for (var training of json.training) {
+                    training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
+                }
+            });
+    }
+    else
+    {
+        training_list =
+            [
+                new TrainingCert("Architecture", "Microservices", 3, 5, "https://drive.proton.me/urls/5M8YDQBA30#ZDWwYmUZi6m2"),
+                new TrainingCert("Net", "C#", 9, 18, "https://drive.proton.me/urls/84BDNCM6YW#pEwyqItO3Krq"),
+                new TrainingCert("Java", "JS2E", 6, 15, "https://drive.proton.me/urls/QSKQ4ZMW4W#oFnm5EJbzczg"), //completing
+                new TrainingCert("Web Development", "HTML", 1, 6, "https://drive.proton.me/urls/PFSA9M7ZWG#q6vMC94Nd4K8"),
+                new TrainingCert("Web Development", "CSS", 4, 16, "https://drive.proton.me/urls/CSQZJ9SSQR#rnrT83tI3bBx"),
+                new TrainingCert("Web Development", "Javascript", 2, 11, "https://drive.proton.me/urls/KVV5ZPE2V4#JKueDhfSI89t"),
+                new TrainingCert("Web Development", "Bootstrap", 2, 10, "https://drive.proton.me/urls/HP9FXGN5XM#OYa8nfbZmCKi"),
+                new TrainingCert("Web Development", "jQuery", 3, 8, "https://drive.proton.me/urls/1AWYEDWC9G#h4OFmvzlcYF0"),
+                new TrainingCert("Sharepoint", "General Sharepoint", 10, 17, "https://drive.proton.me/urls/9ADFEKRZ14#XT40kSubezCS"),
+                new TrainingCert("CMS", "Drupal", 4, 4, "https://drive.proton.me/urls/5WVTXNEF88#GXW8AAZrJ0jU"),
+                new TrainingCert("Azure", "Azure Data", 4, 3, "https://drive.proton.me/urls/BEJW2H6K3G#O8dp93o0FVKb")
+            ];
+    }
+    
     return training_list;
 };
 
