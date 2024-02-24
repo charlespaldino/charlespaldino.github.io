@@ -10,6 +10,8 @@ function TrainingCert(category, name,courses, hours, url)
 
 TrainingCert.prototype.getTrainingCertList = function (debugmode)
 {
+    consoole.log("Debug = "+false);
+
     var training_list = [];
 
     if (debugmode)
