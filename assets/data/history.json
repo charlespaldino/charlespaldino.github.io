@@ -7,42 +7,18 @@
       "enddate": "10/31/2023",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Contracted to Hire via Net2Source & FirstPro (04/07/2022 to 11/08/2022), converted to full time."
-        },
-        {
-          "point_data": "Performed full stack development in a .Net environment, including web Applications, console applications, and cloud applications."
-        },
-        {
-          "point_data": "Lead a team of 4 Developers and assisted in managing teams of 3rd party contractors."
-        },
-        {
-          "point_data": "Managed over 20 projects using the Atlassian product suite (BitBucket, JIRA, Confluence)."
-        },
-        {
-          "point_data": "Handled majority of support tickets coming in for our Team, delegating some of them to junior members."
-        },
-        {
-          "point_data": "Handled basic administration tasks and ticket requests for the Intranet Hub and MyMedPayment.com using Sitecore's admin suite."
-        },
-        {
-          "point_data": "Developed applications using the OutSystems PaaS cloud environment."
-        },
-        {
-          "point_data": "Developed and maintained various FACS external .aspx pages."
-        },
-        {
-          "point_data": "Modernized various background services/console applications as well as handled their migration & deployment for server upgrades."
-        },
-        {
-          "point_data": "Assisted in documentation, cleanup, and organization."
-        },
-        {
-          "point_data": "Managed and assisted in migrating servers and databases involving our payment processing web portal into clouded environments - Azure & Sharepoint."
-        },
-        {
-          "point_data": "Lead the migration of our Intranet from on premise servers to our Sharepoint host, including file migration and Active Directory integration."
-        }
+        "Contracted to Hire via Net2Source & FirstPro (04/07/2022 to 11/08/2022), converted to full time.",
+        "Performed full stack development in a .Net environment, including web Applications, console applications, and cloud applications.",
+        "Lead a team of 4 Developers and assisted in managing teams of 3rd party contractors.",
+        "Managed over 20 projects using the Atlassian product suite (BitBucket, JIRA, Confluence).",
+        "Handled majority of support tickets coming in for our Team, delegating some of them to junior members.",
+        "Handled basic administration tasks and ticket requests for the Intranet Hub and MyMedPayment.com using Sitecore's admin suite.",
+        "Developed applications using the OutSystems PaaS cloud environment.",
+        "Developed and maintained various FACS external .aspx pages.",
+        "Modernized various background services/console applications as well as handled their migration & deployment for server upgrades.",
+        "Assisted in documentation, cleanup, and organization.",
+        "Managed and assisted in migrating servers and databases involving our payment processing web portal into clouded environments - Azure & Sharepoint.",
+        "Lead the migration of our Intranet from on premise servers to our Sharepoint host, including file migration and Active Directory integration."
       ]
     },
     {
