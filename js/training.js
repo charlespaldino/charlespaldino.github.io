@@ -20,7 +20,7 @@ TrainingCert.prototype.getHTML = function (debugmode, target_id) {
     }
     else
     {
-        trainingcerts.fillHTMLFromJSON(target_id);
+        this.fillHTMLFromJSON(target_id);
     }
 };
 
