@@ -127,7 +127,7 @@ TrainingCert.prototype.getTrainingCertList = function (json_data)
     }
     else
     {
-        for (var training of json.training)
+        for (var training of json_data.training)
         {
             training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
         }
