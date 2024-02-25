@@ -74,7 +74,7 @@ TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
             }
 
             //Get Categories
-            const category_list = getTrainingCategoryList(training_list);
+            const category_list = this.getTrainingCategoryList(training_list);
             //for (var i = 0; i < training_list.length; i++) {
             //    if (!category_list.includes(training_list[i].category)) { category_list[i] = training_list[i].category; }
             //}
@@ -93,7 +93,7 @@ TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
             //    HTML += "</div>";
             //}
 
-            $(target_id).html(getCategoryHTML(category_list));
+            $(target_id).html(this.getCategoryHTML(category_list));
             fillCategoryHTML(training_list);
             ////Write training certs into each category
             //HTML = "";
