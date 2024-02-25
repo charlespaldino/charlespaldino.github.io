@@ -7,7 +7,177 @@ function TrainingCert(category, name,courses, hours, url)
     this.url = url;
 }
 
-TrainingCert.prototype.getTrainingCertList = function (debugmode)
+
+TrainingCert.prototype.getHTML = function () {
+    var category_list = this.getTrainingCategoryList();
+
+    var HTML = "";
+
+    //generate category sections.
+    for (var i = 0; i < category_list.length; i++) {
+        if (category_list[i] == null) { continue; } //skip extras
+
+        HTML += "<h3 class='span_traininglist_category'>";
+        HTML += category_list[i] == 'Net' ? ".Net" : category_list[i]; //Special case, period breaks ID.
+        HTML += "</h3>";
+        HTML += "<hr class='hr_traininglist'>";
+        HTML += "<div id='category_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
+        HTML += "</div>";
+    }
+
+
+
+    return HTML;
+};
+
+TrainingCert.prototype.fillHTML = function () {
+    var training_list = this.getTrainingCertList();
+
+    for (var i = 0; i < training_list.length; i++) {
+        var HTML = "";
+        HTML += "<div class='col col_traininglist'>";
+        HTML += "<div class='card div_traininglist'>";
+        HTML += "<div class='card-body'>";
+        HTML += "<center><h5 class='card-title title_training'>";
+        HTML += "<a href='" + training_list[i].url + "'>" + training_list[i].name + "</a>";
+        HTML += "</h5></center>";
+        HTML += "<span/>";
+        HTML += "<b>Courses:</b> " + training_list[i].courses;
+        HTML += "<span/>";
+        HTML += "<br />";
+        HTML += "<span/>";
+        HTML += "<b>Hours:</b> " + training_list[i].hours;
+        HTML += "<span/>";
+        HTML += "</div>"; //card-body
+        HTML += "</div>"; //card
+        HTML += "</div>"; //col
+
+        //inject into the category
+        $("#category_" + training_list[i].category.replace(" ", "_")).append(HTML);
+    }
+
+}
+
+TrainingCert.prototype.fillHTMLFromJSON = function (target_id) {
+    fetch('assets/data/training.json')
+        .then((response) => response.json())
+        .then((json) =>
+        {
+            console.log("Loading from json");
+
+            //Load JSON
+            const training_list = [];
+            for (var training of json.training)
+            {
+                training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
+            }
+
+            //Get Categories
+            const category_list = getTrainingCategoryList(training_list);
+            //for (var i = 0; i < training_list.length; i++) {
+            //    if (!category_list.includes(training_list[i].category)) { category_list[i] = training_list[i].category; }
+            //}
+
+            //Write structure and categories, inject into target.
+            //var HTML = "";
+
+            //for (var i = 0; i < category_list.length; i++) {
+            //    if (category_list[i] == null) { continue; } //skip extras
+
+            //    HTML += "<h3 class='span_traininglist_category'>";
+            //    HTML += category_list[i] == 'Net' ? ".Net" : category_list[i]; //Special case, period breaks ID.
+            //    HTML += "</h3>";
+            //    HTML += "<hr class='hr_traininglist'>";
+            //    HTML += "<div id='category_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
+            //    HTML += "</div>";
+            //}
+
+            $(target_id).html(getCategoryHTML(category_list));
+            fillCategoryHTML(training_list);
+            ////Write training certs into each category
+            //HTML = "";
+            //for (var i = 0; i < training_list.length; i++) {
+            //    var HTML = "";
+            //    HTML += "<div class='col col_traininglist'>";
+            //    HTML += "<div class='card div_traininglist'>";
+            //    HTML += "<div class='card-body'>";
+            //    HTML += "<center><h5 class='card-title title_training'>";
+            //    HTML += "<a href='" + training_list[i].url + "'>" + training_list[i].name + "</a>";
+            //    HTML += "</h5></center>";
+            //    HTML += "<span/>";
+            //    HTML += "<b>Courses:</b> " + training_list[i].courses;
+            //    HTML += "<span/>";
+            //    HTML += "<br />";
+            //    HTML += "<span/>";
+            //    HTML += "<b>Hours:</b> " + training_list[i].hours;
+            //    HTML += "<span/>";
+            //    HTML += "</div>"; //card-body
+            //    HTML += "</div>"; //card
+            //    HTML += "</div>"; //col
+
+            //    //inject into the category
+            //    $("#category_" + training_list[i].category.replace(" ", "_")).append(HTML);
+            //}
+        });
+}
+
+TrainingCert.prototype.getTrainingCategoryList = function (training_list) {
+    const category_list = [];
+
+    for (var i = 0; i < training_list.length; i++) {
+        if (!category_list.includes(training_list[i].category)) { category_list[i] = training_list[i].category; }
+    }
+
+    return category_list;
+};
+
+TrainingCert.prototype.getCategoryHTML = function (category_list) {
+    var HTML = "";
+
+    for (var i = 0; i < category_list.length; i++) {
+        if (category_list[i] == null) { continue; } //skip extras
+
+        HTML += "<h3 class='span_traininglist_category'>";
+        HTML += category_list[i] == 'Net' ? ".Net" : category_list[i]; //Special case, period breaks ID.
+        HTML += "</h3>";
+        HTML += "<hr class='hr_traininglist'>";
+        HTML += "<div id='category_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
+        HTML += "</div>";
+    }
+
+    return HTML;
+};
+
+TrainingCert.prototype.fillCategoryHTML = function (training_list)
+{
+    for (var i = 0; i < training_list.length; i++) {
+        var HTML = "";
+        HTML += "<div class='col col_traininglist'>";
+        HTML += "<div class='card div_traininglist'>";
+        HTML += "<div class='card-body'>";
+        HTML += "<center><h5 class='card-title title_training'>";
+        HTML += "<a href='" + training_list[i].url + "'>" + training_list[i].name + "</a>";
+        HTML += "</h5></center>";
+        HTML += "<span/>";
+        HTML += "<b>Courses:</b> " + training_list[i].courses;
+        HTML += "<span/>";
+        HTML += "<br />";
+        HTML += "<span/>";
+        HTML += "<b>Hours:</b> " + training_list[i].hours;
+        HTML += "<span/>";
+        HTML += "</div>"; //card-body
+        HTML += "</div>"; //card
+        HTML += "</div>"; //col
+
+        //inject into the category
+        $("#category_" + training_list[i].category.replace(" ", "_")).append(HTML);
+    }
+
+}
+
+
+
+TrainingCert.prototype.getTrainingCertList = function ()
 {
 
     var training_list = [];
@@ -30,132 +200,3 @@ TrainingCert.prototype.getTrainingCertList = function (debugmode)
     return training_list;
 };
 
-TrainingCert.prototype.getTrainingCategoryList = function () {
-    var training_list = this.getTrainingCertList();
-    const category_list = [];
-
-    for (var i = 0; i < training_list.length; i++)
-    {
-        if (!category_list.includes(training_list[i].category)) { category_list[i] = training_list[i].category; }        
-    }
- 
-    return category_list;
-};
-
-TrainingCert.prototype.getHTML = function ()
-{
-    var category_list = this.getTrainingCategoryList();
-   
-    var HTML = "";
-
-    //generate category sections.
-    for (var i = 0; i < category_list.length; i++)
-    {
-        if (category_list[i] == null){continue;} //skip extras
-
-        HTML += "<h3 class='span_traininglist_category'>";
-        HTML += category_list[i] == 'Net' ? ".Net" : category_list[i]; //Special case, period breaks ID.
-        HTML += "</h3>";
-        HTML += "<hr class='hr_traininglist'>";
-        HTML += "<div id='category_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
-        HTML += "</div>";
-    }
-
- 
-
-    return HTML;
-};
-
-TrainingCert.prototype.fillHTML = function ()
-{
-    var training_list = this.getTrainingCertList();
-
-    for (var i = 0; i < training_list.length; i++)
-    {
-        var HTML = "";
-        HTML += "<div class='col col_traininglist'>";
-            HTML += "<div class='card div_traininglist'>";
-                HTML += "<div class='card-body'>";
-                    HTML += "<center><h5 class='card-title title_training'>";
-                        HTML += "<a href='" + training_list[i].url + "'>" + training_list[i].name + "</a>";
-                    HTML += "</h5></center>";
-                    HTML += "<span/>";
-                        HTML += "<b>Courses:</b> "+training_list[i].courses;
-                    HTML += "<span/>";
-                    HTML += "<br />";
-                    HTML += "<span/>";
-                        HTML += "<b>Hours:</b> " + training_list[i].hours;
-                    HTML += "<span/>";
-                HTML += "</div>"; //card-body
-            HTML += "</div>"; //card
-        HTML += "</div>"; //col
-
-        //inject into the category
-        $("#category_" + training_list[i].category.replace(" ","_")).append(HTML);
-    }
-
-}
-
-TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
-{
-    fetch('assets/data/training.json')
-        .then((response) => response.json())
-        .then((json) => {
-            console.log("Loading from json");
-
-            //Load JSON
-            const training_list = [];
-            for (var training of json.training)
-            {
-                training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
-            }
-
-            //Get Categories
-            const category_list = [];
-            for (var i = 0; i < training_list.length; i++)
-            {
-                if (!category_list.includes(training_list[i].category)) { category_list[i] = training_list[i].category; }
-            }
-
-            //Write structure and categories, inject into target.
-            var HTML = "";
-            
-            for (var i = 0; i < category_list.length; i++) {
-                if (category_list[i] == null) { continue; } //skip extras
-
-                HTML += "<h3 class='span_traininglist_category'>";
-                HTML += category_list[i] == 'Net' ? ".Net" : category_list[i]; //Special case, period breaks ID.
-                HTML += "</h3>";
-                HTML += "<hr class='hr_traininglist'>";
-                HTML += "<div id='category_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
-                HTML += "</div>";
-            }
-
-            $(target_id).html(HTML);
-
-            //Write training certs into each category
-            HTML = "";
-            for (var i = 0; i < training_list.length; i++) {
-                var HTML = "";
-                HTML += "<div class='col col_traininglist'>";
-                HTML += "<div class='card div_traininglist'>";
-                HTML += "<div class='card-body'>";
-                HTML += "<center><h5 class='card-title title_training'>";
-                HTML += "<a href='" + training_list[i].url + "'>" + training_list[i].name + "</a>";
-                HTML += "</h5></center>";
-                HTML += "<span/>";
-                HTML += "<b>Courses:</b> " + training_list[i].courses;
-                HTML += "<span/>";
-                HTML += "<br />";
-                HTML += "<span/>";
-                HTML += "<b>Hours:</b> " + training_list[i].hours;
-                HTML += "<span/>";
-                HTML += "</div>"; //card-body
-                HTML += "</div>"; //card
-                HTML += "</div>"; //col
-
-                //inject into the category
-                $("#category_" + training_list[i].category.replace(" ", "_")).append(HTML);
-            }
-        });
-}
