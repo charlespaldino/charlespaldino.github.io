@@ -19,8 +19,6 @@ WorkHistory.prototype.getHTML = function (debugmode, target_id)
         fetch('assets/data/history.json')
             .then((response) => response.json())
             .then((json) => {
-                console.log("Loading from json");
-
                 //Load JSON
                 const work_list = this.getWorkHistoryList(json);
                 this.fillHTML(target_id, work_list);
