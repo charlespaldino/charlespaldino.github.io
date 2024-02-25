@@ -9,8 +9,6 @@ getHTML =>
     Copy data to mobile divs.
 */
 
-
-
 function TrainingCert(category, name, courses, hours, url)
 {
     this.category = category;
