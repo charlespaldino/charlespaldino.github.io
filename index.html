@@ -159,8 +159,7 @@
             $("#view_summary_mobile").html($("#view_summary").html());
 
             var workhistory = new WorkHistory();
-            $("#view_resume").html(workhistory.getHTML());
-            $("#view_resume_mobile").html($("#view_resume").html());
+            workhistory.getHTML(debugmode, "#view_resume");
 
             var trainingcerts = new TrainingCert();
             trainingcerts.getHTML(debugmode, "#view_training");
