@@ -9,7 +9,7 @@ function TrainingCert(category, name,courses, hours, url)
 
 
 TrainingCert.prototype.getHTML = function () {
-    var category_list = this.getTrainingCategoryList();
+    var category_list = this.getTrainingCategoryList(null);
 
     var HTML = "";
 
@@ -31,7 +31,7 @@ TrainingCert.prototype.getHTML = function () {
 };
 
 TrainingCert.prototype.fillHTML = function () {
-    var training_list = this.getTrainingCertList();
+    var training_list = this.getTrainingCertList(null);
 
     for (var i = 0; i < training_list.length; i++) {
         var HTML = "";
@@ -58,7 +58,8 @@ TrainingCert.prototype.fillHTML = function () {
 
 }
 
-TrainingCert.prototype.fillHTMLFromJSON = function (target_id) {
+TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
+{
     fetch('assets/data/training.json')
         .then((response) => response.json())
         .then((json) =>
