@@ -28,24 +28,12 @@
       "enddate": "12/31/2021",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Developed, maintained, and enhanced classic/modern sharepoint sites, pages, and lists."
-        },
-        {
-          "point_data": "Developed custom JavaScript for various advanced operations and business rules."
-        },
-        {
-          "point_data": "Handled Intranet (Sharepoint) related support tickets and issues."
-        },
-        {
-          "point_data": "Utilized Node, Yeoman, React, PNPjs, TypeScript/SASS, and Visual Studio Code for development and deployment."
-        },
-        {
-          "point_data": "Maintenance, Page development, and Data Entry for FEMA's Drupal site - https://wecandothis.hhs.gov/."
-        },
-        {
-          "point_data": "Developed and deployed an internal .Net Portal using ASP, C# and MVC responsible for handling internal forms and ticket requests."
-        }
+          "Developed, maintained, and enhanced classic/modern sharepoint sites, pages, and lists.",
+          "Developed custom JavaScript for various advanced operations and business rules.",
+        "Handled Intranet (Sharepoint) related support tickets and issues.",
+        "Utilized Node, Yeoman, React, PNPjs, TypeScript/SASS, and Visual Studio Code for development and deployment.",
+        "Maintenance, Page development, and Data Entry for FEMA's Drupal site - https://wecandothis.hhs.gov/."
+         ,"Developed and deployed an internal .Net Portal using ASP, C# and MVC responsible for handling internal forms and ticket requests."
       ]
     },
     {
@@ -55,9 +43,7 @@
       "enddate": "3/01/2020",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Performed Full Stack technical analysis and support for a variety of applications."
-        }
+        "Performed Full Stack technical analysis and support for a variety of applications."
       ]
     },
     {
@@ -67,18 +53,10 @@
       "enddate": "1/03/2020",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Full Stack .Net Cloud development for a Community Corrections web application."
-        },
-        {
-          "point_data": "Reviewed tickets and specific issues with the QA team, handling the bugs and/or delegating to the offshore dev team."
-        },
-        {
-          "point_data": "Acted as liaison with offshore development team."
-        },
-        {
-          "point_data": "Handled Dev Ops for QA and UAT stages with Microsoft Azure services."
-        }
+          "Full Stack .Net Cloud development for a Community Corrections web application.",
+          "Reviewed tickets and specific issues with the QA team, handling the bugs and/or delegating to the offshore dev team.",
+          "Acted as liaison with offshore development team.",
+          "Handled Dev Ops for QA and UAT stages with Microsoft Azure services."
       ]
     },
     {
@@ -88,27 +66,13 @@
       "enddate": "1/10/2019",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Performed basic maintenance, enhancements, and deployments for a .Net ASP/C# WebForms CRM product."
-        },
-        {
-          "point_data": "Inherited control and ownership of a legacy .Net ASP/VB WebForms warehouse management application."
-        },
-        {
-          "point_data": "Handled all support related issues, communicating directly with customers, Stephen Gould representatives, and warehouse management."
-        },
-        {
-          "point_data": "Developed major features for the warehouse management product in a modular fashion for feature-based sales/add-ons."
-        },
-        {
-          "point_data": "Cleaned up old background maintenance/reporting services and implemented robust new ones."
-        },
-        {
-          "point_data": "Rebuilt a Prize Code GiveAway product built in .Net ASP/C# WebForms."
-        },
-        {
-          "point_data": "Lead and trained entry level developers in .Net, SQL, clean coding, OO, and Agile practices, etc."
-        }
+        "Performed basic maintenance, enhancements, and deployments for a .Net ASP/C# WebForms CRM product.",
+          "Inherited control and ownership of a legacy .Net ASP/VB WebForms warehouse management application.",
+          "Handled all support related issues, communicating directly with customers, Stephen Gould representatives, and warehouse management.",
+          "Developed major features for the warehouse management product in a modular fashion for feature-based sales/add-ons.",
+          "Cleaned up old background maintenance/reporting services and implemented robust new ones.",
+          "Rebuilt a Prize Code GiveAway product built in .Net ASP/C# WebForms.",
+          "Lead and trained entry level developers in .Net, SQL, clean coding, OO, and Agile practices, etc."
       ]
     },
     {
@@ -118,9 +82,8 @@
       "enddate": "07/15/2016",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Developed and deployed desktop applications in .Net for clients based off of specification sheets."
-        }
+        "Developed and deployed desktop applications in .Net for clients based off of specification sheets."
+        
       ]
     },
     {
@@ -130,9 +93,7 @@
       "enddate": "11/23/2015",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Helped bring a project to meet a targeted deadline – A trade web application built in JSP, hosted by Tomcat."
-        }
+        "Helped bring a project to meet a targeted deadline – A trade web application built in JSP, hosted by Tomcat."
       ]
     },
     {
@@ -142,12 +103,8 @@
       "enddate": "8/21/2015",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Primarily worked on a financial ratings web application that used HTML for the front end and Java/MongoDB for the backend."
-        },
-        {
-          "point_data": "Built out a small suite of tools for basic office management."
-        }
+        "Primarily worked on a financial ratings web application that used HTML for the front end and Java/MongoDB for the backend.",
+          "Built out a small suite of tools for basic office management."
       ]
     },
     {
@@ -157,9 +114,7 @@
       "enddate": "1/02/2015",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Assisted in development of a major asset management product."
-        }
+        "Assisted in development of a major asset management product."
       ]
     },
     {
@@ -169,12 +124,8 @@
       "enddate": "7/1/2014",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Developed various parts of ServiceNow (Sandbox → Dev → UAT → Production)"
-        },
-        {
-          "point_data": "Developed UI Policies, Data Policies, Client Scripts, and UI Actions."
-        }
+        "Developed various parts of ServiceNow (Sandbox → Dev → UAT → Production)",
+          "Developed UI Policies, Data Policies, Client Scripts, and UI Actions."
       ]
     },
     {
@@ -184,18 +135,10 @@
       "enddate": "12/31/2013",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Created a GWT Web Application from scratch."
-        },
-        {
-          "point_data": "Performed manual testing, debugging, and functionality enhancement on a new web application."
-        },
-        {
-          "point_data": "Created two Android Demos and one Android Prototype."
-        },
-        {
-          "point_data": "Bench-marked and assisted in testing a website in development. (Existing product version upgrade)"
-        }
+        "Created a GWT Web Application from scratch.",
+          "Performed manual testing, debugging, and functionality enhancement on a new web application.",
+          "Created two Android Demos and one Android Prototype.",
+          "Bench-marked and assisted in testing a website in development. (Existing product version upgrade)"
       ]
     },
     {
@@ -204,19 +147,11 @@
       "startdate": "6/27/2012",
       "enddate": "9/7/2012",
       "description": "",
-      "bulletpoints": [
-        {
-          "point_data": "Led and organized project and code documentation efforts."
-        },
-        {
-          "point_data": "Trained the intern in basic C# and OO Principles."
-        },
-        {
-          "point_data": "Designed and built utility projects to speed up development."
-        },
-        {
-          "point_data": "Redesigned and cleaned existing projects."
-        }
+      "bulletpoints": [        
+          "Led and organized project and code documentation efforts.",
+          "Trained the intern in basic C# and OO Principles.",
+          "Designed and built utility projects to speed up development.",
+          "Redesigned and cleaned existing projects."
       ]
     },
     {
@@ -226,9 +161,8 @@
       "enddate": "4/10/2012",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Research and development – Benchmarking various databases such as MS SQL and Oracle."
-        }
+        "Research and development – Benchmarking various databases such as MS SQL and Oracle."
+        
       ]
     },
     {
@@ -238,15 +172,9 @@
       "enddate": "12/02/2011",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Used Exigen''s OpenL framework to parse tables built in MS Excel to create various business rules (insurance policy ratings) for the backend of an N-tier layered web application."
-        },
-        {
-          "point_data": "Tested and Modified existing OpenL formatted spreadsheets according to given requirements."
-        },
-        {
-          "point_data": "Used Java for test case automation and performing unit test cases in combination with Exigen''s WebStudio web application (Hosted by Tomcat)."
-        }
+        "Used Exigen''s OpenL framework to parse tables built in MS Excel to create various business rules (insurance policy ratings) for the backend of an N-tier layered web application.",
+          "Tested and Modified existing OpenL formatted spreadsheets according to given requirements.",
+          "Used Java for test case automation and performing unit test cases in combination with Exigen''s WebStudio web application (Hosted by Tomcat)."
       ]
     },
     {
@@ -256,15 +184,9 @@
       "enddate": "9/30/2011",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Led and trained a team of 6 in Java's J2SE framework."
-        },
-        {
-          "point_data": "Worked on a 3 layered project in Java that consists of a General Purpose Backend Library, Module Package, and a Modular Calculator."
-        },
-        {
-          "point_data": "Responsible for business and management website design, construction, and management using WordPress, JQuery, HTML, CSS, JavaScript, and PHP (mySQL database)."
-        }
+        "Led and trained a team of 6 in Java's J2SE framework.",
+          "Worked on a 3 layered project in Java that consists of a General Purpose Backend Library, Module Package, and a Modular Calculator.",
+          "Responsible for business and management website design, construction, and management using WordPress, JQuery, HTML, CSS, JavaScript, and PHP (mySQL database)."
       ]
     },
     {
@@ -274,12 +196,8 @@
       "enddate": "7/2011",
       "description": "",
       "bulletpoints": [
-        {
-          "point_data": "Trained students with the basics of the Java J2SE and/or .Net C# platform."
-        },
-        {
-          "point_data": "Trained students with Java executable Jar file and/or C# .exe deployment."
-        }
+        "Trained students with the basics of the Java J2SE and/or .Net C# platform.",
+          "Trained students with Java executable Jar file and/or C# .exe deployment."
       ]
     },
     {
@@ -288,13 +206,9 @@
       "startdate": "5/2008",
       "enddate": "11/2008",
       "description": "",
-      "bulletpoints": [
-        {
-          "point_data": "Worked on ServiceNow's front end implementation to create business and validation rules, as well as tables, widgets, etc."
-        },
-        {
-          "point_data": "Created .Net ASP webpages for various clients, using .Net VB code behind that accessed a SQL database. These pages served as a temporary service until the ServiceNow migration was completed."
-        }
+      "bulletpoints": [        
+          "Worked on ServiceNow's front end implementation to create business and validation rules, as well as tables, widgets, etc.",
+          "Created .Net ASP webpages for various clients, using .Net VB code behind that accessed a SQL database. These pages served as a temporary service until the ServiceNow migration was completed."        
       ]
     }
   ]
