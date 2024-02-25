@@ -30,7 +30,6 @@ TrainingCert.prototype.getHTML = function (debugmode, target_id) {
         fetch('assets/data/training.json')
             .then((response) => response.json())
             .then((json) => {
-                console.log("Loading from json");
 
                 //Load JSON
                 const training_list = this.getTrainingCertList(json);
