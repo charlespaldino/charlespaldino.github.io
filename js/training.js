@@ -1,4 +1,17 @@
-function TrainingCert(category, name,courses, hours, url)
+/*FLOW
+getHTML => 
+    If debugmode => getTrainingCertList(null)                    
+    Else => get JSON Data
+            getTrainingCertList(json data)
+    fillHTML
+    getTrainingCategoryList
+    fillCategoryHTML       
+    Copy data to mobile divs.
+*/
+
+
+
+function TrainingCert(category, name, courses, hours, url)
 {
     this.category = category;
     this.name = name;
@@ -28,7 +41,7 @@ TrainingCert.prototype.getHTML = function (debugmode, target_id) {
     }
 };
 
-//Get Categories and inject
+//Get Categories and inject.
 TrainingCert.prototype.fillHTML = function (target_id, training_list)
 {
     var category_list = this.getTrainingCategoryList(training_list);
