@@ -163,18 +163,7 @@
             $("#view_resume_mobile").html($("#view_resume").html());
 
             var trainingcerts = new TrainingCert();
-
-            if (debugmode)
-            {
-                $("#view_training").html(trainingcerts.getHTML());
-                trainingcerts.fillHTML();
-                $("#view_training_mobile").html($("#view_training").html());
-            }
-            else
-            {
-                trainingcerts.fillHTMLFromJSON("#view_training");
-            }
-
+            trainingcerts.getHTML(debugmode, "#view_training");
           
 
             //Nav Links
