@@ -111,7 +111,7 @@ WorkHistory.prototype.getBulletPoints = function (data)
 
         for (var x = 0; x < data.length; x++) {
             HTML += "<li>";
-            HTML += "" +data[x];
+            HTML += data[x].bulletpoints;
             HTML += "</li>";
         }
 
