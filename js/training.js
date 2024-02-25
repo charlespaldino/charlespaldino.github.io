@@ -7,46 +7,38 @@ function TrainingCert(category, name,courses, hours, url)
     this.url = url;
 }
 
-
+//Gets the HTML for the training list main div. Debugmode off will load from JSON data file.
 TrainingCert.prototype.getHTML = function (debugmode, target_id) {
     if (debugmode)
     {
-        var training_list = this.getTrainingCertList(null);
-        var category_list = this.getTrainingCategoryList(training_list);
-
-        $(target_id).html(this.getCategoryHTML(category_list));
-        this.fillCategoryHTML(training_list);        
-        $(target_id + "_mobile").html($(target_id).html());
+        const training_list = this.getTrainingCertList(null);
+        this.fillHTML(target_id, training_list);
     }
     else
     {
-        this.fillHTMLFromJSON(target_id);
+        fetch('assets/data/training.json')
+            .then((response) => response.json())
+            .then((json) => {
+                console.log("Loading from json");
+
+                //Load JSON
+                const training_list = this.getTrainingCertList(json);
+                this.fillHTML(target_id, training_list);              
+            });
     }
 };
 
-TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
+//Get Categories and inject
+TrainingCert.prototype.fillHTML = function (target_id, training_list)
 {
-    fetch('assets/data/training.json')
-        .then((response) => response.json())
-        .then((json) =>
-        {
-            console.log("Loading from json");
+    var category_list = this.getTrainingCategoryList(training_list);
 
-            //Load JSON
-            const training_list = this.getTrainingCertList(json);
-            //for (var training of json.training)
-            //{
-            //    training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
-            //}
-
-            //Get Categories and inject
-            const category_list = this.getTrainingCategoryList(training_list);          
-            $(target_id).html(this.getCategoryHTML(category_list));
-            this.fillCategoryHTML(training_list);
-            $(target_id + "_mobile").html($(target_id).html());
-        });
+    $(target_id).html(this.getCategoryHTML(category_list));
+    this.fillCategoryHTML(training_list);
+    $(target_id + "_mobile").html($(target_id).html());
 }
 
+//Gets the list of categories.
 TrainingCert.prototype.getTrainingCategoryList = function (training_list) {
     const category_list = [];
 
@@ -57,6 +49,7 @@ TrainingCert.prototype.getTrainingCategoryList = function (training_list) {
     return category_list;
 };
 
+//Gets the HTML for categories, filled with the  given category list.
 TrainingCert.prototype.getCategoryHTML = function (category_list) {
     var HTML = "";
 
@@ -74,6 +67,7 @@ TrainingCert.prototype.getCategoryHTML = function (category_list) {
     return HTML;
 };
 
+//Fills the category list with training data.
 TrainingCert.prototype.fillCategoryHTML = function (training_list)
 {
     for (var i = 0; i < training_list.length; i++) {
@@ -101,8 +95,7 @@ TrainingCert.prototype.fillCategoryHTML = function (training_list)
 
 }
 
-
-
+//Gets the list of training data objects, will use json if provided. Null defaults to hard coded list for debugging.
 TrainingCert.prototype.getTrainingCertList = function (json_data)
 {
 
