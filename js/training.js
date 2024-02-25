@@ -33,7 +33,7 @@ TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
             console.log("Loading from json");
 
             //Load JSON
-            const training_list = getTrainingCertList(json);
+            const training_list = this.getTrainingCertList(json);
             //for (var training of json.training)
             //{
             //    training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
@@ -42,7 +42,8 @@ TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
             //Get Categories and inject
             const category_list = this.getTrainingCategoryList(training_list);          
             $(target_id).html(this.getCategoryHTML(category_list));
-            this.fillCategoryHTML(training_list);          
+            this.fillCategoryHTML(training_list);
+            $(target_id + "_mobile").html($(target_id).html());
         });
 }
 
