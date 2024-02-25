@@ -94,7 +94,7 @@ TrainingCert.prototype.fillHTMLFromJSON = function (target_id)
             //}
 
             $(target_id).html(this.getCategoryHTML(category_list));
-            fillCategoryHTML(training_list);
+            this.fillCategoryHTML(training_list);
             ////Write training certs into each category
             //HTML = "";
             //for (var i = 0; i < training_list.length; i++) {
