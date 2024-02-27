@@ -8,6 +8,20 @@
       "url": "https://drive.proton.me/urls/Q92DZYPJAM#GG6EH62uuaLG"
     },
     {
+      "category": "Software Development",
+      "name": "Cyber Security",
+      "courses": 1,
+      "hours": 1,
+      "url": "https://drive.proton.me/urls/Z81DBRTVDW#17RBkPHgciwS"
+    },
+    {
+      "category": "Software Development",
+      "name": "JIRA",
+      "courses": 6,
+      "hours": 6,
+      "url": "https://drive.proton.me/urls/ZPSJJSA26W#o86nAMIwWuZ0"
+    },
+    {
       "category": "Architecture",
       "name": "Microservices",
       "courses": 3,
@@ -80,9 +94,16 @@
     {
       "category": "CMS",
       "name": "Word Press",
-      "courses": 5,
-      "hours": 9,
+      "courses": 20,
+      "hours": 32,
       "url": "https://drive.proton.me/urls/M0YSNK5TN8#dj5X7SJ43icX"
+    },
+    {
+      "category": "CMS",
+      "name": "ServiceNow",
+      "courses": 3,
+      "hours":5,
+      "url": "https://drive.proton.me/urls/4XWWNK566C#bdiYW488LGBg"
     },
     {
       "category": "Azure",
