@@ -23,6 +23,7 @@
     <script src="js\jquery_ui\jquery-ui.min.js"></script>
 
 
+    <script src="js\main.js"></script>
     <script src="js\summary.js"></script>
     <script src="js\workhistory.js"></script>
     <script src="js\training.js"></script>
@@ -140,55 +141,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <script type="text/javascript">
-        var debugmode = false;
-
-        $(document).ready(function () {
-            $('.carousel').carousel('pause');
-
-            $(".nav-link").on("click", function () {
-                $(this).addClass("active")
-            })
-
-            var summary = new Summary();
-            $("#view_summary").html(summary.getHTML());
-            $("#view_summary_mobile").html($("#view_summary").html());
-
-            var workhistory = new WorkHistory();
-            workhistory.getHTML(debugmode, "#view_resume");
-
-            var trainingcerts = new TrainingCert();
-            trainingcerts.getHTML(debugmode, "#view_training");
-          
-
-            //Nav Links
-            $("#navlink_home").on("click", function ()
-            {
-                switchView("section_summary");
-            })
-
-            $("#navlink_resume").on("click", function ()
-            {
-                switchView("section_resume");
-            })
-
-            $("#navlink_training").on("click", function ()
-            {
-                switchView("section_training");
-            })
-
-            //$("#navlink_live").on("click", function ()
-            //{
-            //    switchView("section_porfolio_live");
-            //})
-
-        });
-
-    </script>
 </body>
 
 
