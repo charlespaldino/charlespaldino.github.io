@@ -20,6 +20,7 @@ WorkHistory.prototype.getHTML = function (debugmode, target_id)
             .then((response) => response.json())
             .then((json) => {
                 //Load JSON
+                console.log("Loaded Work Historyfom JSON");
                 const work_list = this.getWorkHistoryList(json);
                 this.fillHTML(target_id, work_list);
             });

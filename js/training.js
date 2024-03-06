@@ -32,6 +32,7 @@ TrainingCert.prototype.getHTML = function (debugmode, target_id) {
             .then((json) => {
 
                 //Load JSON
+                console.log("Loaded Training from JSON");
                 const training_list = this.getTrainingCertList(json);
                 this.fillHTML(target_id, training_list);              
             });

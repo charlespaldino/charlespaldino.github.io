@@ -29,6 +29,7 @@ PortfolioCodeSample.prototype.getHTML = function (debugmode, target_id)
             .then((response) => response.json())
             .then((json) => {
                 //Load JSON
+                console.log("Loaded Code Samples from JSON");
                 const codesample_list = this.getPortfolioCodeSampleList(json);
                 this.fillHTML(target_id, codesample_list);
             });
