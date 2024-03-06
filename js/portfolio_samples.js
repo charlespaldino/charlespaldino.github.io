@@ -32,6 +32,8 @@ PortfolioCodeSample.prototype.getHTML = function (debugmode, target_id)
                 console.log("Loaded Code Samples from JSON");
                 const codesample_list = this.getPortfolioCodeSampleList(json);
                 this.fillHTML(target_id, codesample_list);
+            }).catch((error) => {
+                console.log(error)
             });
     }
 };
@@ -72,7 +74,16 @@ PortfolioCodeSample.prototype.getPortfolioCodeSampleList = function (json_data) 
     else {
         for (var codesample of json_data.codesample)
         {
-            //codesample_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
+            var sample = new PortfolioCodeSample(codesample.category, codesample.tool, codesample.github_url, null);
+            sample.projects = [];
+
+            for (var project of codesample.projects)
+            {
+                sample.projects.push(new PortfolioCodeSampleProject(project.name, project.description, project.github_url, project.video_url, project.demo_url));
+            }
+
+            codesample_list.push(sample);
+
         }
     }
 
@@ -97,7 +108,6 @@ PortfolioCodeSample.prototype.getCategoryHTML = function (category_list)
 
     for (var i = 0; i < category_list.length; i++)
     {
-        console.log(category_list[i]);
         if (category_list[i] == null) { continue; } //skip extras
 
         HTML += "<h3 class='resume_span_category'>";
