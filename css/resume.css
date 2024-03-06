@@ -23,6 +23,33 @@
 }
 
 
+.resume_span_category {
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 5px;
+    text-align: center;
+}
+
+.resume_hr_categorylist {
+    margin: 10px;
+}
+
+.resume_cardtitle 
+{
+    
+}
+
+.resume_mini_icon
+{
+    border-radius: 5px;
+    width: 20px;
+    margin-right: 2px;
+}
+
+.resume_mini_icon_github 
+{
+    background-color: purple;
+}
 
 /* Summary */
 
@@ -59,14 +86,8 @@
     margin-bottom: 5px !important;
 }
 
-.span_traininglist_category {
-    font-weight: bold;
-    color: whitesmoke;
-    margin: 5px;
-    text-align: center;
-}
-
-.hr_traininglist 
+/* Code Samples */
+.cardbody_codesample
 {
-    margin: 10px;
+    padding: .5rem .5rem !important;
 }

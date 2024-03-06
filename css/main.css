@@ -10,6 +10,12 @@
 }
 
 
+.menu_dropdown_arrow 
+{
+	margin-top: 2px;
+	margin-left: -10px;
+}
+
 
 #banner_nav {
 	border-style: solid;
