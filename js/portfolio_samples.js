@@ -25,7 +25,7 @@ PortfolioCodeSample.prototype.getHTML = function (debugmode, target_id)
         this.fillHTML(target_id, codesample_list);
     }
     else {
-        fetch('assets/data/history.json')
+        fetch('assets/data/samples.json')
             .then((response) => response.json())
             .then((json) => {
                 //Load JSON
