@@ -3,9 +3,11 @@ var debugmode = true;
 
 $(document).ready(function () {
     $('.carousel').carousel('pause');
+  
 
     $(".nav-link").on("click", function () {
-        $(this).addClass("active")
+        $(".nav-link").removeClass("active");
+        $(this).addClass("active");
     })
 
     var summary = new Summary();
@@ -18,6 +20,8 @@ $(document).ready(function () {
     var trainingcerts = new TrainingCert();
     trainingcerts.getHTML(debugmode, "#view_training");
 
+    var codesamples = new PortfolioCodeSample();
+    codesamples.getHTML(debugmode, "#view_portfolio_samples");
 
     //Nav Links
     $("#navlink_home").on("click", function () {
@@ -30,6 +34,10 @@ $(document).ready(function () {
 
     $("#navlink_training").on("click", function () {
         switchView("section_training");
+    })
+
+    $("#navlink_codesamples").on("click", function () {
+        switchView("section_portfolio_samples");
     })
 
     //$("#navlink_live").on("click", function ()
