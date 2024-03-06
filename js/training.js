@@ -66,11 +66,11 @@ TrainingCert.prototype.getCategoryHTML = function (category_list) {
     for (var i = 0; i < category_list.length; i++) {
         if (category_list[i] == null) { continue; } //skip extras
 
-        HTML += "<h3 class='span_traininglist_category'>";
+        HTML += "<h3 class='resume_span_category'>";
         HTML += category_list[i] == 'Net' ? ".Net" : category_list[i]; //Special case, period breaks ID.
         HTML += "</h3>";
-        HTML += "<hr class='hr_traininglist'>";
-        HTML += "<div id='category_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
+        HTML += "<hr class='resume_hr_categorylist'>";
+        HTML += "<div id='category_training_" + category_list[i].replace(" ", "_") + "' class='row row-cols-2 row-cols-md-5 row-cols-lg-5 g-3 row_trainingcerts'>";
         HTML += "</div>";
     }
 
@@ -80,27 +80,25 @@ TrainingCert.prototype.getCategoryHTML = function (category_list) {
 //Fills the category list with training data.
 TrainingCert.prototype.fillCategoryHTML = function (training_list)
 {
-    for (var i = 0; i < training_list.length; i++) {
+    for (var i = 0; i < training_list.length; i++)
+    {
         var HTML = "";
         HTML += "<div class='col col_traininglist'>";
         HTML += "<div class='card div_traininglist'>";
         HTML += "<div class='card-body'>";
-        HTML += "<center><h5 class='card-title title_training'>";
+        HTML += "<center><h5 class='card-title'>";
         HTML += "<a href='" + training_list[i].url + "'>" + training_list[i].name + "</a>";
         HTML += "</h5></center>";
         HTML += "<span/>";
         HTML += "<b>Courses:</b> " + training_list[i].courses;
-        HTML += "<span/>";
         HTML += "<br />";
-        HTML += "<span/>";
         HTML += "<b>Hours:</b> " + training_list[i].hours;
-        HTML += "<span/>";
         HTML += "</div>"; //card-body
         HTML += "</div>"; //card
         HTML += "</div>"; //col
 
         //inject into the category
-        $("#category_" + training_list[i].category.replace(" ", "_")).append(HTML);
+        $("#category_training_" + training_list[i].category.replace(" ", "_")).append(HTML);
     }
 
 }

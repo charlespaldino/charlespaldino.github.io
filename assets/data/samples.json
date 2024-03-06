@@ -1,0 +1,111 @@
+{
+  "codesample": [
+    {
+      "category": "Net",
+      "tool": "C#",
+      "github_url": "https://github.com/charlespaldino/DotNet-CSharp",
+      "projects": [
+        {
+            "name": "CSharpUtilities",
+            "description": "A small utility project containing various tools built in C#.",
+            "github_url": "https://github.com/charlespaldino/DotNet-CSharp/tree/main/CSharpUtilities",
+            "video_url": ""
+        }
+      ]
+    },
+    {
+      "category": "Net",
+      "tool": "VB",
+      "github_url": "https://github.com/charlespaldino/DotNet-VB",
+      "projects": [
+        {          
+            "name": "VBUtilities",
+            "description": "A small .Net VB utility project with some stand alone tools.",
+            "github_url": "https://github.com/charlespaldino/DotNet-VB/tree/main/VBUtilities",
+            "video_url": ""
+        }
+      ]
+    },
+    {
+      "category": "Net",
+      "tool": "WPF",
+      "github_url": "https://github.com/charlespaldino/DotNet-WPF",
+      "projects": [
+        {          
+            "name": "BasicMessagingForm",
+            "description": "A small WPF app that uses MSMQ to simulate a chatroom. Run two instances to use.",
+            "github_url": "https://github.com/charlespaldino/DotNet-WPF/tree/main/BasicMessagingForm",
+            "video_url": ""          
+        }
+      ]
+    },
+    {
+      "category": "Net",
+      "tool": "ASP Core Razor",
+      "github_url": "https://github.com/charlespaldino/DotNet-ASP-Core-Razor",
+      "projects": [
+        {
+          "name": "PaldinoCrafts",
+          "description": "A small Razor site that displays store items and their ratings.",
+          "github_url": "https://github.com/charlespaldino/DotNet-ASP-Core-Razor/tree/main/PaldinoCrafts",
+          "video_url": ""
+        },
+        {
+          "name": "MoviesApp",
+          "description": "A small Razor site that lists movie reviews, includes admin section for uploading new reviews.",
+          "github_url": "https://github.com/charlespaldino/DotNet-ASP-Core-Razor/tree/main/MoviesApp",
+          "video_url": ""
+        }
+      ]
+    },
+    {
+      "category": "Net",
+      "tool": "ASP Core MVC",
+      "github_url": "https://github.com/charlespaldino/DotNet-ASP-Core-MVC",
+      "projects": [
+        {
+          "name": "ExploreCalifornia",
+          "description": "A travel site converted to MVC from HTML, based off a LinkedIn Learning course.",
+          "github_url": "https://github.com/charlespaldino/DotNet-ASP-Core-MVC/tree/main/ExploreCalifornia",
+          "video_url": ""
+        }
+      ]
+    },
+    {
+      "category": "Java",
+      "tool": "J2SE",
+      "github_url": "https://github.com/charlespaldino/Java-J2SE",
+      "projects": [
+        {
+          "project": {
+            "name": "LogicGates",
+            "description": "A small Java J2SE project that has components to simulate a basic circuit board. Uses JUnit for testing.",
+            "github_url": "https://github.com/charlespaldino/Java-J2SE/tree/main/LogicGates",
+            "video_url": ""
+          }
+        }
+      ]
+    },
+    {
+      "category": "HTML",
+      "tool": "HTML",
+      "github_url": "https://github.com/charlespaldino/HTML",
+      "projects": [
+        {
+          "name": "ClockApp",
+          "description": "A small HTML website site that displays both digital and analog clocks.",
+          "github_url": "https://github.com/charlespaldino/HTML/tree/main/ClockApp_Basic",
+          "video_url": "",
+          "demo_url": "Demos/ClockApp_Basic/charlespaldino_basicclockapp.html"
+        },
+        {
+          "name": "WeatherApp",
+          "description": "A small HTML site that taps into a weather service to display weather data.",
+          "github_url": "",
+          "video_url": "https://github.com/charlespaldino/HTML/tree/main/WeatherApp_Basic",
+          "demo_url": "Demos/WeatherApp_Basic/charlespaldino_basicweatherapp.html"
+        }
+      ]
+    }
+  ]
+}

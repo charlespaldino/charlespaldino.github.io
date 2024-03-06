@@ -17,8 +17,8 @@
     {
       "category": "Software Development",
       "name": "JIRA",
-      "courses": 6,
-      "hours": 6,
+      "courses": 7,
+      "hours": 8,
       "url": "https://drive.proton.me/urls/ZPSJJSA26W#o86nAMIwWuZ0"
     },
     {
@@ -102,8 +102,29 @@
       "category": "CMS",
       "name": "ServiceNow",
       "courses": 3,
-      "hours":5,
+      "hours": 5,
       "url": "https://drive.proton.me/urls/4XWWNK566C#bdiYW488LGBg"
+    },
+    {
+      "category": "Azure",
+      "name": "General",
+      "courses": 1,
+      "hours": 3,
+      "url": "https://drive.proton.me/urls/93P51SW2MR#c7jQiSIZGGnL"
+    },
+    {
+      "category": "Azure",
+      "name": "Administration",
+      "courses": 2,
+      "hours": 3,
+      "url": "https://drive.proton.me/urls/Z9KFMXNEQ0#rbdO6bfy8mdU"
+    },
+    {
+      "category": "Azure",
+      "name": "Security",
+      "courses": 1,
+      "hours": 1,
+      "url": "https://drive.proton.me/urls/0RA2MMKP3M#b3Hwi8Nxcrxe"
     },
     {
       "category": "Azure",

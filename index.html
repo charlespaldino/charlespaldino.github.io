@@ -23,11 +23,13 @@
     <script src="js\jquery_ui\jquery-ui.min.js"></script>
 
 
+
     <script src="js\summary.js"></script>
     <script src="js\workhistory.js"></script>
     <script src="js\training.js"></script>
+    <script src="js\portfolio_samples.js"></script>
     <script src="js\viewswitcher.js"></script>
-
+    <script src="js\main.js"></script>
 
 </head>
 <body class="bg-dark container-fluid">
@@ -45,34 +47,24 @@
                     <li class="nav-item">
                         <a id="navlink_training" class="nav-link" href="#section_training">Training Certs</a>
                     </li>
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#section_portfolio_samples" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Code Samples
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">.Net C#</a></li>
-                            <li><a class="dropdown-item" href="#">.Net VB</a></li>
-                            <li><a class="dropdown-item" href="#">.Net WPF</a></li>
-                            <li><a class="dropdown-item" href="#">.Net ASP Core Razor</a></li>
-                            <li><a class="dropdown-item" href="#">.Net ASP Core MVC</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Java J2SE</a></li>
+                    <li class="nav-item">
+                        <a id="navlink_codesamples" class="nav-link" href="#section_portfolio_samples">Code Samples</a>
+                    </li>
+                    <li class="nav-item dropdown menu_dropdown_arrow">
+                        <a id="navlink_codesamples_dropdown" class="nav-link dropdown-toggle" href="#section_samples" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                        <ul id="nav_ul_codesamples_dropdown" class="dropdown-menu" aria-labelledby="navlink_codesamples_dropdown">                            
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a id="navlink_live" class="nav-link" href="#section_portfolio_live">Portfolio</a>
-                    </li>-->
+                    <!--<li class="nav-item">
+        <a id="navlink_live" class="nav-link" href="#section_portfolio_live">Portfolio</a>
+    </li>-->
                 </ul>
                 <div id="div_social" class="d-flex">
                     <button type="button" class="btn btn-secondary linkedin_icon socialicon" onclick="window.open('https://www.linkedin.com/in/cpaldino/', '_blank');">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="whitesmoke" class="bi bi-linkedin" viewBox="0 0 16 16">
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
-                        </svg>
+                        <img src="img/linkedin.svg" alt="LinkedIn">        
                     </button>
                     <button type="button" class="btn btn-secondary github_icon socialicon" onclick="window.open('https://github.com/charlespaldino', '_blank');">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="whitesmoke" class="bi bi-github" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
-                        </svg>
+                        <img src="img/github.svg" alt="GitHub">
                     </button>
                 </div>
             </div>
@@ -98,7 +90,7 @@
         </section>
         <section id="section_portfolio_samples" class="hidden">
             <div class="container-fluid">
-                <div id="view_portfolio_samples">Code samples</div>
+                <div id="view_portfolio_samples"></div>
             </div>
         </section>
         <section id="section_portfolio_live" class="hidden">
@@ -127,12 +119,12 @@
                         <div id="view_training_mobile"></div>
                     </div>
                 </div>
-                <!--<div class="carousel-item">
+                <div class="carousel-item">
                     <div class="container-fluid">
                         <div id="view_portfolio_samples_mobile">Code samples</div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <!--<div class="carousel-item">
                     <div class="container-fluid">
                         <div id="view_portfolio_live_mobile">Live</div>
                     </div>
@@ -140,55 +132,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <script type="text/javascript">
-        var debugmode = false;
-
-        $(document).ready(function () {
-            $('.carousel').carousel('pause');
-
-            $(".navlink").on("click", function () {
-                $(this).addClass("active")
-            })
-
-            var summary = new Summary();
-            $("#view_summary").html(summary.getHTML());
-            $("#view_summary_mobile").html($("#view_summary").html());
-
-            var workhistory = new WorkHistory();
-            workhistory.getHTML(debugmode, "#view_resume");
-
-            var trainingcerts = new TrainingCert();
-            trainingcerts.getHTML(debugmode, "#view_training");
-          
-
-            //Nav Links
-            $("#navlink_home").on("click", function ()
-            {
-                switchView("section_summary");
-            })
-
-            $("#navlink_resume").on("click", function ()
-            {
-                switchView("section_resume");
-            })
-
-            $("#navlink_training").on("click", function ()
-            {
-                switchView("section_training");
-            })
-
-            //$("#navlink_live").on("click", function ()
-            //{
-            //    switchView("section_porfolio_live");
-            //})
-
-        });
-
-    </script>
 </body>
 
 
