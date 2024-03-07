@@ -77,12 +77,10 @@
       "github_url": "https://github.com/charlespaldino/Java-J2SE",
       "projects": [
         {
-          "project": {
             "name": "LogicGates",
             "description": "A small Java J2SE project that has components to simulate a basic circuit board. Uses JUnit for testing.",
             "github_url": "https://github.com/charlespaldino/Java-J2SE/tree/main/LogicGates",
             "video_url": ""
-          }
         }
       ]
     },
