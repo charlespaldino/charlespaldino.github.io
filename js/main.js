@@ -1,5 +1,5 @@
 
-var debugmode = false;
+var debugmode = true;
 
 $(document).ready(function () {
     $('.carousel').carousel('pause');
@@ -26,18 +26,22 @@ $(document).ready(function () {
     //Nav Links
     $("#navlink_home").on("click", function () {
         switchView("section_summary");
+        $('#main_carousel').carousel(0);
     })
 
     $("#navlink_resume").on("click", function () {
         switchView("section_resume");
+        $('#main_carousel').carousel(1);
     })
 
     $("#navlink_training").on("click", function () {
         switchView("section_training");
+        $('#main_carousel').carousel(2);
     })
 
     $("#navlink_codesamples").on("click", function () {
         switchView("section_portfolio_samples");
+        $('#main_carousel').carousel(3);
     })
 
     //$("#navlink_live").on("click", function ()
