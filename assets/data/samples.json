@@ -91,7 +91,7 @@
       "projects": [
         {
           "name": "ClockApp",
-          "description": "A small HTML website site that displays both digital and analog clocks.",
+          "description": "A small HTML site that displays both digital and analog clocks.",
           "github_url": "https://github.com/charlespaldino/HTML/tree/main/ClockApp_Basic",
           "video_url": "",
           "demo_url": "Demos/ClockApp_Basic/charlespaldino_basicclockapp.html"
