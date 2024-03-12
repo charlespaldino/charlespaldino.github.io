@@ -104,7 +104,7 @@ PortfolioCodeSample.prototype.getPortfolioCategoryList = function (codesample_li
 //Gets the HTML for categories, filled with the  given category list.
 PortfolioCodeSample.prototype.getCategoryHTML = function (category_list)
 {
-    var HTML = "";
+    var HTML = "<center><h1 class='resume_section_cardlesstitle'><span>Code Samples</span></h1></center>";
 
     for (var i = 0; i < category_list.length; i++)
     {

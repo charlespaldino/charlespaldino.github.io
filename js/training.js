@@ -65,7 +65,7 @@ TrainingCert.prototype.getTrainingCategoryList = function (training_list) {
 
 //Gets the HTML for categories, filled with the  given category list.
 TrainingCert.prototype.getCategoryHTML = function (category_list) {
-    var HTML = "";
+    var HTML = "<center><h1 class='resume_section_cardlesstitle'><span>Training Certificates</span></h1></center>";
 
     for (var i = 0; i < category_list.length; i++) {
         if (category_list[i] == null) { continue; } //skip extras
