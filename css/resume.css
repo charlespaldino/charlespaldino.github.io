@@ -20,6 +20,7 @@
 .resume_maincard 
 {
     margin: 5px 0px 5px 0px;
+    border-width: 0px !important;
 }
 
 
@@ -34,10 +35,6 @@
     margin: 10px;
 }
 
-.resume_cardtitle 
-{
-    
-}
 
 .resume_mini_icon
 {
@@ -51,7 +48,28 @@
     background-color: purple;
 }
 
-/* Summary */
+/* h1 section title with inverse curves */
+
+.resume_section_cardtitle {
+    width: fit-content;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: -6px;
+    padding-bottom: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-width: 0px;
+    border-style: ridge;
+}
+
+.resume_section_cardlesstitle {
+    width: fit-content;
+    color: whitesmoke;
+    border-radius: 10px;
+    border-style: ridge;
+    padding: 0px 5px 5px 5px;
+    margin-top: 10px;
+}
 
 
 /* Work History */

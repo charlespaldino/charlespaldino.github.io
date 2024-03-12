@@ -31,7 +31,7 @@ WorkHistory.prototype.getHTML = function (debugmode, target_id)
 
 WorkHistory.prototype.fillHTML = function (target_id, work_list)
 {
-    var HTML = "";
+    var HTML = "<center><h1 class='resume_section_cardtitle'><span>Resume</span></h1></center>";
 
     for (var i = 0; i < work_list.length; i++)
     {
@@ -125,8 +125,7 @@ WorkHistory.prototype.getBulletPoints = function (data)
 WorkHistory.prototype.getSampleHistory = function ()
 {
     var HTML = "";
-
-    HTML = "";
+    
     HTML += "<ul class='nobold'>";
 
     HTML += "<li>";

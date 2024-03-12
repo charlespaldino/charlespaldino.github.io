@@ -56,5 +56,32 @@
     {
         display: none;
     }
+
 }
 
+@media screen and (min-width: 500px) 
+{
+    .resume_section_cardtitle {
+        position: relative;
+    }
+
+        .resume_section_cardtitle:before, .resume_section_cardtitle:after {
+            content: "";
+            position: absolute;
+            height: 15px;
+            width: 20px;
+            bottom: 0;
+        }
+
+    .resume_section_cardtitle:after {
+        right: -20px;
+        border-radius: 0 0 0 10px;
+        box-shadow: -10px 0 0 0 #fff;
+    }
+
+        .resume_section_cardtitle:before {
+            left: -20px;
+            border-radius: 0 0 10px 0;
+            box-shadow: 10px 0 0 0 #fff;
+        }
+}
