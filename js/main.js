@@ -10,6 +10,11 @@ $(document).ready(function () {
         $(this).addClass("active");
     })
 
+    $("#navlink_home").on("click", function ()
+    {
+        $(".nav-link").removeClass("active");
+    })
+
     var summary = new Summary();
     $("#view_summary").html(summary.getHTML());
     $("#view_summary_mobile").html($("#view_summary").html());
