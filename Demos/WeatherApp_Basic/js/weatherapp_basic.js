@@ -18,16 +18,16 @@ $(document).ready(function () {
 
 function navigateWeatherInfo()
 {
-    if ($('#button_infoswitch').val().toString() == 'Show Local Weather')
+    if ($('#button_infoswitch').val().toString() == 'Local Weather')
     {
-        $("#button_infoswitch").prop('value', 'Show Major Cities');
+        $("#button_infoswitch").prop('value', 'Major Cities');
         $("#div_info_current").fadeIn();
         $("#div_info_cities").hide();
         $("#div_about").hide();
     }
     else
     {
-        $("#button_infoswitch").prop('value', 'Show Local Weather');
+        $("#button_infoswitch").prop('value', 'Local Weather');
         $("#div_info_current").hide();
         $("#div_about").hide();
         $("#div_info_cities").fadeIn();

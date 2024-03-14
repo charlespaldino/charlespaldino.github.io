@@ -94,14 +94,14 @@
           "description": "A small HTML site that displays both digital and analog clocks.",
           "github_url": "https://github.com/charlespaldino/HTML/tree/main/ClockApp_Basic",
           "video_url": "",
-          "demo_url": "Demos/ClockApp_Basic/charlespaldino_basicclockapp.html"
+          "demo_url": "Demos/ClockApp_Basic/index.html"
         },
         {
           "name": "WeatherApp",
           "description": "A small HTML site that taps into a weather service to display weather data.",
           "github_url": "",
           "video_url": "https://github.com/charlespaldino/HTML/tree/main/WeatherApp_Basic",
-          "demo_url": "Demos/WeatherApp_Basic/charlespaldino_basicweatherapp.html"
+          "demo_url": "Demos/WeatherApp_Basic/index.html"
         }
       ]
     }
