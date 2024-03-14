@@ -54,7 +54,7 @@ function getLocalWeather(position) {
     var ip_lat = position.coords.latitude;
     var ip_long = position.coords.longitude;
     var apid = "3afd95114b0b9a7868ee51e059f7f45b";
-    var ap_weather_api_endpoint = "http://api.openweathermap.org/data/2.5/weather?"
+    var ap_weather_api_endpoint = "https://api.openweathermap.org/data/2.5/weather?"
    
     var dataurl = ap_weather_api_endpoint + "lat=" + ip_lat + "&lon=" + ip_long + "&appid=" + apid;
 
@@ -65,7 +65,7 @@ function getLocalWeather(position) {
 
         $('#citylabel').append(data.name);
         $('#degreeslabel').append(weather_fahrenheit + "\u00B0" + "F");
-        $('#iconimg').attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+        $('#iconimg').attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
         $('#skieslabel').append(data.weather[0].main);
 
         $("#div_loading").hide();
@@ -81,7 +81,7 @@ function getLocalWeather(position) {
 
             $('#nycp').append("New York, NY");
             $('#nycp_temp').append("" + fahrenheit + "\u00B0" + "F");
-            $('#nycp_icon').attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+            $('#nycp_icon').attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
         }).fail(function (data) {
             $('#nycp').append("Could not find New York");
         });
@@ -94,7 +94,7 @@ function getLocalWeather(position) {
 
             $('#lap').append("Los Angeles, CA");
             $('#lap_temp').append("" + fahrenheit + "\u00B0" + "F");
-            $('#lap_icon').attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+            $('#lap_icon').attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
         }).fail(function (data) {
             $('#lap').append("Could not find Los Angeles");
         });
@@ -107,7 +107,7 @@ function getLocalWeather(position) {
 
             $('#ccp').append("Chicago, IL");
             $('#ccp_temp').append("" + fahrenheit + "\u00B0" + "F");
-            $('#ccp_icon').attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+            $('#ccp_icon').attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
         }).fail(function (data) {
             $('#ccp').append("Could not find Chicago");
         });
@@ -120,7 +120,7 @@ function getLocalWeather(position) {
 
             $('#pap').append("Philadelphia, PA");
             $('#pap_temp').append("" + fahrenheit + "\u00B0" + "F");
-            $('#pap_icon').attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+            $('#pap_icon').attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
         }).fail(function (data) {
             $('#pap').append("Could not find Philadelphia");
         });
@@ -133,7 +133,7 @@ function getLocalWeather(position) {
 
             $('#hsp').append("Houston, TX");
             $('#hsp_temp').append("" + fahrenheit + "\u00B0" + "F");
-            $('#hsp_icon').attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+            $('#hsp_icon').attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
         }).fail(function (data) {
             $('#hsp').append("Could not find Houston");
         });
