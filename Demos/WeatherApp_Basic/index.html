@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js\weatherapp_basic.js"></script>
+<link rel="stylesheet" type="text/css" href="css\weatherapp_basic.css">
+</head>
+
+
+<body class="container-fluid">
+    <div class="container-fluid centerdiv">
+        <div class="card container-fluid">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <input id="button_home" class="btn btn-block navbutton" type="button" onclick="location.href='https://charlespaldino.github.io/'" value="Home">
+                    <input id="button_infoswitch" class="btn navbutton" type="button" onclick="navigateWeatherInfo()" value="Major Cities">
+                    <input id="button_about" class="btn navbutton" type="button" onclick="navigateAbout()" value="About">
+                </h5>
+                <p class="card-text">
+                    <div id="div_error" class="error_div">
+                        <p id="errortext"></p>
+                    </div>
+
+                    <div id="div_loading" class="loading_div">
+                        <img alt="Loading...Please Wait" class="img-fluid loading_gif" src="img\loading.gif">
+                    </div>
+
+                    <div id="div_info_current" class="info_current_div" style="visible: false;">
+                        <h1><label id="textlabel">CURRENT CONDITIONS FOR:</label></h1>
+                        <br><br>
+                        <label id="citylabel"></label><br><br>
+                        <label id="degreeslabel"></label><br><br>
+                        <img id="iconimg" class="img-fluid weather_mainimg"><br><br>
+                        <label id="skieslabel"></label><br><br>
+                    </div>
+
+                    <div id="div_info_cities" class="info_cities_div" style="visible: false;">
+                        <table>
+                            <tr>
+                                <td><p id="lap"></p></td>
+                                <td><p id="lap_temp"></p></td>
+                                <td><img id="lap_icon" class="img-fluid"></td>
+                            </tr>
+                            <tr>
+                                <td><p id="ccp"></p></td>
+                                <td><p id="ccp_temp"></p></td>
+                                <td><img id="ccp_icon" class="img-fluid"></td>
+                            </tr>
+                            <tr>
+                                <td><p id="pap"></p></td>
+                                <td><p id="pap_temp"></p></td>
+                                <td><img id="pap_icon" class="img-fluid"></td>
+                            </tr>
+                            <tr>
+                                <td><p id="nycp"></p></td>
+                                <td><p id="nycp_temp"></p></td>
+                                <td><img id="nycp_icon" class="img-fluid"></td>
+                            </tr>
+                            <tr>
+                                <td><p id="hsp"></p></td>
+                                <td><p id="hsp_temp"></p></td>
+                                <td><img id="hsp_icon" class="img-fluid"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="div_about" class="about_div" style="visible: false;">
+                        <div class="display_about">
+                            <h1>About</h1>
+                        </div>
+                        <div class="container-fluid about_div_info">
+                            <p>This is a demo site to display basic HTML skills.</p>
+                            <figure>
+                                <figcaption>Major Skills Involved</figcaption>
+                                <ul>
+                                    <li>HTML, CSS, Javascript</li>
+                                    <li>JQuery</li>
+                                    <li>WebAPI / REST</li>
+                                </ul>
+                            </figure>
+                            <figure>
+                                <figcaption>Minor Skills Involved</figcaption>
+                                <ul>
+                                    <li>Asynchronous Threading</li>
+                                    <li>AJAX, Promises</li>
+                                </ul>
+                            </figure>
+                        </div>
+                    </div>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
