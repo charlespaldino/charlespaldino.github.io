@@ -137,10 +137,10 @@ PortfolioCodeSample.prototype.fillCategoryHTML = function (codesample_list) {
         {
             HTML += "<span>";
 
-            //if (project.demo_url != null)
-            //{
-            //    HTML += "<a href='" + project.demo_url + "' class='sample_tooltip' target='_blank'>"; --FIX CSS, top level site interferring with it. Add Bootstrap.
-            //}
+            if (project.demo_url != null)
+            {
+                HTML += "<a href='" + project.demo_url + "' class='sample_tooltip' target='_blank'>";// --FIX CSS, top level site interferring with it. Add Bootstrap.
+            }
 
             HTML += "<small><strong>" + project.name + "</strong></small>";
             HTML += "</a>";
