@@ -36,10 +36,10 @@ Summary.prototype.getSummary = function ()
     HTML += "Open to Remote, Hybrid, Onsite roles, preference towards Remote.";
     HTML += "</li>";
     HTML += "<li>";
-    HTML += "<span class='resume_bold'>Experience:</span> Mid Level .Net(~10 years), Jr Java Developer (~2.5 years)";
+    HTML += "<span class='resume_bold'>Experience:</span> Mid Level .Net (~10 years), Jr Java Developer (~2.5 years)";
     HTML += "</li>";
     HTML += "<li>";
-    HTML += "<span class='resume_bold'>Salary Range:</span> Open(Generally $35 to $50 / hr | $72k to $100k / annum)";
+    HTML += "<span class='resume_bold'>Salary Range:</span> Open (Generally $35 to $50 / hr | $72k to $100k / annum)";
     HTML += "</li>";
     HTML += "<li>";
     HTML += "<span class='resume_bold'>Relocation:</span> Open to relocation for most areas.";
