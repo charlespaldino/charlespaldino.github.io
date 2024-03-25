@@ -3,9 +3,15 @@
     "",
     "\\assets",
     "\\assets\\data",
-    "\\css",
+    "\\Demos",
+    "\\Demos\\ClockApp_Basic",
+    "\\Demos\\ClockApp_Basic\\css",
+    "\\Demos\\WeatherApp_Basic",
+    "\\Demos\\WeatherApp_Basic\\css",
+    "\\Demos\\WeatherApp_Basic\\js",
+    "\\img",
     "\\js"
   ],
-  "SelectedNode": "\\js\\summary.js",
+  "SelectedNode": "\\assets\\data\\training.json",
   "PreviewInSolutionExplorer": false
 }
