@@ -1,13 +1,25 @@
 {
   "history": [
     {
+      "company": "Microsoft",
+      "title": "Azure App Support Engineer",
+      "startdate": "03/04/2024",
+      "enddate": "Current",
+      "description": "",
+      "bulletpoints": [
+        "Contracted to Hire via Insight Global.",
+        "Providing technical assistance to Azure customers for Storage related issues via the Azure Support Center.",
+        "Troubleshooting Developer SDK issues."
+      ]
+    },
+    {
       "company": "Hospital Billing Collection Service",
       "title": "Software Engineer",
       "startdate": "04/07/2022",
       "enddate": "10/31/2023",
       "description": "",
       "bulletpoints": [
-        "Contracted to Hire via Net2Source & FirstPro (04/07/2022 to 11/08/2022), converted to full time.",
+        "Contracted to Hire via Net2Source & FirstPro, converted to full time.",
         "Performed full stack development in a .Net environment, including web Applications, console applications, and cloud applications.",
         "Lead a team of 4 Developers and assisted in managing teams of 3rd party contractors.",
         "Managed over 20 projects using the Atlassian product suite (BitBucket, JIRA, Confluence).",
@@ -28,12 +40,12 @@
       "enddate": "12/31/2021",
       "description": "",
       "bulletpoints": [
-          "Developed, maintained, and enhanced classic/modern sharepoint sites, pages, and lists.",
-          "Developed custom JavaScript for various advanced operations and business rules.",
+        "Developed, maintained, and enhanced classic/modern sharepoint sites, pages, and lists.",
+        "Developed custom JavaScript for various advanced operations and business rules.",
         "Handled Intranet (Sharepoint) related support tickets and issues.",
         "Utilized Node, Yeoman, React, PNPjs, TypeScript/SASS, and Visual Studio Code for development and deployment.",
-        "Maintenance, Page development, and Data Entry for FEMA's Drupal site - https://wecandothis.hhs.gov/."
-         ,"Developed and deployed an internal .Net Portal using ASP, C# and MVC responsible for handling internal forms and ticket requests."
+        "Maintenance, Page development, and Data Entry for FEMA's Drupal site - https://wecandothis.hhs.gov/.",
+        "Developed and deployed an internal .Net Portal using ASP, C# and MVC responsible for handling internal forms and ticket requests."
       ]
     },
     {
@@ -53,10 +65,10 @@
       "enddate": "1/03/2020",
       "description": "",
       "bulletpoints": [
-          "Full Stack .Net Cloud development for a Community Corrections web application.",
-          "Reviewed tickets and specific issues with the QA team, handling the bugs and/or delegating to the offshore dev team.",
-          "Acted as liaison with offshore development team.",
-          "Handled Dev Ops for QA and UAT stages with Microsoft Azure services."
+        "Full Stack .Net Cloud development for a Community Corrections web application.",
+        "Reviewed tickets and specific issues with the QA team, handling the bugs and/or delegating to the offshore dev team.",
+        "Acted as liaison with offshore development team.",
+        "Handled Dev Ops for QA and UAT stages with Microsoft Azure services."
       ]
     },
     {
@@ -67,12 +79,12 @@
       "description": "",
       "bulletpoints": [
         "Performed basic maintenance, enhancements, and deployments for a .Net ASP/C# WebForms CRM product.",
-          "Inherited control and ownership of a legacy .Net ASP/VB WebForms warehouse management application.",
-          "Handled all support related issues, communicating directly with customers, Stephen Gould representatives, and warehouse management.",
-          "Developed major features for the warehouse management product in a modular fashion for feature-based sales/add-ons.",
-          "Cleaned up old background maintenance/reporting services and implemented robust new ones.",
-          "Rebuilt a Prize Code GiveAway product built in .Net ASP/C# WebForms.",
-          "Lead and trained entry level developers in .Net, SQL, clean coding, OO, and Agile practices, etc."
+        "Inherited control and ownership of a legacy .Net ASP/VB WebForms warehouse management application.",
+        "Handled all support related issues, communicating directly with customers, Stephen Gould representatives, and warehouse management.",
+        "Developed major features for the warehouse management product in a modular fashion for feature-based sales/add-ons.",
+        "Cleaned up old background maintenance/reporting services and implemented robust new ones.",
+        "Rebuilt a Prize Code GiveAway product built in .Net ASP/C# WebForms.",
+        "Lead and trained entry level developers in .Net, SQL, clean coding, OO, and Agile practices, etc."
       ]
     },
     {
@@ -83,7 +95,7 @@
       "description": "",
       "bulletpoints": [
         "Developed and deployed desktop applications in .Net for clients based off of specification sheets."
-        
+
       ]
     },
     {
@@ -104,7 +116,7 @@
       "description": "",
       "bulletpoints": [
         "Primarily worked on a financial ratings web application that used HTML for the front end and Java/MongoDB for the backend.",
-          "Built out a small suite of tools for basic office management."
+        "Built out a small suite of tools for basic office management."
       ]
     },
     {
@@ -125,7 +137,7 @@
       "description": "",
       "bulletpoints": [
         "Developed various parts of ServiceNow (Sandbox → Dev → UAT → Production)",
-          "Developed UI Policies, Data Policies, Client Scripts, and UI Actions."
+        "Developed UI Policies, Data Policies, Client Scripts, and UI Actions."
       ]
     },
     {
@@ -136,9 +148,9 @@
       "description": "",
       "bulletpoints": [
         "Created a GWT Web Application from scratch.",
-          "Performed manual testing, debugging, and functionality enhancement on a new web application.",
-          "Created two Android Demos and one Android Prototype.",
-          "Bench-marked and assisted in testing a website in development. (Existing product version upgrade)"
+        "Performed manual testing, debugging, and functionality enhancement on a new web application.",
+        "Created two Android Demos and one Android Prototype.",
+        "Bench-marked and assisted in testing a website in development. (Existing product version upgrade)"
       ]
     },
     {
@@ -147,11 +159,11 @@
       "startdate": "6/27/2012",
       "enddate": "9/7/2012",
       "description": "",
-      "bulletpoints": [        
-          "Led and organized project and code documentation efforts.",
-          "Trained the intern in basic C# and OO Principles.",
-          "Designed and built utility projects to speed up development.",
-          "Redesigned and cleaned existing projects."
+      "bulletpoints": [
+        "Led and organized project and code documentation efforts.",
+        "Trained the intern in basic C# and OO Principles.",
+        "Designed and built utility projects to speed up development.",
+        "Redesigned and cleaned existing projects."
       ]
     },
     {
@@ -162,7 +174,7 @@
       "description": "",
       "bulletpoints": [
         "Research and development – Benchmarking various databases such as MS SQL and Oracle."
-        
+
       ]
     },
     {
@@ -173,8 +185,8 @@
       "description": "",
       "bulletpoints": [
         "Used Exigen''s OpenL framework to parse tables built in MS Excel to create various business rules (insurance policy ratings) for the backend of an N-tier layered web application.",
-          "Tested and Modified existing OpenL formatted spreadsheets according to given requirements.",
-          "Used Java for test case automation and performing unit test cases in combination with Exigen''s WebStudio web application (Hosted by Tomcat)."
+        "Tested and Modified existing OpenL formatted spreadsheets according to given requirements.",
+        "Used Java for test case automation and performing unit test cases in combination with Exigen''s WebStudio web application (Hosted by Tomcat)."
       ]
     },
     {
@@ -185,8 +197,8 @@
       "description": "",
       "bulletpoints": [
         "Led and trained a team of 6 in Java's J2SE framework.",
-          "Worked on a 3 layered project in Java that consists of a General Purpose Backend Library, Module Package, and a Modular Calculator.",
-          "Responsible for business and management website design, construction, and management using WordPress, JQuery, HTML, CSS, JavaScript, and PHP (mySQL database)."
+        "Worked on a 3 layered project in Java that consists of a General Purpose Backend Library, Module Package, and a Modular Calculator.",
+        "Responsible for business and management website design, construction, and management using WordPress, JQuery, HTML, CSS, JavaScript, and PHP (mySQL database)."
       ]
     },
     {
@@ -197,7 +209,7 @@
       "description": "",
       "bulletpoints": [
         "Trained students with the basics of the Java J2SE and/or .Net C# platform.",
-          "Trained students with Java executable Jar file and/or C# .exe deployment."
+        "Trained students with Java executable Jar file and/or C# .exe deployment."
       ]
     },
     {
@@ -206,9 +218,9 @@
       "startdate": "5/2008",
       "enddate": "11/2008",
       "description": "",
-      "bulletpoints": [        
-          "Worked on ServiceNow's front end implementation to create business and validation rules, as well as tables, widgets, etc.",
-          "Created .Net ASP webpages for various clients, using .Net VB code behind that accessed a SQL database. These pages served as a temporary service until the ServiceNow migration was completed."        
+      "bulletpoints": [
+        "Worked on ServiceNow's front end implementation to create business and validation rules, as well as tables, widgets, etc.",
+        "Created .Net ASP webpages for various clients, using .Net VB code behind that accessed a SQL database. These pages served as a temporary service until the ServiceNow migration was completed."
       ]
     }
   ]
