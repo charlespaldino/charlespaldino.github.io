@@ -115,8 +115,8 @@
     {
       "category": "Azure",
       "name": "General",
-      "courses": 3,
-      "hours": 6,
+      "courses": 6,
+      "hours": 11,
       "url": "https://drive.proton.me/urls/93P51SW2MR#c7jQiSIZGGnL"
     },
     {
@@ -136,9 +136,16 @@
     {
       "category": "Azure",
       "name": "Azure Data",
-      "courses": 13,
-      "hours": 36,
+      "courses": 35,
+      "hours": 82,
       "url": "https://drive.proton.me/urls/BEJW2H6K3G#O8dp93o0FVKb"
+    },
+    {
+      "category": "Azure",
+      "name": "Azure DevOps",
+      "courses": 2,
+      "hours": 4,
+      "url": "https://drive.proton.me/urls/XJ34ECY38M#v7jeF4zKN75H"
     }
   ]
 }
