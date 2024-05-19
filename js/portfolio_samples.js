@@ -181,6 +181,4 @@ PortfolioCodeSample.prototype.fillHTML = function (target_id, codesample_list) {
         $("<li><hr class='dropdown-divider'></li>").insertAfter($(".menuitem_" + category_list[x]).last());
     }
 
-
-    $(target_id + "_mobile").html($(target_id).html());
 }

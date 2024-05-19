@@ -49,7 +49,6 @@ TrainingCert.prototype.fillHTML = function (target_id, training_list)
 
     $(target_id).html(this.getCategoryHTML(category_list));
     this.fillCategoryHTML(training_list);
-    $(target_id + "_mobile").html($(target_id).html());
 }
 
 //Gets the list of categories.
