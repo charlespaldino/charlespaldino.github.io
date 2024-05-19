@@ -62,7 +62,6 @@ WorkHistory.prototype.fillHTML = function (target_id, work_list)
     }
     
     $(target_id).html(HTML);
-    $(target_id + "_mobile").html($(target_id).html());
 }
 
 WorkHistory.prototype.getWorkHistoryList = function (json_data)
