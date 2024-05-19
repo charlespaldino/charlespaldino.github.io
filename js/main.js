@@ -1,10 +1,9 @@
 
-var debugmode = true;
+var debugmode = false;
 
 $(document).ready(function () {
     $('.carousel').carousel('pause');
   
-
     $(".nav-link").on("click", function () {
         $(".nav-link").removeClass("active");
         $(this).addClass("active");
