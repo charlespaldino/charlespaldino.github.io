@@ -31,9 +31,9 @@ WorkHistory.prototype.getHTML = function (debugmode, target_id)
 
 WorkHistory.prototype.fillHTML = function (target_id, work_list)
 {
-    var HTML = "<center><h1 class='resume_section_cardtitle'><span>Resume</span></h1></center>";
+    let HTML = "<center><h1 class='resume_section_cardtitle'><span>Resume</span></h1></center>";
 
-    for (var i = 0; i < work_list.length; i++)
+    for (let i = 0; i < work_list.length; i++)
     {
         HTML += "<div class='card resume_maincard'>";
         HTML += "<div class='card-body div_cardbody'>";
@@ -66,7 +66,7 @@ WorkHistory.prototype.fillHTML = function (target_id, work_list)
 
 WorkHistory.prototype.getWorkHistoryList = function (json_data)
 {
-    var work_list = []
+    let work_list = []
     if (json_data == null)
     {
         work_list =
@@ -92,7 +92,7 @@ WorkHistory.prototype.getWorkHistoryList = function (json_data)
     }
     else
     {
-        for (var history of json_data.history) {
+        for (let history of json_data.history) {
             work_list.push(new WorkHistory(history.company, history.title, history.startdate, history.enddate, history.description, history.bulletpoints))
         }
     }
@@ -103,13 +103,13 @@ WorkHistory.prototype.getWorkHistoryList = function (json_data)
 
 WorkHistory.prototype.getBulletPoints = function (data)
 {
-    var HTML = data;
+    let HTML = data;
     if (Array.isArray(data))
     {
         HTML = "";
         HTML += "<ul class='nobold'>";
 
-        for (var x = 0; x < data.length; x++) {
+        for (let x = 0; x < data.length; x++) {
             HTML += "<li>";
             HTML += data[x];
             HTML += "</li>";
@@ -123,7 +123,7 @@ WorkHistory.prototype.getBulletPoints = function (data)
 
 WorkHistory.prototype.getSampleHistory = function ()
 {
-    var HTML = "";
+    let HTML = "";
     
     HTML += "<ul class='nobold'>";
 

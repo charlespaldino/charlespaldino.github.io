@@ -45,7 +45,7 @@ TrainingCert.prototype.getHTML = function (debugmode, target_id) {
 //Get Categories and inject.
 TrainingCert.prototype.fillHTML = function (target_id, training_list)
 {
-    var category_list = this.getTrainingCategoryList(training_list);
+    let category_list = this.getTrainingCategoryList(training_list);
 
     $(target_id).html(this.getCategoryHTML(category_list));
     this.fillCategoryHTML(training_list);
@@ -55,7 +55,7 @@ TrainingCert.prototype.fillHTML = function (target_id, training_list)
 TrainingCert.prototype.getTrainingCategoryList = function (training_list) {
     const category_list = [];
 
-    for (var i = 0; i < training_list.length; i++) {
+    for (let i = 0; i < training_list.length; i++) {
         if (!category_list.includes(training_list[i].category)) { category_list[i] = training_list[i].category; }
     }
 
@@ -64,9 +64,9 @@ TrainingCert.prototype.getTrainingCategoryList = function (training_list) {
 
 //Gets the HTML for categories, filled with the  given category list.
 TrainingCert.prototype.getCategoryHTML = function (category_list) {
-    var HTML = "<center><h1 class='resume_section_cardlesstitle'><span>Training Certificates</span></h1></center>";
+    let HTML = "<center><h1 class='resume_section_cardlesstitle'><span>Training Certificates</span></h1></center>";
 
-    for (var i = 0; i < category_list.length; i++) {
+    for (let i = 0; i < category_list.length; i++) {
         if (category_list[i] == null) { continue; } //skip extras
 
         HTML += "<h3 class='resume_span_category'>";
@@ -83,9 +83,9 @@ TrainingCert.prototype.getCategoryHTML = function (category_list) {
 //Fills the category list with training data.
 TrainingCert.prototype.fillCategoryHTML = function (training_list)
 {
-    for (var i = 0; i < training_list.length; i++)
+    for (let i = 0; i < training_list.length; i++)
     {
-        var HTML = "";
+        let HTML = "";
         HTML += "<div class='col col_traininglist'>";
         HTML += "<div class='card div_traininglist'>";
         HTML += "<div class='card-body'>";
@@ -110,7 +110,7 @@ TrainingCert.prototype.fillCategoryHTML = function (training_list)
 TrainingCert.prototype.getTrainingCertList = function (json_data)
 {
 
-    var training_list = [];
+    let training_list = [];
 
     if (json_data == null)
     {
@@ -131,7 +131,7 @@ TrainingCert.prototype.getTrainingCertList = function (json_data)
     }
     else
     {
-        for (var training of json_data.training)
+        for (let training of json_data.training)
         {
             training_list.push(new TrainingCert(training.category, training.name, training.courses, training.hours, training.url))
         }
