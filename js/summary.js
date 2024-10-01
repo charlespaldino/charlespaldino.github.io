@@ -3,7 +3,7 @@ function Summary(){}
 
 Summary.prototype.getHTML = function ()
 {
-    var HTML = "";
+    let HTML = "";
     
     HTML += "<div class='card resume_maincard'>";
     HTML += "<div class='card-body div_cardbody'>";
@@ -23,7 +23,7 @@ Summary.prototype.getHTML = function ()
 
 Summary.prototype.getSummary = function ()
 {
-    var HTML = "";
+    let HTML = "";
 
     HTML += "<center>";
         HTML += "<h3>Summary</h3>";
@@ -57,7 +57,7 @@ Summary.prototype.getSummary = function ()
 
 Summary.prototype.getTechnicalSkills = function ()
 {
-    var HTML = "";
+    let HTML = "";
 
     HTML += "<center>";
     HTML += "<h3>Technical Skills</h3>";

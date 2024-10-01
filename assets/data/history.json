@@ -4,12 +4,16 @@
       "company": "Microsoft",
       "title": "Azure App Support Engineer",
       "startdate": "03/04/2024",
-      "enddate": "Current",
+      "enddate": "09/20/2024",
       "description": "",
       "bulletpoints": [
-        "Contracted to Hire via Insight Global.",
-        "Providing technical assistance to Azure customers for Storage related issues via the Azure Support Center.",
-        "Troubleshooting Developer SDK issues."
+        "Contracted via Insight Global.",
+        "Provided technical assistance to Azure customers for Storage related issues via the Azure Support Center.",
+        "Provided guidance on best practices for Azure Reddis Cache, actively worked with customers to monitor and adjust their applications.",
+        "Troubleshot Developer SDK issues with both Azure’s Java and .Net SDKs.",
+        "Provided security and administration assistance with Blob Storage, Azure Files, Azure Reddis Cache, and Azure SQL.",
+        "Assisted customers with pricing and cost calculation.",
+        "Created, debugged, and assisted customers with PowerShell scripts to communicate to Azure Storage."
       ]
     },
     {
