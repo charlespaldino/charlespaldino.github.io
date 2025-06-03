@@ -31,7 +31,8 @@ WorkHistory.prototype.getHTML = function (debugmode, target_id)
 
 WorkHistory.prototype.fillHTML = function (target_id, work_list)
 {
-    let HTML = "<center><h1 class='resume_section_cardtitle'><span>Resume</span></h1></center>";
+    let HTML = "<center><h1 class='resume_section_cardtitle'><span><a href='assets/files/CharlesPaldinoRESUME_FULL-2025.doc'>Resume</a></span></h1></center>";
+
 
     for (let i = 0; i < work_list.length; i++)
     {
