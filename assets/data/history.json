@@ -1,6 +1,22 @@
 {
   "history": [
     {
+      "company": "Persistent",
+      "title": ".Net Consultant (Remote)",
+      "startdate": "09/24/2024",
+      "enddate": "Current",
+      "description": "",
+      "bulletpoints": [
+        "Contracted via Veridian Tech Solutions.",
+        "Assisting the Business Process Consultant team with customer care and after business hours support.",
+        "Assisting with modernization efforts off of an on premises ASP MVC application.",
+        "Maintaining and supporting current .Net Core ASP MVC applications.",
+        "Assisting with day to day DevOps.",
+        "Developing ETL and automation processes.",
+        "Handling security and penetration testing issues from periodic scans."
+      ]
+    },
+    {
       "company": "Microsoft",
       "title": "Azure App Support Engineer",
       "startdate": "03/04/2024",
