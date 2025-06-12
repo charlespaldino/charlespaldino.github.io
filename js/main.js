@@ -1,5 +1,5 @@
 
-var debugmode = false;
+var debugmode = true;
 
 $(document).ready(function () {
     $('.carousel').carousel('pause');

@@ -2,16 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\data",
+    "\\assets\\docs",
+    "\\assets\\files",
     "\\Demos",
-    "\\Demos\\ClockApp_Basic",
     "\\Demos\\ClockApp_Basic\\css",
-    "\\Demos\\WeatherApp_Basic",
     "\\Demos\\WeatherApp_Basic\\css",
     "\\Demos\\WeatherApp_Basic\\js",
     "\\img",
     "\\js"
   ],
-  "SelectedNode": "\\assets\\data\\training.json",
+  "SelectedNode": "\\assets\\files\\CharlesPaldinoRESUME_FULL-2025.doc",
   "PreviewInSolutionExplorer": false
 }
