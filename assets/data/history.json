@@ -1,19 +1,34 @@
 {
   "history": [
     {
-      "company": "Persistent",
-      "title": ".Net Consultant (Remote)",
-      "startdate": "09/24/2024",
+      "company": "Nityo Infotech",
+      "title": "Microsoft Windows Developer (Remote)",
+      "startdate": "05/18/2026",
       "enddate": "Current",
       "description": "",
       "bulletpoints": [
+        "Contracted By: Nityo Infotech – Assignment through Kforce",
+        "Took ownership of a suite of legacy ASP and VB .NET applications, including a multi‑app web portal, providing ongoing maintenance, troubleshooting, and user assistance.",
+        "Developed an API integration layer inside ARAS Innovator to enable structured communication with the ERP system (IFS).",
+        "Recovered and modernized a set of old MS Access document databases, converting file entries into searchable documents.",
+        "Resolved tickets through ServiceNow.",
+        "Assisted in team Sharepoint administration, applications, and custom SPFx solutions."    
+      ]
+    },
+    {
+      "company": "Persistent",
+      "title": ".Net Consultant (Remote)",
+      "startdate": "09/24/2024",
+      "enddate": "05/08/2026",
+      "description": "",
+      "bulletpoints": [
         "Contracted via Veridian Tech Solutions.",
-        "Assisting the Business Process Consultant team with customer care and after business hours support.",
-        "Assisting with modernization efforts off of an on premises ASP MVC application.",
-        "Maintaining and supporting current .Net Core ASP MVC applications.",
-        "Assisting with day to day DevOps.",
-        "Developing ETL and automation processes.",
-        "Handling security and penetration testing issues from periodic scans."
+        "Assisted the Business Process Consultant team with customer care and after business hours support.",
+        "Assisted with modernization efforts off of an on premises ASP MVC application.",
+        "Maintained and supported current .Net Core ASP MVC applications.",
+        "Assisted with day to day DevOps.",
+        "Developed ETL and automation processes.",
+        "Handled security and penetration testing issues from periodic scans."
       ]
     },
     {
