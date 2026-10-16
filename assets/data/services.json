@@ -1,0 +1,52 @@
+{
+  "services": [
+    {
+      "name": "Local or Hosted Websites",
+      "image": "img/service_websites.png",
+      "description": "Simple websites for personal or professional needs.",
+      "details": "Custom websites, personal portfolios, menus, product catalogs, contact pages, and mobile-friendly layouts."
+    },
+    {
+      "name": "Custom Applications",
+      "image": "img/service_applications.png",
+      "description": "Simple desktop programs built around your needs.",
+      "details": "Small desktop applications, custom utilities, data entry tools, and programs designed to simplify everyday tasks."
+    },
+    {
+      "name": "Local or Hosted Databases",
+      "image": "img/service_databases.png",
+      "description": "Organize and manage your information with a custom database.",
+      "details": "Database design, setup, data organization, and simple interfaces for managing personal or professional records."
+    },
+    {
+      "name": "Software Repairs & Updates",
+      "image": "img/service_repairs.png",
+      "description": "Fix bugs, update websites, and improve existing applications.",
+      "details": "Troubleshooting, bug fixes, website updates, minor feature additions, and improvements to existing software."
+    },
+    {
+      "name": "Reports & Spreadsheets",
+      "image": "img/service_reports.png",
+      "description": "Create useful reports, improve spreadsheets, and organize information.",
+      "details": "Excel improvements, spreadsheet formulas, data summaries, charts, custom reports, and document generation."
+    },
+    {
+      "name": "Automation",
+      "image": "img/service_automation.png",
+      "description": "Save time by automating repetitive tasks.",
+      "details": "Automated data entry, file processing, scheduled tasks, document generation, and simple custom workflows."
+    },
+    {
+      "name": "Data Transfers & ETL",
+      "image": "img/service_etl.png",
+      "description": "Move, clean, and organize information between different systems.",
+      "details": "Extract, Transform, and Load (ETL) processes, spreadsheet imports, database migrations, data cleanup, and file conversions."
+    },
+    {
+      "name": "API Integrations",
+      "image": "img/service_integrations.png",
+      "description": "Connect different applications so they can share information automatically.",
+      "details": "REST API integrations, third-party service connections, automated data exchange, and custom application interfaces."
+    }
+  ]
+}

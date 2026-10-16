@@ -20,6 +20,9 @@ $(document).ready(function () {
     var workhistory = new WorkHistory();
     workhistory.getHTML(debugmode, "#view_resume_mobile");
 
+    var services = new OfferedService();
+    services.getHTML(debugmode, "#view_services_mobile");
+
     var trainingcerts = new TrainingCert();
     trainingcerts.getHTML(debugmode, "#view_training_mobile");
 
@@ -35,12 +38,17 @@ $(document).ready(function () {
         $('#main_carousel').carousel(1);
     })
 
-    $("#navlink_training").on("click", function () {
+    $("#navlink_services").on("click", function ()
+    {
         $('#main_carousel').carousel(2);
     })
 
-    $("#navlink_codesamples").on("click", function () {
+    $("#navlink_training").on("click", function () {
         $('#main_carousel').carousel(3);
+    })
+
+    $("#navlink_codesamples").on("click", function () {
+        $('#main_carousel').carousel(4);
     })
 
     //$("#navlink_live").on("click", function ()
