@@ -1,0 +1,116 @@
+
+/* Contact Button */
+.service_contact_action {
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+.service_contact_button {
+    min-width: 145px;
+    padding: 8px 25px !important;
+    background-color: #ffffff !important;
+    border: 2px solid #dddddd !important;
+    border-radius: 8px !important;
+    color: #333333 !important;
+    font-weight: bold !important;
+    transition: background-color .2s, transform .2s;
+}
+
+    .service_contact_button:hover {
+        background-color: #e8f3ff !important;
+        transform: translateY(-2px);
+    }
+
+/* Slide-Down Animation */
+.service_contact_modal.fade .modal-dialog {
+    transform: translateY(-100px);
+    transition: transform .3s ease-out;
+}
+
+.service_contact_modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+/* Modal */
+.service_contact_modal .modal-dialog {
+    max-width: 520px;
+}
+
+.service_contact_modal .modal-content {
+    background-color: #ffffff;
+    border: 2px solid #dddddd;
+    border-radius: 12px;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, .3);
+}
+
+.service_contact_modal .modal-header {
+    justify-content: center;
+    border-bottom: 1px solid #dddddd;
+    padding: 18px;
+}
+
+.service_contact_modal .modal-title {
+    color: #333333;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.service_contact_modal .modal-body {
+    padding: 20px 25px;
+}
+
+/* Form */
+.service_contact_modal .form-label {
+    color: #333333;
+    font-weight: bold;
+}
+
+.service_contact_modal .form-control,
+.service_contact_modal .form-select {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+
+    .service_contact_modal .form-control:focus,
+    .service_contact_modal .form-select:focus {
+        border-color: #6aa9e8;
+        box-shadow: 0px 0px 5px rgba(106, 169, 232, .3);
+    }
+
+.service_contact_modal textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Send Button */
+.service_contact_modal .modal-footer {
+    justify-content: center;
+    border-top: 1px solid #dddddd;
+    padding: 15px;
+}
+
+.service_contact_send {
+    min-width: 130px;
+    background-color: #286ca8 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-weight: bold !important;
+}
+
+    .service_contact_send:hover {
+        background-color: #195584 !important;
+    }
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+    .service_contact_modal .modal-dialog {
+        margin: 12px;
+    }
+
+    .service_contact_modal .modal-body {
+        padding: 15px;
+    }
+}

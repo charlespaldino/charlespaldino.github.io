@@ -42,15 +42,21 @@ OfferedService.prototype.getHTML = function (debugmode, target_id)
     }
 };
 
-//Creates the services section and fills it with service data.
+/* Creates the services section and fills it with service data. */
 OfferedService.prototype.fillHTML = function (target_id, services_list)
 {
-    let HTML = "<center><h1 class='resume_section_cardlesstitle'><span>Offered Services</span></h1></center>";
+    let HTML = "<center><h1 class='resume_section_cardlesstitle'><span>Offered Services</span></h1>";
+    HTML += "<span class='service_subtitle'>For Personal or Small Businesses</span>";
+    HTML += "<div class='service_contact_action'><button type='button' class='btn service_contact_button' data-bs-toggle='modal' data-bs-target='#service_contact_modal'>Contact</button></div></center>";
     HTML += "<div class='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 row_services'></div>";
 
     $(target_id).html(HTML);
     this.fillServiceHTML(services_list, target_id);
+
+    const contact = new ServiceContact();
+    contact.getHTML(services_list);
 };
+
 
 
 //Fills the services list with service cards.

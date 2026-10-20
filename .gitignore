@@ -2,3 +2,4 @@
 *.config
 .vs/slnx.sqlite
 *.sqlite
+/.vs
