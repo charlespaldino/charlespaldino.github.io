@@ -1,0 +1,4 @@
+*.vsidx
+*.config
+.vs/slnx.sqlite
+*.sqlite
