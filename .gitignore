@@ -4,3 +4,4 @@
 *.sqlite
 /.vs
 .vs/slnx.sqlite
+/.vs
