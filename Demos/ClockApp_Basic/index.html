@@ -8,6 +8,8 @@
 
 	<link rel="stylesheet" href="css/AnalogClock.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/DigitalClock.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/CountdownClock.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/WaterClock.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/About.css" type="text/css" media="all">
 	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/MainApp.css" type="text/css" media="all">
@@ -19,14 +21,16 @@
 </head>
 
 <body>
-	<main class="main">		
+	<main class="main">
 		<nav>
-				<ul>
-					<li><button onclick="location.href='https://charlespaldino.github.io/'" aria-label="Home">Home</button></li>
-					<li><button onclick="changeButton(this);" aria-label="Analog">Analog</button></li>
-					<li><button onclick="changeButton(this);" aria-label="Digital">Digital</button></li>
-					<li><button onclick="changeButton(this);" aria-label="About">About</button></li>
-				</ul>
+			<ul>
+				<li><button onclick="location.href='https://charlespaldino.github.io/'" aria-label="Home">Home</button></li>
+				<li><button onclick="changeButton(this);" aria-label="Analog">Analog</button></li>
+				<li><button onclick="changeButton(this);" aria-label="Digital">Digital</button></li>
+				<li><button onclick="changeButton(this);" aria-label="Countdown">Countdown</button></li>
+				<li><button onclick="changeButton(this);" aria-label="Water">Water</button></li>
+				<li><button onclick="changeButton(this);" aria-label="About">About</button></li>
+			</ul>
 		</nav>
 		<section id="container_analog">
 			<div class="clockbox">
@@ -55,7 +59,7 @@
 					The time is now <label id="label_analog_timetext"></label>
 				</p>
 			</div>
-			
+
 		</section>
 		<section id="container_digital">
 			<table id="timetable">
@@ -66,6 +70,38 @@
 					<td id="td_digital_ampmtext"><label id="label_digital_ampmtext"></label></td>
 				</tr>
 			</table>
+		</section>
+		<section id="container_countdown">
+			<div id="countdown_clock" class="countdown_clock" role="timer" aria-label="Countdown timer">
+				<div class="countdown_time" aria-live="off">
+					<span id="countdown_hours">00</span>
+					<span class="countdown_separator">:</span>
+					<span id="countdown_minutes">00</span>
+					<span class="countdown_separator">:</span>
+					<span id="countdown_seconds">00</span>
+				</div>
+			</div>
+			<div class="countdown_add_controls" aria-label="Add countdown time">
+				<div class="countdown_add_control">
+					<input id="countdown_input_hours" type="number" min="0" max="99" step="1" value="1" inputmode="numeric" aria-label="Hours to add">
+					<button type="button" data-countdown-input="countdown_input_hours" data-countdown-unit-seconds="3600">Add Hours</button>
+				</div>
+				<div class="countdown_add_control">
+					<input id="countdown_input_minutes" type="number" min="0" max="99" step="1" value="1" inputmode="numeric" aria-label="Minutes to add">
+					<button type="button" data-countdown-input="countdown_input_minutes" data-countdown-unit-seconds="60">Add Minutes</button>
+				</div>
+				<div class="countdown_add_control">
+					<input id="countdown_input_seconds" type="number" min="0" max="99" step="1" value="1" inputmode="numeric" aria-label="Seconds to add">
+					<button type="button" data-countdown-input="countdown_input_seconds" data-countdown-unit-seconds="1">Add Seconds</button>
+				</div>
+			</div>
+			<div class="countdown_playback_controls" aria-label="Countdown controls">
+				<button id="countdown_start" type="button">Start</button>
+				<button id="countdown_reset" type="button">Reset</button>
+				<button id="countdown_stop" type="button">Stop</button>
+			</div>
+		</section>
+		<section id="container_water">
 		</section>
 		<section id="container_about">
 			<div class="display_about">
@@ -86,6 +122,7 @@
 					<ul>
 						<li>Asynchronous Threading</li>
 						<li>Callbacks, Promises</li>
+						<li>SVG</li>
 					</ul>
 				</figure>
 			</div>

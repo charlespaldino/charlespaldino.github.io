@@ -1,15 +1,18 @@
 #container_digital
 {
-	
+	box-sizing: border-box;
+	width: 100%;
 	font-family: 'Orbitron', sans-serif;
 	font-weight: normal;
 	font-size: xx-large;
 	letter-spacing: 1px;
 	margin-top: 10px;
-	display: inline;
+	overflow-x: hidden;
 }
 
-#timetable{
+#timetable
+{
+	margin: 0px auto;
 }
 
 #timetable td
@@ -44,4 +47,64 @@
 	min-width: 10px;
 	text-align: center;
 	border: 0px !important;
+}
+
+@media screen and (max-width: 500px)
+{
+	#container_digital
+	{
+		font-size: clamp(1.1rem, 5.5vw, 1.5rem);
+	}
+
+	#timetable
+	{
+		display: block;
+		width: 100%;
+		max-width: 340px;
+		border-spacing: 0px;
+	}
+
+	#timetable tbody
+	{
+		display: block;
+		width: 100%;
+	}
+
+	#timetable tr
+	{
+		display: grid;
+		grid-template-columns: minmax(0, 1.5fr) auto minmax(0, 1fr);
+		align-items: center;
+		gap: 5px;
+		width: 100%;
+	}
+
+	#timetable td
+	{
+		box-sizing: border-box;
+		min-width: 0px;
+		max-width: none;
+	}
+
+	#td_digital_timetext
+	{
+		grid-column: 1;
+	}
+
+	#td_digital_dashtext
+	{
+		grid-column: 2;
+	}
+
+	#td_digital_millisecondstext
+	{
+		grid-column: 3;
+	}
+
+	#td_digital_ampmtext
+	{
+		grid-column: 1 / -1;
+		padding-top: 5px;
+		font-size: .7em;
+	}
 }

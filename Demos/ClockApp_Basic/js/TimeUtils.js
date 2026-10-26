@@ -36,3 +36,17 @@ function getCurrentAMPM()
 {
     return new Date().getHours() >= 12 ? "PM" : "AM";
 }
+
+//Converts a duration in seconds to normalized hour, minute, and second values.
+function getDurationParts(total_seconds)
+{
+	total_seconds = Math.max(0, Math.floor(Number(total_seconds) || 0));
+
+	return { hours: Math.floor(total_seconds / 3600), minutes: Math.floor((total_seconds % 3600) / 60), seconds: total_seconds % 60 };
+}
+
+//Formats one part of a time display with at least two digits.
+function formatTimePart(value)
+{
+	return String(value).padStart(2, "0");
+}

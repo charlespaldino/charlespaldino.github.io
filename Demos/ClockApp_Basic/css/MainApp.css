@@ -1,9 +1,10 @@
 .main {
+	box-sizing: border-box;
     display: flex;
-    padding: 2em;
-    height: 90vh;
+	padding: 60px 2em 2em;
+	min-height: 100vh;
     justify-content: center;
-    align-items: middle;
+	align-items: center;
 }
 
 
@@ -20,14 +21,17 @@ nav
 
 nav ul
 {
-	margin: 0px;
-	margin-top: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4px;
+	margin: 5px 0px 0px;
 	padding: 0px;
 }
 
 nav li
 {
-	display: inline;
+	display: block;
 	margin: 0px;
 }
 
@@ -35,9 +39,10 @@ nav button
 {
 	
 	min-width: 75px;
-	width: 75px;
+	width: auto;
 	min-height: 40px;
 	height: 40px;
+	padding: 0px 10px;
 	
 	font-size: large;
 	font-weight: bold;
@@ -50,11 +55,21 @@ nav button
 }
 
 @media screen and (max-width: 500px) {
-	
-	tbody {
-		font-size: medium;
+	.main
+	{
+		padding: 105px 1em 1em;
+		align-items: flex-start;
 	}
 
+	nav button
+	{
+		min-width: 0px;
+		height: 36px;
+		min-height: 36px;
+		padding: 0px 8px;
+		font-size: 1rem;
+	}
+	
 	#container_about
 	{
 		font-size:larger;
