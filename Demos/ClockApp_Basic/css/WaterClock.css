@@ -1,0 +1,284 @@
+#container_water
+{
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	font-family: 'Orbitron', sans-serif;
+}
+
+.water_clock_time
+{
+	font-size: clamp(1.6rem, 5vw, 2.5rem);
+	font-variant-numeric: tabular-nums;
+	font-weight: bold;
+}
+
+.water_clock
+{
+	display: block;
+	width: min(100%, 560px);
+	max-height: calc(100vh - 220px);
+	margin: 0px auto;
+	overflow: visible;
+}
+
+.water_clock_vessel,
+.water_clock_bowl,
+.water_clock_outlet_neck
+{
+	fill: url(#water_clock_vessel_gradient);
+	stroke: #3f2416;
+	stroke-width: 6px;
+	stroke-linejoin: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_water
+{
+	fill: url(#water_clock_water_gradient);
+	opacity: .9;
+}
+
+.water_clock_surface
+{
+	fill: none;
+	stroke: #d8f7ff;
+	stroke-width: 5px;
+	stroke-linecap: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_wave
+{
+	animation: water_clock_wave_shift 10s linear infinite;
+}
+
+#water_clock_lower_water .water_clock_wave
+{
+	animation-direction: reverse;
+	animation-duration: 12s;
+}
+
+.water_clock_droplet
+{
+	fill: #8ee4ff;
+	stroke: #d8f7ff;
+	stroke-width: 2px;
+	opacity: 0;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_droplet.is-running
+{
+	animation: water_clock_droplet_fall 1s linear infinite;
+}
+
+@keyframes water_clock_wave_shift
+{
+	from
+	{
+		transform: translateX(-64px);
+	}
+
+	to
+	{
+		transform: translateX(0px);
+	}
+}
+
+@keyframes water_clock_droplet_fall
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY(0px);
+	}
+
+	12%, 82%
+	{
+		opacity: 1;
+	}
+
+	100%
+	{
+		opacity: 0;
+		transform: translateY(var(--water-clock-drop-distance));
+	}
+}
+
+.water_clock_rim,
+.water_clock_bowl_rim
+{
+	fill: url(#water_clock_vessel_gradient);
+	stroke: #3f2416;
+	stroke-width: 6px;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_rim_inner,
+.water_clock_bowl_inner
+{
+	fill: #57331f;
+	stroke: #2b1911;
+	stroke-width: 4px;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_vessel_highlight,
+.water_clock_bowl_highlight
+{
+	fill: none;
+	stroke: #edc58a;
+	stroke-width: 4px;
+	stroke-linecap: round;
+	opacity: .65;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_bowl_window
+{
+	fill: #392319;
+	stroke: #3f2416;
+	stroke-width: 6px;
+	stroke-linejoin: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_bowl_cut_edge
+{
+	fill: none;
+	stroke: #edc58a;
+	stroke-width: 4px;
+	stroke-linecap: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_marks path
+{
+	fill: none;
+	stroke: #fff1c9;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_marks text
+{
+	fill: #fff1c9;
+	font: bold 14px 'Orbitron', sans-serif;
+	text-anchor: middle;
+}
+
+.water_clock_outlet_opening
+{
+	fill: #20130e;
+	stroke: #9b622f;
+	stroke-width: 3px;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_float_stem,
+.water_clock_float_line
+{
+	fill: none;
+	stroke: #754522;
+	stroke-width: 5px;
+	stroke-linecap: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_float_top,
+.water_clock_float_body
+{
+	fill: url(#water_clock_float_gradient);
+	stroke: #754522;
+	stroke-width: 4px;
+	vector-effect: non-scaling-stroke;
+}
+
+.water_clock_controls
+{
+	display: grid;
+	grid-template-columns: auto 72px;
+	align-items: center;
+	justify-content: center;
+	gap: 7px 10px;
+}
+
+.water_clock_controls label
+{
+	font-weight: bold;
+}
+
+.water_clock_controls input
+{
+	box-sizing: border-box;
+	width: 72px;
+	padding: 7px 5px;
+	border: 2px solid #222222;
+	border-radius: 5px;
+	font: bold 1rem 'Orbitron', sans-serif;
+	text-align: center;
+}
+
+.water_clock_control_buttons
+{
+	display: flex;
+	grid-column: 1 / -1;
+	gap: 8px;
+}
+
+.water_clock_control_buttons button
+{
+	min-width: 90px;
+	padding: 9px 12px;
+	border: 2px solid #222222;
+	border-radius: 5px;
+	background: #edf8ff;
+	font-size: .95rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.water_clock_control_buttons button:hover,
+.water_clock_control_buttons button:focus-visible
+{
+	background: #9edcff;
+}
+
+@media screen and (max-width: 500px)
+{
+	.water_clock
+	{
+		max-height: calc(100vh - 250px);
+	}
+
+	.water_clock_control_buttons
+	{
+		gap: 5px;
+	}
+
+	.water_clock_control_buttons button
+	{
+		min-width: 80px;
+		padding: 8px;
+		font-size: .85rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+	.water_clock_wave
+	{
+		animation: none;
+	}
+
+	.water_clock_droplet.is-running
+	{
+		animation: none;
+		opacity: 0;
+	}
+}

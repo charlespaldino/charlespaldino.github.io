@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="css/MainApp.css" type="text/css" media="all">
 
 	<script src="js/TimeUtils.js" defer></script>
+	<script src="js/CountdownClock.js" defer></script>
+	<script src="js/WaterClock.js" defer></script>
 	<script src="js/Clock_Script.js" defer></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 
@@ -102,6 +104,111 @@
 			</div>
 		</section>
 		<section id="container_water">
+			<output id="water_clock_time" class="water_clock_time" aria-live="off">10:00</output>
+			<svg id="water_clock" class="water_clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 680" role="img" aria-labelledby="water_clock_title water_clock_description">
+				<title id="water_clock_title">Ten-minute water clock</title>
+				<desc id="water_clock_description">An upper marked vessel drains through a small outlet into a lower bowl containing a floating indicator.</desc>
+				<defs>
+					<linearGradient id="water_clock_vessel_gradient" x1="0" y1="0" x2="1" y2="1">
+						<stop offset="0" stop-color="#d4aa68" />
+						<stop offset=".5" stop-color="#9b622f" />
+						<stop offset="1" stop-color="#6d3d1f" />
+					</linearGradient>
+					<linearGradient id="water_clock_water_gradient" x1="0" y1="0" x2="0" y2="1">
+						<stop offset="0" stop-color="#9ee8ff" />
+						<stop offset="1" stop-color="#3198c8" />
+					</linearGradient>
+					<radialGradient id="water_clock_float_gradient" cx="35%" cy="30%" r="70%">
+						<stop offset="0" stop-color="#ffe59a" />
+						<stop offset="1" stop-color="#bd772e" />
+					</radialGradient>
+					<clipPath id="water_clock_upper_clip">
+						<path d="M145 104 Q260 76 375 104 L347 292 Q340 331 282 346 L276 372 H244 L238 346 Q180 331 173 292 Z" />
+					</clipPath>
+					<clipPath id="water_clock_bowl_window_clip">
+						<path d="M100 510 H420 Q400 615 260 640 Q120 615 100 510 Z" />
+					</clipPath>
+					<clipPath id="water_clock_bowl_outer_clip">
+						<ellipse cx="260" cy="493" rx="166" ry="35" />
+						<path d="M72 487 Q260 542 448 487 Q433 624 260 652 Q87 624 72 487 Z" />
+					</clipPath>
+					<clipPath id="water_clock_droplet_clip">
+						<rect x="250" y="424" width="20" height="86" />
+						<path d="M100 510 H420 Q400 615 260 640 Q120 615 100 510 Z" />
+					</clipPath>
+				</defs>
+
+				<g id="water_clock_upper_vessel">
+					<path class="water_clock_vessel" d="M126 90 Q260 49 394 90 L366 301 Q359 347 287 366 L280 397 H240 L233 366 Q161 347 154 301 Z" />
+					<g clip-path="url(#water_clock_upper_clip)">
+						<g id="water_clock_upper_water">
+							<g class="water_clock_wave">
+								<path class="water_clock_water" d="M107 138 Q123 132 139 138 T171 138 T203 138 T235 138 T267 138 T299 138 T331 138 T363 138 T395 138 T427 138 T459 138 T491 138 V377 H107 Z" />
+								<path id="water_clock_upper_surface" class="water_clock_surface" d="M107 138 Q123 132 139 138 T171 138 T203 138 T235 138 T267 138 T299 138 T331 138 T363 138 T395 138 T427 138 T459 138 T491 138" />
+							</g>
+						</g>
+					</g>
+					<path class="water_clock_vessel_highlight" d="M151 111 Q260 82 369 111" />
+					<ellipse class="water_clock_rim" cx="260" cy="91" rx="138" ry="38" />
+					<ellipse class="water_clock_rim_inner" cx="260" cy="92" rx="113" ry="25" />
+
+					<g id="water_clock_marks" class="water_clock_marks" transform="translate(0 16)" aria-label="Ten one-minute marks">
+						<path d="M205 122 H240 M280 122 H315 M211 143 H240 M280 143 H309 M211 164 H240 M280 164 H309 M211 185 H240 M280 185 H309 M211 206 H240 M280 206 H309 M211 227 H240 M280 227 H309 M211 248 H240 M280 248 H309 M211 269 H240 M280 269 H309 M211 290 H240 M280 290 H309 M205 311 H240 M280 311 H315" />
+						<text x="260" y="127">10</text>
+						<text x="260" y="148">9</text>
+						<text x="260" y="169">8</text>
+						<text x="260" y="190">7</text>
+						<text x="260" y="211">6</text>
+						<text x="260" y="232">5</text>
+						<text x="260" y="253">4</text>
+						<text x="260" y="274">3</text>
+						<text x="260" y="295">2</text>
+						<text x="260" y="316">1</text>
+					</g>
+				</g>
+
+				<g id="water_clock_outlet">
+					<path class="water_clock_outlet_neck" d="M239 383 H281 L276 423 Q260 438 244 423 Z" />
+					<ellipse class="water_clock_outlet_opening" cx="260" cy="424" rx="16" ry="7" />
+				</g>
+
+				<g id="water_clock_lower_bowl">
+					<path class="water_clock_bowl" d="M72 487 Q260 542 448 487 Q433 624 260 652 Q87 624 72 487 Z" />
+					<ellipse class="water_clock_bowl_rim" cx="260" cy="487" rx="190" ry="50" />
+					<ellipse class="water_clock_bowl_inner" cx="260" cy="493" rx="166" ry="35" />
+					<path class="water_clock_bowl_highlight" d="M105 520 Q260 558 415 520" />
+					<path class="water_clock_bowl_window" d="M100 510 H420 Q400 615 260 640 Q120 615 100 510 Z" />
+					<g clip-path="url(#water_clock_bowl_window_clip)">
+						<g id="water_clock_lower_water">
+							<g class="water_clock_wave">
+								<path class="water_clock_water" d="M68 510 Q84 504 100 510 T132 510 T164 510 T196 510 T228 510 T260 510 T292 510 T324 510 T356 510 T388 510 T420 510 T452 510 T484 510 T516 510 V642 H68 Z" />
+								<path id="water_clock_lower_surface" class="water_clock_surface" d="M68 510 Q84 504 100 510 T132 510 T164 510 T196 510 T228 510 T260 510 T292 510 T324 510 T356 510 T388 510 T420 510 T452 510 T484 510 T516 510" />
+							</g>
+						</g>
+					</g>
+					<g clip-path="url(#water_clock_droplet_clip)">
+						<ellipse id="water_clock_droplet" class="water_clock_droplet" cx="260" cy="436" rx="5" ry="9" />
+					</g>
+					<g clip-path="url(#water_clock_bowl_outer_clip)">
+						<g id="water_clock_float" transform="translate(260 630)">
+							<path class="water_clock_float_stem" d="M0 0 V-26" />
+							<circle class="water_clock_float_top" cx="0" cy="-32" r="7" />
+							<ellipse class="water_clock_float_body" cx="0" cy="3" rx="34" ry="13" />
+							<path class="water_clock_float_line" d="M-27 3 Q0 11 27 3" />
+						</g>
+					</g>
+					<path class="water_clock_bowl_cut_edge" d="M100 510 H420" />
+				</g>
+			</svg>
+			<div class="water_clock_controls">
+				<label for="water_clock_minutes">Minutes</label>
+				<input id="water_clock_minutes" type="number" min="1" max="10" step="1" value="10" inputmode="numeric">
+				<div class="water_clock_control_buttons">
+					<button id="water_clock_start" type="button">Start</button>
+					<button id="water_clock_reset" type="button">Reset</button>
+					<button id="water_clock_stop" type="button">Stop</button>
+				</div>
+			</div>
 		</section>
 		<section id="container_about">
 			<div class="display_about">
