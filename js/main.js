@@ -27,7 +27,7 @@ $(document).ready(function () {
     trainingcerts.getHTML(debugmode, "#view_training_mobile");
 
     var codesamples = new PortfolioCodeSample();
-    codesamples.getHTML(debugmode, "#view_portfolio_samples_mobile");
+    codesamples.getHTML("#view_portfolio_samples_mobile");
 
     //Nav Links
     $("#navlink_home").on("click", function () {
